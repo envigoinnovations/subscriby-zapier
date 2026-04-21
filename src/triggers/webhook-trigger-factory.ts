@@ -96,6 +96,28 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
 
       return {};
     },
+    performList: async (z: ZObject, bundle: Bundle) => {
+      const response = await z.request({
+        url: `${apiBaseUrl()}/webhook-events`,
+        params: {
+          type: input.event,
+          limit: 3,
+        },
+      });
+
+      handleHttpError(response, z);
+
+      const body = response.data as { data?: MemberPassEvent[] };
+      const events = Array.isArray(body?.data) ? body.data : [];
+
+      return events.map((event) => ({
+        id: event.id,
+        type: event.type,
+        created_at: event.created_at,
+        project_id: event.project_id,
+        data: event.data,
+      }));
+    },
     sample: {
       id: input.sample.id,
       type: input.sample.type,
