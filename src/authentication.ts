@@ -31,7 +31,7 @@ const testAuthentication = async (z: ZObject, bundle: Bundle) => {
 export const authentication: Authentication = {
 	type: "custom",
 	test: testAuthentication,
-	connectionLabel: (z, bundle) =>
+	connectionLabel: async (_z, bundle) =>
 		`MemberPass — ${(bundle.inputData.name as string) ?? "team"}`,
 	fields: [
 		{

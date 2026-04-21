@@ -1,4 +1,4 @@
-import { ZObject, Bundle } from 'zapier-platform-core';
+import { ZObject, Bundle, Create } from 'zapier-platform-core';
 import { randomUUID } from 'node:crypto';
 import { apiBaseUrl, handleHttpError } from '../utils/http';
 
@@ -26,4 +26,4 @@ export default {
     },
     sample: { id: 'prj_01HXPROJECTSAMPLE000000000', active: true },
   },
-};
+} satisfies Create;

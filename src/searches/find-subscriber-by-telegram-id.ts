@@ -1,4 +1,4 @@
-import { ZObject, Bundle } from 'zapier-platform-core';
+import { ZObject, Bundle, Search } from 'zapier-platform-core';
 import { apiBaseUrl, handleHttpError } from '../utils/http';
 
 export default {
@@ -36,4 +36,4 @@ export default {
       status: 'customer',
     },
   },
-};
+} satisfies Search;
