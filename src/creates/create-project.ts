@@ -7,23 +7,63 @@ export default {
   noun: 'Project',
   display: {
     label: 'Create Project',
-    description: 'Create a new MemberPass project. Delegates to the REST v1 endpoint and enforces plan limits.',
+    description:
+      'Create a new MemberPass project. Delegates to the REST v1 endpoint — plan limits, the custom_handle tier gate, and cache invalidation all run server-side.',
   },
   operation: {
     inputFields: [
       { key: 'name', label: 'Name', type: 'string', required: true, helpText: 'Project name, 5-255 characters.' },
-      { key: 'description', label: 'Description', type: 'text', required: false },
-      { key: 'handle', label: 'Handle', type: 'string', required: false, helpText: 'URL-friendly slug; alpha-dash lowercase.' },
+      {
+        key: 'type',
+        label: 'Platform Type',
+        type: 'string',
+        required: false,
+        default: 'telegram',
+        helpText: 'Defaults to telegram. Only telegram is available today; Slack / Discord / Viber unlock as each platform launches.',
+      },
+      { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 characters. HTML is filtered server-side.' },
+      {
+        key: 'handle',
+        label: 'Handle',
+        type: 'string',
+        required: false,
+        helpText: 'URL-friendly slug; alpha-dash lowercase, 5-255 chars. Requires a Starter or Growth MemberPass tier — Free-tier tokens get TEAM_TIER_REQUIRED if supplied.',
+      },
+      { key: 'terms', label: 'Terms URL', type: 'string', required: false, helpText: 'Optional URL to the terms page. Max 255 characters.' },
+      { key: 'privacy', label: 'Privacy URL', type: 'string', required: false, helpText: 'Optional URL to the privacy page. Max 255 characters.' },
+      { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false, helpText: 'Opt into aggregated metrics collection on this project.' },
+      { key: 'active', label: 'Active', type: 'boolean', required: false, helpText: 'Defaults to true. Set false to create in draft state.' },
+      { key: 'bot_id', label: 'Telegram Bot ID', type: 'string', required: false, helpText: 'UUID of a telegram_bot row to attach at creation.' },
+      { key: 'team_id', label: 'Team ID', type: 'string', required: false, helpText: 'UUID of the owning team. Defaults to the token\'s scoped team.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
+      const body: Record<string, unknown> = {
+        name: bundle.inputData.name,
+      };
+
+      const passthrough: Array<keyof typeof bundle.inputData> = [
+        'type',
+        'description',
+        'handle',
+        'terms',
+        'privacy',
+        'metrics',
+        'active',
+        'bot_id',
+        'team_id',
+      ];
+
+      for (const key of passthrough) {
+        const value = bundle.inputData[key];
+        if (value !== undefined && value !== null && value !== '') {
+          body[key as string] = value;
+        }
+      }
+
       const response = await z.request({
         url: `${apiBaseUrl()}/projects`,
         method: 'POST',
-        body: {
-          name: bundle.inputData.name,
-          description: bundle.inputData.description ?? null,
-          handle: bundle.inputData.handle ?? null,
-        },
+        body,
         headers: { 'Idempotency-Key': randomUUID() },
       });
 
@@ -35,6 +75,8 @@ export default {
       id: 'prj_01HXPROJECTSAMPLE000000000',
       name: 'Research Premium',
       handle: 'research-premium',
+      type: 'telegram',
+      active: true,
     },
   },
 };

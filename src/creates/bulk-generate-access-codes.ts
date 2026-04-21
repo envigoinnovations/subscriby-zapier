@@ -14,32 +14,78 @@ export default {
     inputFields: [
       { key: 'project_id', label: 'Project ID', type: 'string', required: true },
       { key: 'plan_id', label: 'Plan ID', type: 'string', required: true },
-      { key: 'quantity', label: 'Quantity', type: 'integer', required: true, helpText: '1-10000 codes per batch.' },
+      { key: 'quantity', label: 'Quantity', type: 'integer', required: true, helpText: '1-1000 codes per batch.' },
+      {
+        key: 'export_type',
+        label: 'Export Type',
+        type: 'string',
+        required: true,
+        choices: {
+          file: 'File — CSV delivered to the creator\'s Telegram chat',
+          messages: 'Messages — one Telegram message per code delivered to the creator\'s chat',
+        },
+        helpText: 'How the job delivers the generated codes to the creator. Both variants require the creator to have a Telegram chat linked to their MemberPass account.',
+      },
       {
         key: 'expiry_preset',
         label: 'Expiry Preset',
         type: 'string',
+        required: true,
         choices: {
           no_expiry: 'No expiry',
           '1_day': '1 day',
           '1_week': '1 week',
           '1_month': '1 month',
           '1_year': '1 year',
+          custom: 'Custom',
         },
+      },
+      {
+        key: 'custom_expiry_amount',
+        label: 'Custom Expiry Amount',
+        type: 'integer',
+        required: false,
+        helpText: 'Required when expiry_preset=custom. Minimum 1.',
+      },
+      {
+        key: 'custom_expiry_type',
+        label: 'Custom Expiry Type',
+        type: 'string',
+        required: false,
+        choices: { days: 'Days', weeks: 'Weeks', months: 'Months', years: 'Years' },
+        helpText: 'Required when expiry_preset=custom.',
+      },
+      {
+        key: 'consent',
+        label: 'Messages Consent',
+        type: 'boolean',
+        required: false,
+        helpText: 'Required and must be true when export_type=messages — acknowledges that one Telegram message per code will be sent to the creator\'s chat (high-volume batches may hit Telegram rate limits).',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;
       const planId = bundle.inputData.plan_id as string;
 
+      const body: Record<string, unknown> = {
+        quantity: bundle.inputData.quantity,
+        export_type: bundle.inputData.export_type,
+        expiry_preset: bundle.inputData.expiry_preset,
+      };
+
+      if (bundle.inputData.expiry_preset === 'custom') {
+        body.custom_expiry_amount = bundle.inputData.custom_expiry_amount;
+        body.custom_expiry_type = bundle.inputData.custom_expiry_type;
+      }
+
+      if (bundle.inputData.export_type === 'messages') {
+        body.consent = bundle.inputData.consent === true;
+      }
+
       const response = await z.request({
         url: `${apiBaseUrl()}/projects/${projectId}/plans/${planId}/access-codes/bulk-generate`,
         method: 'POST',
-        body: {
-          quantity: bundle.inputData.quantity,
-          expiry_preset: bundle.inputData.expiry_preset ?? 'no_expiry',
-          export_type: 'silent',
-        },
+        body,
         headers: { 'Idempotency-Key': randomUUID() },
       });
 
