@@ -17,6 +17,7 @@ import createPlan from './creates/create-plan';
 import cancelSubscription from './creates/cancel-subscription';
 import banMember from './creates/ban-member';
 import kickMember from './creates/kick-member';
+import bulkGenerateAccessCodes from './creates/bulk-generate-access-codes';
 
 import findProjectByHandle from './searches/find-project-by-handle';
 import findPlanByName from './searches/find-plan-by-name';
@@ -47,6 +48,7 @@ const app: App = {
     [cancelSubscription.key]: cancelSubscription,
     [banMember.key]: banMember,
     [kickMember.key]: kickMember,
+    [bulkGenerateAccessCodes.key]: bulkGenerateAccessCodes,
   },
   searches: {
     [findProjectByHandle.key]: findProjectByHandle,
