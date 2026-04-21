@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Bulk Generate Access Codes',
     description:
-      'Queue a bulk access-code generation batch for a plan. BILLING WARNING: quantities beyond the creator tier free allotment are metered on Stripe. Set acknowledge_overage=true only after a human reviews the preview call.',
+      'Queue a bulk access-code generation batch for a plan. Returns immediately with a preview of the worst-case overage ("if every code is redeemed, this is what it would bill"). Stripe metered overage fires on redemption, not generation.',
   },
   operation: {
     inputFields: [
@@ -27,13 +27,6 @@ export default {
           '1_year': '1 year',
         },
       },
-      {
-        key: 'acknowledge_overage',
-        label: 'Acknowledge Overage',
-        type: 'boolean',
-        helpText:
-          'REQUIRED when the batch exceeds the creator tier free allotment. Run the preview helper first and confirm the dollar figure with your finance lead before toggling this on.',
-      },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;
@@ -46,7 +39,6 @@ export default {
           quantity: bundle.inputData.quantity,
           expiry_preset: bundle.inputData.expiry_preset ?? 'no_expiry',
           export_type: 'silent',
-          acknowledge_overage: bundle.inputData.acknowledge_overage ?? false,
         },
         headers: { 'Idempotency-Key': randomUUID() },
       });
