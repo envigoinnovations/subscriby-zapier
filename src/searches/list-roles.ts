@@ -1,0 +1,42 @@
+import { ZObject, Bundle, Search } from 'zapier-platform-core';
+import { apiBaseUrl, handleHttpError } from '../utils/http';
+
+export default {
+  key: 'list_roles',
+  noun: 'Role',
+  display: {
+    label: 'List Roles',
+    description: 'List every role defined for the current team.',
+  },
+  operation: {
+    inputFields: [
+      {
+        key: 'limit',
+        label: 'Limit',
+        type: 'integer',
+        required: false,
+        helpText: 'Maximum number of roles to return. Leave blank for the server default.',
+      },
+    ],
+    async perform(z: ZObject, bundle: Bundle) {
+      const params: Record<string, unknown> = {};
+      if (bundle.inputData.limit !== undefined && bundle.inputData.limit !== null && bundle.inputData.limit !== '') {
+        params.limit = bundle.inputData.limit;
+      }
+
+      const response = await z.request({
+        url: `${apiBaseUrl()}/roles`,
+        params,
+      });
+
+      handleHttpError(response, z);
+
+      return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
+    },
+    sample: {
+      id: 'rol_01HXROLESAMPLE0000000000000',
+      code: 'manager',
+      name: 'Manager',
+    },
+  },
+} satisfies Search;

@@ -22,7 +22,7 @@ export const addAuthHeader: BeforeRequestMiddleware = (request, _z, bundle) => {
 	request.headers = {
 		...(request.headers ?? {}),
 		Authorization: `Bearer ${token}`,
-		"User-Agent": "MemberPass-Zapier/1.0.0",
+		"User-Agent": "MemberPass-Zapier/1.1.0",
 	};
 
 	return request;

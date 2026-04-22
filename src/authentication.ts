@@ -40,7 +40,7 @@ export const authentication: Authentication = {
 			type: "password",
 			required: true,
 			helpText:
-				"Paste a token minted at https://app.memberpass.net/settings/tokens. Tokens start with `mpt_`. Grant at minimum the `team:view` ability plus the abilities matching the triggers / actions you plan to use.",
+				"Paste a token minted at https://app.memberpass.net/settings/tokens. Production tokens start with `mpt_live_`; non-production tokens start with `mpt_test_`. Grant at minimum the `team:view` ability plus the abilities matching the triggers / actions you plan to use.",
 		},
 	],
 };

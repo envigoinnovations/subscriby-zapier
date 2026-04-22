@@ -1,0 +1,71 @@
+import { ZObject, Bundle, Search } from 'zapier-platform-core';
+import { apiBaseUrl, handleHttpError } from '../utils/http';
+
+export default {
+  key: 'list_transactions',
+  noun: 'Transaction',
+  display: {
+    label: 'List Transactions',
+    description: 'List transactions for a project, filterable by status, provider, plan, or currency. Returns a cursor-paginated page.',
+  },
+  operation: {
+    inputFields: [
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'period', label: 'Period', type: 'string', required: false },
+      { key: 'from', label: 'From', type: 'datetime', required: false },
+      { key: 'to', label: 'To', type: 'datetime', required: false },
+      { key: 'statuses', label: 'Statuses', type: 'string', required: false, list: true },
+      { key: 'provider_ids', label: 'Provider IDs', type: 'string', required: false, list: true },
+      { key: 'plan_ids', label: 'Plan IDs', type: 'string', required: false, list: true },
+      { key: 'currency_ids', label: 'Currency IDs', type: 'string', required: false, list: true },
+      { key: 'cursor', label: 'Cursor', type: 'string', required: false, helpText: 'Opaque cursor returned in meta.next_cursor.' },
+      { key: 'limit', label: 'Limit', type: 'integer', required: false, default: '50', helpText: 'Between 1 and 200.' },
+    ],
+    async perform(z: ZObject, bundle: Bundle) {
+      const params: Record<string, unknown> = {
+        project_id: bundle.inputData.project_id,
+      };
+
+      const passthrough: Array<keyof typeof bundle.inputData> = [
+        'period',
+        'from',
+        'to',
+        'statuses',
+        'provider_ids',
+        'plan_ids',
+        'currency_ids',
+        'cursor',
+        'limit',
+      ];
+
+      for (const key of passthrough) {
+        const value = bundle.inputData[key];
+        if (value !== undefined && value !== null && value !== '') {
+          params[key as string] = value;
+        }
+      }
+
+      if (params.limit === undefined) {
+        params.limit = 50;
+      }
+
+      const response = await z.request({
+        url: `${apiBaseUrl()}/analytics/transactions`,
+        params,
+      });
+
+      handleHttpError(response, z);
+
+      const envelope = response.data as { data?: Record<string, unknown>[] };
+
+      return (envelope.data ?? []);
+    },
+    sample: {
+      id: 'txn_01HXTXNSAMPLE00000000000000',
+      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      amount: '29.00',
+      currency_id: 'USD',
+      status: 'succeeded',
+    },
+  },
+} satisfies Search;
