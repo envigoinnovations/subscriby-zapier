@@ -19,7 +19,7 @@
 		"validate": "zapier validate",
 		"push": "npm run build && zapier push",
 		"promote": "zapier promote",
-		"push:win": "npm run build && zapier push"
+		"push:win": "powershell -NoProfile -Command \"Move-Item -Path .git -Destination ../.git-mp-zap; npm run build; zapier push; Move-Item -Path ../.git-mp-zap -Destination .git\""
 	},
 	"dependencies": {
 		"zapier-platform-core": "18.5.1"
