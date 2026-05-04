@@ -1,0 +1,6 @@
+.git
+**/.git/**
+src/
+*.ts
+!*.d.ts
+node_modules/

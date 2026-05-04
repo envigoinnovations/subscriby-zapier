@@ -4,6 +4,10 @@
 	"description": "Zapier Platform integration for MemberPass — monetised Telegram community automation.",
 	"main": "index.js",
 	"types": "dist/index.d.ts",
+	"files": [
+		"index.js",
+		"dist/"
+	],
 	"private": true,
 	"engines": {
 		"node": ">=18"
@@ -15,7 +19,7 @@
 		"validate": "zapier validate",
 		"push": "npm run build && zapier push",
 		"promote": "zapier promote",
-		"push:win": "mv .git ../.git-mp-zap && (npm run build && zapier push); mv ../.git-mp-zap .git"
+		"push:win": "npm run build && zapier push"
 	},
 	"dependencies": {
 		"zapier-platform-core": "18.5.1"
