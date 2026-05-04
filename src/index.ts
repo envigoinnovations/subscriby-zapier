@@ -73,6 +73,17 @@ import billingAccountLocked from './triggers/billing-account-locked';
 import billingTierUpgraded from './triggers/billing-tier-upgraded';
 import billingTierDowngraded from './triggers/billing-tier-downgraded';
 import billingTierCancelled from './triggers/billing-tier-cancelled';
+import dropdownProjects from './triggers/dropdown-projects';
+import dropdownPlans from './triggers/dropdown-plans';
+import dropdownTeams from './triggers/dropdown-teams';
+import dropdownMembers from './triggers/dropdown-members';
+import dropdownSubscriptions from './triggers/dropdown-subscriptions';
+import dropdownResources from './triggers/dropdown-resources';
+import dropdownWebhookEndpoints from './triggers/dropdown-webhook-endpoints';
+import dropdownTokens from './triggers/dropdown-tokens';
+import dropdownRoles from './triggers/dropdown-roles';
+import dropdownGroups from './triggers/dropdown-groups';
+import dropdownAccessCodes from './triggers/dropdown-access-codes';
 
 import createProject from './creates/create-project';
 import updateProject from './creates/update-project';
@@ -215,6 +226,17 @@ const triggers = {
   [billingTierUpgraded.key]: billingTierUpgraded,
   [billingTierDowngraded.key]: billingTierDowngraded,
   [billingTierCancelled.key]: billingTierCancelled,
+  [dropdownProjects.key]: dropdownProjects,
+  [dropdownPlans.key]: dropdownPlans,
+  [dropdownTeams.key]: dropdownTeams,
+  [dropdownMembers.key]: dropdownMembers,
+  [dropdownSubscriptions.key]: dropdownSubscriptions,
+  [dropdownResources.key]: dropdownResources,
+  [dropdownWebhookEndpoints.key]: dropdownWebhookEndpoints,
+  [dropdownTokens.key]: dropdownTokens,
+  [dropdownRoles.key]: dropdownRoles,
+  [dropdownGroups.key]: dropdownGroups,
+  [dropdownAccessCodes.key]: dropdownAccessCodes,
 };
 
 const creates = {
@@ -298,6 +320,7 @@ const app: App<typeof triggers, typeof creates, typeof searches> = {
   creates,
   searches,
   resources: {},
+  flags: { cleanInputData: false },
 };
 
 export default app;

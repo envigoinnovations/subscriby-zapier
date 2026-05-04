@@ -10,8 +10,8 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
-      { key: 'member_id', label: 'Member ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
+      { key: 'member_id', label: 'Member ID', type: 'string', required: true, dynamic: 'dropdown_members.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;

@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'token_id', label: 'Token ID', type: 'string', required: true },
+      { key: 'token_id', label: 'Token ID', type: 'string', required: true, dynamic: 'dropdown_tokens.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const tokenId = bundle.inputData.token_id as string;

@@ -11,9 +11,9 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'access_code', label: 'Access Code', type: 'string', required: false, helpText: 'Optional unredeemed access code to pre-fill.' },
-      { key: 'plan_id', label: 'Plan ID', type: 'string', required: false, helpText: 'Optional plan UUID to pre-select.' },
+      { key: 'plan_id', label: 'Plan ID', type: 'string', required: false, helpText: 'Optional plan UUID to pre-select.', dynamic: 'dropdown_plans.id.name' },
       { key: 'custom', label: 'Custom Payload', type: 'string', required: false, helpText: 'Optional custom payload passed through as the bot start parameter.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {

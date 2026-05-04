@@ -11,7 +11,7 @@ export default {
   operation: {
     inputFields: [
       { key: 'type', label: 'Event Type', type: 'string', required: true, helpText: 'Event name to filter on (e.g. subscription.created).' },
-      { key: 'project_id', label: 'Project ID', type: 'string', required: false },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: false, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'limit', label: 'Limit', type: 'integer', required: false, helpText: 'Between 1 and 10.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {

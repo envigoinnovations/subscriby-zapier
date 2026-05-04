@@ -1,6 +1,6 @@
 {
 	"name": "memberpass-zapier",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Zapier Platform integration for MemberPass — monetised Telegram community automation.",
 	"main": "index.js",
 	"types": "dist/index.d.ts",
@@ -18,12 +18,12 @@
 		"push:win": "mv .git ../.git-mp-zap && (npm run build && zapier push); mv ../.git-mp-zap .git"
 	},
 	"dependencies": {
-		"zapier-platform-core": "18.5.0"
+		"zapier-platform-core": "18.5.1"
 	},
 	"devDependencies": {
 		"@types/node": "^22.9.0",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.6.3",
-		"zapier-platform-cli": "^18.5.0"
+		"zapier-platform-cli": "^18.5.1"
 	}
 }

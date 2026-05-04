@@ -18,6 +18,8 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the project to delete.',
+        dynamic: 'dropdown_projects.id.name',
+        altersDynamicFields: true,
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

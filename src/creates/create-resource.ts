@@ -12,7 +12,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'title', label: 'Title', type: 'string', required: true, helpText: '5-255 characters.' },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 chars; HTML filtered server-side.' },
       { key: 'active', label: 'Active', type: 'boolean', required: false, helpText: 'Defaults to true.' },

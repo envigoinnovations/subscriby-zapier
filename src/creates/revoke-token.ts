@@ -18,6 +18,7 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the token to revoke.',
+        dynamic: 'dropdown_tokens.id.name',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

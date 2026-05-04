@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'status', label: 'Status', type: 'string', required: false, helpText: 'Optional member status filter.' },
       { key: 'limit', label: 'Limit', type: 'integer', required: false, default: '25' },
     ],

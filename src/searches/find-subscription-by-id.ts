@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'subscription_id', label: 'Subscription ID', type: 'string', required: true },
+      { key: 'subscription_id', label: 'Subscription ID', type: 'string', required: true, dynamic: 'dropdown_subscriptions.id.id' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const subscriptionId = bundle.inputData.subscription_id as string;

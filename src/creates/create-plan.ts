@@ -12,7 +12,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'name', label: 'Name', type: 'string', required: true, helpText: '5-255 chars; unique per project.' },
       { key: 'currency_id', label: 'Currency ID', type: 'string', required: true, helpText: 'UUID from /v1/currencies. Must be supported by an active payment method on the project.' },
       { key: 'price', label: 'Price', type: 'number', required: true, helpText: 'Decimal, min 0.' },

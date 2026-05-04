@@ -12,7 +12,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'name', label: 'Name', type: 'string', required: false, helpText: '5-255 characters.' },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 characters. HTML filtered server-side.' },
       { key: 'handle', label: 'Handle', type: 'string', required: false, helpText: 'URL slug (alpha-dash lowercase, 5-255). Requires Starter or Growth tier.' },
@@ -21,7 +21,7 @@ export default {
       { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false },
       { key: 'active', label: 'Active', type: 'boolean', required: false },
       { key: 'bot_id', label: 'Telegram Bot ID', type: 'string', required: false },
-      { key: 'team_id', label: 'Team ID', type: 'string', required: false },
+      { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;

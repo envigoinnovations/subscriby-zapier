@@ -18,6 +18,7 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the webhook endpoint whose secret should be rotated.',
+        dynamic: 'dropdown_webhook_endpoints.id.url',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

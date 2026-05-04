@@ -18,6 +18,7 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the subscription to cancel.',
+        dynamic: 'dropdown_subscriptions.id.id',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

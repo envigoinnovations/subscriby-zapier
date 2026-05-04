@@ -18,6 +18,8 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the owning project.',
+        dynamic: 'dropdown_projects.id.name',
+        altersDynamicFields: true,
       },
       {
         key: 'resource_id',
@@ -25,6 +27,7 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the project resource to unlink.',
+        dynamic: 'dropdown_resources.id.name',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

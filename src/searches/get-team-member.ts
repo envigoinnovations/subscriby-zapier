@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'team_id', label: 'Team ID', type: 'string', required: true },
+      { key: 'team_id', label: 'Team ID', type: 'string', required: true, dynamic: 'dropdown_teams.id.name', altersDynamicFields: true },
       { key: 'user_id', label: 'User ID', type: 'string', required: true },
     ],
     async perform(z: ZObject, bundle: Bundle) {

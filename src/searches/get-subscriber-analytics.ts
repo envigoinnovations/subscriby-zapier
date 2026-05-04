@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: false },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: false, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'period', label: 'Period', type: 'string', required: false },
       { key: 'from', label: 'From', type: 'datetime', required: false },
       { key: 'to', label: 'To', type: 'datetime', required: false },

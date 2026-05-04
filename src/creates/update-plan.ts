@@ -12,8 +12,8 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
-      { key: 'plan_id', label: 'Plan ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
+      { key: 'plan_id', label: 'Plan ID', type: 'string', required: true, dynamic: 'dropdown_plans.id.name' },
       { key: 'name', label: 'Name', type: 'string', required: false, helpText: '5-255 chars; unique per project.' },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 chars; HTML filtered server-side.' },
       { key: 'currency_id', label: 'Currency ID', type: 'string', required: false },

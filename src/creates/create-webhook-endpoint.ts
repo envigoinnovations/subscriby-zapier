@@ -40,6 +40,8 @@ export default {
         type: 'string',
         required: false,
         helpText: 'Optional UUID of the project to scope deliveries to. Omit for team-wide delivery.',
+        dynamic: 'dropdown_projects.id.name',
+        altersDynamicFields: true,
       },
       {
         key: 'allowed_ips',

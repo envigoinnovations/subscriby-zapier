@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'role_id', label: 'Role ID', type: 'string', required: true },
+      { key: 'role_id', label: 'Role ID', type: 'string', required: true, dynamic: 'dropdown_roles.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const roleId = bundle.inputData.role_id as string;

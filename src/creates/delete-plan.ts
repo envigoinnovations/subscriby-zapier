@@ -18,6 +18,8 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the owning project.',
+        dynamic: 'dropdown_projects.id.name',
+        altersDynamicFields: true,
       },
       {
         key: 'plan_id',
@@ -25,6 +27,7 @@ export default {
         type: 'string',
         required: true,
         helpText: 'UUID of the plan to delete.',
+        dynamic: 'dropdown_plans.id.name',
       },
     ],
     async perform(z: ZObject, bundle: Bundle) {

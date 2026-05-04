@@ -10,7 +10,7 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'group_id', label: 'Group ID', type: 'string', required: true },
+      { key: 'group_id', label: 'Group ID', type: 'string', required: true, dynamic: 'dropdown_groups.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const groupId = bundle.inputData.group_id as string;

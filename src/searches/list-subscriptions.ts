@@ -11,7 +11,7 @@ export default {
   operation: {
     inputFields: [
       { key: 'status', label: 'Status', type: 'string', required: false, helpText: 'Optional status filter (e.g. active, trialing, past_due, cancelled).' },
-      { key: 'plan_id', label: 'Plan ID', type: 'string', required: false },
+      { key: 'plan_id', label: 'Plan ID', type: 'string', required: false, dynamic: 'dropdown_plans.id.name' },
       { key: 'limit', label: 'Limit', type: 'integer', required: false, default: '25' },
     ],
     async perform(z: ZObject, bundle: Bundle) {

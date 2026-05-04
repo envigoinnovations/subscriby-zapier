@@ -10,10 +10,14 @@ export default {
   },
   operation: {
     inputFields: [
-      { key: 'project_id', label: 'Project ID', type: 'string', required: true },
+      { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;
+
+      if (!projectId) {
+        return [];
+      }
 
       const response = await z.request({
         url: `${apiBaseUrl()}/projects/${projectId}/plans`,
