@@ -110,13 +110,17 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
       const body = response.data as { data?: MemberPassEvent[] };
       const events = Array.isArray(body?.data) ? body.data : [];
 
-      return events.map((event) => ({
-        id: event.id,
-        type: event.type,
-        created_at: event.created_at,
-        project_id: event.project_id,
-        data: event.data,
-      }));
+      if (events.length > 0) {
+        return events.map((event) => ({
+          id: event.id,
+          type: event.type,
+          created_at: event.created_at,
+          project_id: event.project_id,
+          data: event.data,
+        }));
+      }
+
+      return [input.sample];
     },
     sample: {
       id: input.sample.id,
@@ -125,5 +129,11 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
       project_id: input.sample.project_id,
       data: input.sample.data,
     },
+    outputFields: [
+      { key: 'id', label: 'Event ID', type: 'string' },
+      { key: 'type', label: 'Event Type', type: 'string' },
+      { key: 'created_at', label: 'Created At', type: 'datetime' },
+      { key: 'project_id', label: 'Project ID', type: 'string' },
+    ],
   },
 });
