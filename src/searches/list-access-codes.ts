@@ -27,7 +27,7 @@ export default {
       const params: Record<string, unknown> = {};
 
       if (bundle.inputData.status) params.status = bundle.inputData.status;
-      params.limit = bundle.inputData.limit ?? 50;
+      params.per_page = Math.min(Number(bundle.inputData.limit ?? 50), 100);
 
       const response = await z.request({
         url: `${apiBaseUrl()}/projects/${projectId}/plans/${planId}/access-codes`,

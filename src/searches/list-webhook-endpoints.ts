@@ -21,7 +21,7 @@ export default {
     async perform(z: ZObject, bundle: Bundle) {
       const params: Record<string, unknown> = {};
       if (bundle.inputData.limit !== undefined && bundle.inputData.limit !== null && bundle.inputData.limit !== '') {
-        params.limit = bundle.inputData.limit;
+        params.per_page = Math.min(Number(bundle.inputData.limit), 100);
       }
 
       const response = await z.request({

@@ -19,7 +19,7 @@ export default {
 
       if (bundle.inputData.status) params.status = bundle.inputData.status;
       if (bundle.inputData.plan_id) params.plan_id = bundle.inputData.plan_id;
-      params.limit = bundle.inputData.limit ?? 25;
+      params.per_page = Math.min(Number(bundle.inputData.limit ?? 25), 100);
 
       const response = await z.request({
         url: `${apiBaseUrl()}/subscriptions`,
