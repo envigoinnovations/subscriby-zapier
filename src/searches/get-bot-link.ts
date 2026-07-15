@@ -35,7 +35,7 @@ export default {
 			return data ? [data] : [];
 		},
 		sample: {
-			url: "https://telegram.me/research_premium_bot",
+			url: "https://t.me/research_premium_bot",
 		},
 	},
 } satisfies Search;
