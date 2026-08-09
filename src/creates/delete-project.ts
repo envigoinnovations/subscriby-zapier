@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Delete Project',
     description:
-      'Permanently delete a MemberPass project. Subscribers, plans, resources, and access codes are removed server-side.',
+      'Permanently delete a Subscriby project. Subscribers, plans, resources, and access codes are removed server-side.',
   },
   operation: {
     inputFields: [

@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Create Plan',
     description:
-      'Create a new subscription plan on a MemberPass project. Currency must be supported by an active payment method on the project; crypto/platform currencies reject recurring=true; at least one project_resource UUID must be linked.',
+      'Create a new subscription plan on a Subscriby project. Currency must be supported by an active payment method on the project; crypto/platform currencies reject recurring=true; at least one project_resource UUID must be linked.',
   },
   operation: {
     inputFields: [

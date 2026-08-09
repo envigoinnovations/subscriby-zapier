@@ -2,7 +2,7 @@
 
 ## 1.1.0 — 2026-04-23
 
-Full-parity sync with the live MemberPass REST + webhook surface.
+Full-parity sync with the live Subscriby REST + webhook surface.
 
 ### New triggers (+52)
 
@@ -40,8 +40,8 @@ Lists, gets, and the full Analytics API.
 
 ### Other
 
-- Auth help text updated to reference the new Stripe-style `mpt_live_<id>_<secret>` / `mpt_test_<id>_<secret>` token format.
-- `User-Agent` bumped to `MemberPass-Zapier/1.1.0`.
+- Auth help text updated to reference the new Stripe-style `sbt_live_<id>_<secret>` / `sbt_test_<id>_<secret>` token format.
+- `User-Agent` bumped to `Subscriby-Zapier/1.1.0`.
 - No breaking changes — every existing trigger / action / search key is preserved, so live Zaps from 1.0.0 keep working.
 
 ## 1.0.0

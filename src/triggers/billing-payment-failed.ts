@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Billing',
   label: 'Tier Payment Failed',
   description:
-    "Triggers when a charge for the creator's MemberPass tier fails on the provider.",
+    "Triggers when a charge for the creator's Subscriby tier fails on the provider.",
   event: 'billing.payment_failed',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

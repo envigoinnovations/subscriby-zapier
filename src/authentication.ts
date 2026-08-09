@@ -4,7 +4,7 @@ import { apiBaseUrl, handleHttpError } from "./utils/http";
 /**
  * Validates the pasted API key by fetching the team the token is
  * scoped to. The response doubles as the connection label shown in
- * the Zapier UI so users can tell which MemberPass team the Zap is
+ * the Zapier UI so users can tell which Subscriby team the Zap is
  * wired to.
  */
 const testAuthentication = async (z: ZObject, bundle: Bundle) => {
@@ -19,7 +19,7 @@ const testAuthentication = async (z: ZObject, bundle: Bundle) => {
 
 	if (!data?.data?.id) {
 		throw new z.errors.Error(
-			"Unexpected response shape from /v1/teams/current — contact MemberPass support.",
+			"Unexpected response shape from /v1/teams/current — contact Subscriby support.",
 			"UnexpectedResponse",
 			response.status,
 		);
@@ -32,7 +32,7 @@ export const authentication: Authentication = {
 	type: "custom",
 	test: testAuthentication,
 	connectionLabel: async (_z, bundle) =>
-		`MemberPass — ${(bundle.inputData.name as string) ?? "team"}`,
+		`Subscriby — ${(bundle.inputData.name as string) ?? "team"}`,
 	fields: [
 		{
 			key: "api_key",
@@ -40,7 +40,7 @@ export const authentication: Authentication = {
 			type: "password",
 			required: true,
 			helpText:
-				"Paste a token minted at https://app.memberpass.net/settings/tokens. Production tokens start with `mpt_live_`; non-production tokens start with `mpt_test_`. Grant at minimum the `team:view` ability plus the abilities matching the triggers / actions you plan to use.",
+				"Paste a token minted at https://app.subscriby.net/settings/tokens. Production tokens start with `sbt_live_`; non-production tokens start with `sbt_test_`. Grant at minimum the `team:view` ability plus the abilities matching the triggers / actions you plan to use.",
 		},
 	],
 };

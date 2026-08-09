@@ -4,7 +4,7 @@ export default defineWebhookTrigger({
   key: 'billing_invoice_paid',
   noun: 'Billing',
   label: 'Tier Invoice Paid',
-  description: 'Triggers when a MemberPass tier invoice settles successfully.',
+  description: 'Triggers when a Subscriby tier invoice settles successfully.',
   event: 'billing.invoice_paid',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

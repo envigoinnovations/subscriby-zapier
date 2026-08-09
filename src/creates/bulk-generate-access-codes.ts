@@ -24,7 +24,7 @@ export default {
           file: 'File — CSV delivered to the creator\'s Telegram chat',
           messages: 'Messages — one Telegram message per code delivered to the creator\'s chat',
         },
-        helpText: 'How the job delivers the generated codes to the creator. Both variants require the creator to have a Telegram chat linked to their MemberPass account.',
+        helpText: 'How the job delivers the generated codes to the creator. Both variants require the creator to have a Telegram chat linked to their Subscriby account.',
       },
       {
         key: 'expiry_preset',

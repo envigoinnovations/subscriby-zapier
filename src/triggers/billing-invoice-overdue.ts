@@ -4,7 +4,7 @@ export default defineWebhookTrigger({
   key: 'billing_invoice_overdue',
   noun: 'Billing',
   label: 'Tier Invoice Overdue',
-  description: 'Triggers when a MemberPass tier invoice is overdue.',
+  description: 'Triggers when a Subscriby tier invoice is overdue.',
   event: 'billing.invoice_overdue',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Cancel Subscription',
     description:
-      'Queues cancellation for a MemberPass subscription. Provider-side cancellation + local state mutation run asynchronously; the action returns once the job is queued.',
+      'Queues cancellation for a Subscriby subscription. Provider-side cancellation + local state mutation run asynchronously; the action returns once the job is queued.',
   },
   operation: {
     inputFields: [

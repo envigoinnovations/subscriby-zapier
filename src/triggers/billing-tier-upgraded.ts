@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Billing',
   label: 'Tier Upgraded',
   description:
-    'Triggers when the creator upgrades their MemberPass tier (Free → Starter → Growth).',
+    'Triggers when the creator upgrades their Subscriby tier (Free → Starter → Growth).',
   event: 'billing.tier_upgraded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

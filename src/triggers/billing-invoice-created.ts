@@ -4,7 +4,7 @@ export default defineWebhookTrigger({
   key: 'billing_invoice_created',
   noun: 'Billing',
   label: 'Tier Invoice Created',
-  description: 'Triggers when a MemberPass tier invoice is raised for the creator.',
+  description: 'Triggers when a Subscriby tier invoice is raised for the creator.',
   event: 'billing.invoice_created',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

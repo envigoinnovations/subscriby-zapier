@@ -2,10 +2,10 @@ import { Trigger, ZObject, Bundle } from 'zapier-platform-core';
 import { apiBaseUrl, handleHttpError } from '../utils/http';
 
 /**
- * Shape of a webhook event delivered by MemberPass. Matches the
- * envelope documented at https://docs.memberpass.net/webhooks/index.
+ * Shape of a webhook event delivered by Subscriby. Matches the
+ * envelope documented at https://docs.subscriby.net/webhooks/index.
  */
-interface MemberPassEvent {
+interface SubscribyEvent {
   id: string;
   type: string;
   created_at: string;
@@ -20,12 +20,12 @@ interface TriggerDefinitionInput {
   label: string;
   description: string;
   event: string;
-  sample: MemberPassEvent;
+  sample: SubscribyEvent;
 }
 
 /**
  * Builds a Zapier instant trigger that subscribes to a single
- * MemberPass webhook event. Callers supply the event name, a sample
+ * Subscriby webhook event. Callers supply the event name, a sample
  * payload Zapier shows during Zap setup, and UI strings.
  */
 export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => ({
@@ -38,7 +38,7 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
   operation: {
     type: 'hook',
     perform: async (z: ZObject, bundle: Bundle) => {
-      const event = bundle.cleanedRequest as MemberPassEvent;
+      const event = bundle.cleanedRequest as SubscribyEvent;
 
       return [
         {
@@ -70,7 +70,7 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
       const body = response.data as { data?: { id: string }; secret?: string };
 
       if (!body?.data?.id) {
-        throw new z.errors.Error('MemberPass did not return a webhook endpoint id.');
+        throw new z.errors.Error('Subscriby did not return a webhook endpoint id.');
       }
 
       return { id: body.data.id, secret: body.secret };
@@ -107,7 +107,7 @@ export const defineWebhookTrigger = (input: TriggerDefinitionInput): Trigger => 
 
       handleHttpError(response, z);
 
-      const body = response.data as { data?: MemberPassEvent[] };
+      const body = response.data as { data?: SubscribyEvent[] };
       const events = Array.isArray(body?.data) ? body.data : [];
 
       if (events.length > 0) {

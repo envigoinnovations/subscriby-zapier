@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Update Project',
     description:
-      'Partial-update an existing MemberPass project. Only fields you supply are changed; omitted fields keep their current value. Handle uniqueness and custom_handle tier gate are enforced server-side.',
+      'Partial-update an existing Subscriby project. Only fields you supply are changed; omitted fields keep their current value. Handle uniqueness and custom_handle tier gate are enforced server-side.',
   },
   operation: {
     inputFields: [

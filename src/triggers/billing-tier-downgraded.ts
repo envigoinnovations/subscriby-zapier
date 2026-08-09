@@ -4,7 +4,7 @@ export default defineWebhookTrigger({
   key: 'billing_tier_downgraded',
   noun: 'Billing',
   label: 'Tier Downgraded',
-  description: 'Triggers when the creator downgrades their MemberPass tier.',
+  description: 'Triggers when the creator downgrades their Subscriby tier.',
   event: 'billing.tier_downgraded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

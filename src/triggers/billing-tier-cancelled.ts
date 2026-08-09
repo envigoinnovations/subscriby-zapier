@@ -4,7 +4,7 @@ export default defineWebhookTrigger({
   key: 'billing_tier_cancelled',
   noun: 'Billing',
   label: 'Tier Cancelled',
-  description: 'Triggers when the creator cancels their paid MemberPass tier.',
+  description: 'Triggers when the creator cancels their paid Subscriby tier.',
   event: 'billing.tier_cancelled',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

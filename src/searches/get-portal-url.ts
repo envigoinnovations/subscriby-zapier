@@ -26,7 +26,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      url: 'https://memberpass.net/p/research-premium',
+      url: 'https://subscriby.net/p/research-premium',
     },
   },
 } satisfies Search;
