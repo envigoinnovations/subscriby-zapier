@@ -11,17 +11,12 @@ export default defineWebhookTrigger({
     type: 'team.member.invited',
     created_at: '2026-05-18T10:05:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: null,
     data: {
-      team: {
-        id: 'tem_01HXTEAMSAMPLE0000000000000',
-        name: 'Creator Team',
-      },
-      member: {
-        id: 'usr_01HXUSERSAMPLE0000000000000',
-        name: 'Jane Doe',
-        email: 'jane@example.com',
-      },
+      team_id: 'tem_01HXTEAMSAMPLE0000000000000',
+      email: 'jane@example.com',
+      role_id: 'rol_01HXROLESAMPLE0000000000000',
+      role_code: 'manager',
     },
   },
 });

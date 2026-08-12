@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Member',
   label: 'Member Joined',
   description:
-    'Triggers when a new member is added to one of the project\'s resources — typically right after a successful subscription activation.',
+    'Triggers when a subscriber redeems an access code against a non-trial plan. Paid checkouts do NOT fire this — use Subscription Activated for paying customers.',
   event: 'member.joined',
   sample: {
     id: 'evt_01HXEXAMPLE666666666666666',
@@ -14,16 +14,11 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
-      subscriber: {
-        id: 'usr_01HXUSERSAMPLE0000000000000',
-        name: 'Jane Doe',
-        chat_id: '123456789',
-      },
-      resource: {
-        id: 'res_01HXRESOURCESAMPLE00000000',
-        type: 'group',
-        name: 'Premium Chat',
-      },
+      subscription_id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
+      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      subscriber_id: 'usr_01HXUSERSAMPLE0000000000000',
+      access_code: 'SLATE-SUNDAY-4F2A9',
     },
   },
 });

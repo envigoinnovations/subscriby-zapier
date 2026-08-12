@@ -19,6 +19,7 @@ export default defineWebhookTrigger({
         name: 'Research Premium',
         handle: 'research-premium',
         active: false,
+        team_id: 'tem_01HXTEAMSAMPLE0000000000000',
       },
     },
   },

@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Member',
   label: 'Trial Member Joined',
   description:
-    'Triggers when a subscriber joins via a free-trial (cardless or card-captured). Use for trial-onboarding sequences, concierge outreach, and trial-conversion tracking.',
+    'Triggers when a subscriber starts a cardless trial, or redeems an access code against a trial plan. A card-captured trial checkout does not fire this.',
   event: 'member.trial_joined',
   sample: {
     id: 'evt_01HXEXAMPLEAAAAAAAAAAAAAAA',
@@ -14,16 +14,10 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
-      subscription: {
-        id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
-        plan_id: 'pln_01HXPLANSAMPLE0000000000000',
-        status: 'trialing',
-        trial_ends_at: '2026-05-25T10:30:00Z',
-      },
-      subscriber: {
-        id: 'usr_01HXUSERSAMPLE0000000000000',
-        telegram_user_id: '123456789',
-      },
+      subscription_id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
+      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      subscriber_id: 'usr_01HXUSERSAMPLE0000000000000',
+      trial_ends_at: '2026-05-25T10:05:00Z',
     },
   },
 });

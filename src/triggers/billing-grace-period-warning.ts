@@ -12,9 +12,11 @@ export default defineWebhookTrigger({
     type: 'billing.grace_period_warning',
     created_at: '2026-05-18T10:05:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: null,
     data: {
-      grace_period_ends_at: '2026-06-18T10:05:00Z',
+      creator_id: 'usr_01HXUSERSAMPLE0000000000000',
+      past_due_since: '2026-03-26T10:05:00Z',
+      days_until_lockdown: 7,
     },
   },
 });

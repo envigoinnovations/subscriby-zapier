@@ -16,10 +16,10 @@ export default defineWebhookTrigger({
     data: {
       project: {
         id: 'prj_01HXPROJECTSAMPLE000000000',
-        name: 'Premium Trading',
-        handle: 'premium-trading',
+        name: 'Research Premium',
+        handle: 'research-premium',
         active: true,
-        team_id: 'tm_01HXTEAMSAMPLE00000000000',
+        team_id: 'tem_01HXTEAMSAMPLE0000000000000',
       },
     },
   },

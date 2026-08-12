@@ -16,9 +16,10 @@ export default defineWebhookTrigger({
     data: {
       subscriber: {
         id: 'usr_01HXUSERSAMPLE0000000000000',
-        name: 'Jane Doe',
+        telegram_user_id: '123456789',
+        status: 'banned',
       },
-      reason: 'terms_violation',
+      reason: 'Spamming referral links',
     },
   },
 });

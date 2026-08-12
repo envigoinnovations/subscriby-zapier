@@ -17,8 +17,9 @@ export default defineWebhookTrigger({
       subscriber: {
         id: 'usr_01HXUSERSAMPLE0000000000000',
         telegram_user_id: '123456789',
+        status: 'churned',
       },
-      reason: 'inactive_90_days',
+      reason: 'Inactive for 90 days',
     },
   },
 });

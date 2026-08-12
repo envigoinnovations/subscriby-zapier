@@ -17,7 +17,7 @@ export default defineWebhookTrigger({
       subscriber: {
         id: 'usr_01HXUSERSAMPLE0000000000000',
         telegram_user_id: '123456789',
-        status: 'active',
+        status: 'churned',
       },
     },
   },

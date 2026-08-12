@@ -12,12 +12,11 @@ export default defineWebhookTrigger({
     type: 'billing.account_locked',
     created_at: '2026-05-18T10:05:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: null,
     data: {
-      tier: {
-        id: 'tier_starter',
-        name: 'Starter',
-      },
+      creator_id: 'usr_01HXUSERSAMPLE0000000000000',
+      past_due_since: '2026-03-19T10:05:00Z',
+      locked_at: '2026-05-18T10:05:00Z',
     },
   },
 });

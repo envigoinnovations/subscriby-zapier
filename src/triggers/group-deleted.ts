@@ -11,14 +11,11 @@ export default defineWebhookTrigger({
     type: 'group.deleted',
     created_at: '2026-05-18T10:05:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: null,
     data: {
-      group: {
-        id: 'grp_01HXGROUPSAMPLE00000000000',
-        team_id: 'tem_01HXTEAMSAMPLE0000000000000',
-        code: 'support',
-        name: 'Support',
-      },
+      team_id: 'tem_01HXTEAMSAMPLE0000000000000',
+      group_id: 'grp_01HXGROUPSAMPLE00000000000',
+      code: 'support',
     },
   },
 });

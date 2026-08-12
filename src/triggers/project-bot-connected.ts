@@ -13,12 +13,10 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
-      project: {
-        id: 'prj_01HXPROJECTSAMPLE000000000',
-        name: 'Research Premium',
-        handle: 'research-premium',
-        active: true,
-      },
+      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      bot_id: 'bot_01HXBOTSAMPLE00000000000000',
+      bot_name: 'ResearchPremiumBot',
+      bot_url: 'https://t.me/ResearchPremiumBot',
     },
   },
 });

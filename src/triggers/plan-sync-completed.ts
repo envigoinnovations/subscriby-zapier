@@ -14,12 +14,9 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
-      plan: {
-        id: 'pln_01HXPLANSAMPLE0000000000000',
-        project_id: 'prj_01HXPROJECTSAMPLE000000000',
-        name: 'Premium Monthly',
-        active: true,
-      },
+      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      providers: ['stripe', 'paypal'],
+      synced_at: '2026-05-18T10:05:00Z',
     },
   },
 });

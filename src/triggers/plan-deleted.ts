@@ -15,9 +15,11 @@ export default defineWebhookTrigger({
     data: {
       plan: {
         id: 'pln_01HXPLANSAMPLE0000000000000',
-        project_id: 'prj_01HXPROJECTSAMPLE000000000',
         name: 'Premium Monthly',
-        active: false,
+        price: '9.99',
+        currency_id: 'cur_01HXCURRENCYSAMPLE00000000',
+        billing_cycle: 'month',
+        active: true,
       },
     },
   },

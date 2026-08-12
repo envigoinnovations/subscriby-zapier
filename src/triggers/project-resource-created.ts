@@ -15,10 +15,11 @@ export default defineWebhookTrigger({
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
       resource: {
-        id: 'res_01HXRESOURCESAMPLE00000000',
-        project_id: 'prj_01HXPROJECTSAMPLE000000000',
-        type: 'telegram_channel',
+        id: 'rsr_01HXRESOURCESAMPLE00000000',
         title: 'Premium Channel',
+        type: 'channel',
+        chat_id: '-1001234567890',
+        active: true,
       },
     },
   },

@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Access Code',
   label: 'Access Code Redeemed',
   description:
-    'Triggers when a subscriber redeems an access code, regardless of whether it originated from a bulk batch or an ad-hoc gift.',
+    'Triggers when a subscriber redeems an access code, regardless of whether it originated from a bulk batch or an ad-hoc gift. The Access Code field carries the full code, not a masked fragment.',
   event: 'access_code.redeemed',
   sample: {
     id: 'evt_01HXEXAMPLE555555555555555',
@@ -14,15 +14,11 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: 'prj_01HXPROJECTSAMPLE000000000',
     data: {
-      access_code: 'ABCD-****-****-WXYZ',
-      subscription: {
-        id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
-        plan_id: 'pln_01HXPLANSAMPLE0000000000000',
-      },
-      subscriber: {
-        id: 'usr_01HXUSERSAMPLE0000000000000',
-        name: 'Jane Doe',
-      },
+      subscription_id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
+      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      subscriber_id: 'usr_01HXUSERSAMPLE0000000000000',
+      access_code: 'SLATE-SUNDAY-4F2A9',
     },
   },
 });

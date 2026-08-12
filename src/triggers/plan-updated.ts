@@ -18,11 +18,13 @@ export default defineWebhookTrigger({
         id: 'pln_01HXPLANSAMPLE0000000000000',
         name: 'Premium Monthly',
         price: '12.99',
-        currency_id: 'usd',
+        currency_id: 'cur_01HXCURRENCYSAMPLE00000000',
         billing_cycle: 'month',
         active: true,
       },
-      changed: ['price'],
+      changes: {
+        price: { from: '9.99', to: '12.99' },
+      },
     },
   },
 });
