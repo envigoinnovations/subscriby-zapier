@@ -41,6 +41,8 @@ import planDeactivated from './triggers/plan-deactivated';
 import planActivated from './triggers/plan-activated';
 import planDeleted from './triggers/plan-deleted';
 import planSyncCompleted from './triggers/plan-sync-completed';
+import passWindowOpened from './triggers/pass-window-opened';
+import passWindowClosed from './triggers/pass-window-closed';
 import projectCreated from './triggers/project-created';
 import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
@@ -194,6 +196,8 @@ const triggers = {
   [planActivated.key]: planActivated,
   [planDeleted.key]: planDeleted,
   [planSyncCompleted.key]: planSyncCompleted,
+  [passWindowOpened.key]: passWindowOpened,
+  [passWindowClosed.key]: passWindowClosed,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
   [projectArchived.key]: projectArchived,
