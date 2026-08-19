@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.3.0 — 2026-08-19
+
+Added the `coupon.*` event family, so every `WebhookEvent` Subscriby emits is exposed again.
+
+### Added — 7 coupon triggers
+
+- **New Coupon** (`coupon.created`), **Coupon Updated** (`coupon.updated`), **Coupon Activated** (`coupon.activated`), **Coupon Deactivated** (`coupon.deactivated`), **Coupon Deleted** (`coupon.deleted`) — the authoring lifecycle, payload nested under `data.coupon` exactly as the `plan.*` family does. `coupon.updated` also carries `data.changes`, naming only the fields that moved with their previous and new values.
+- **Coupon Redeemed** (`coupon.redeemed`) — fires on settlement, not when a code is applied, so an abandoned checkout never triggers it. Carries `original_amount`, `discount_amount` and `final_amount` as strings; `final_amount` is what was charged and is the figure to use for revenue reporting.
+- **Coupon Exhausted** (`coupon.exhausted`) — the last use of a capped code being claimed. Never fires for an uncapped code, and rides on the same settlement as Coupon Redeemed, so the final redemption produces both.
+
+### Notes
+
+- A coupon is one code many subscribers can redeem for money off. It is not an access code, which is one code for one person and grants access outright — the two have separate triggers and separate payload shapes.
+- Switching a code on or off fires Coupon Activated / Coupon Deactivated rather than Coupon Updated, so an automation reacting to a code being pulled does not have to diff payloads to notice.
+
 ## 2.1.0 — 2026-08-12
 
 Corrected every trigger sample payload against the live `WebhookEvent` emission sites. The previous samples described a payload shape Subscriby has never sent, so fields mapped in the Zap editor arrived empty at runtime.

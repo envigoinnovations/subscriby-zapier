@@ -43,6 +43,13 @@ import planDeleted from './triggers/plan-deleted';
 import planSyncCompleted from './triggers/plan-sync-completed';
 import passWindowOpened from './triggers/pass-window-opened';
 import passWindowClosed from './triggers/pass-window-closed';
+import couponCreated from './triggers/coupon-created';
+import couponUpdated from './triggers/coupon-updated';
+import couponActivated from './triggers/coupon-activated';
+import couponDeactivated from './triggers/coupon-deactivated';
+import couponDeleted from './triggers/coupon-deleted';
+import couponRedeemed from './triggers/coupon-redeemed';
+import couponExhausted from './triggers/coupon-exhausted';
 import projectCreated from './triggers/project-created';
 import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
@@ -198,6 +205,13 @@ const triggers = {
   [planSyncCompleted.key]: planSyncCompleted,
   [passWindowOpened.key]: passWindowOpened,
   [passWindowClosed.key]: passWindowClosed,
+  [couponCreated.key]: couponCreated,
+  [couponUpdated.key]: couponUpdated,
+  [couponActivated.key]: couponActivated,
+  [couponDeactivated.key]: couponDeactivated,
+  [couponDeleted.key]: couponDeleted,
+  [couponRedeemed.key]: couponRedeemed,
+  [couponExhausted.key]: couponExhausted,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
   [projectArchived.key]: projectArchived,
