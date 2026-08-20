@@ -14,7 +14,8 @@ export default {
     inputFields: [
       { key: 'conversation_id', label: 'Conversation ID', type: 'string', required: true, dynamic: 'dropdown_support_conversations.id.name' },
       { key: 'body', label: 'Reply', type: 'text', required: true, helpText: 'Reaches the member verbatim. Max 4000 characters.' },
-      { key: 'internal', label: 'Internal Note', type: 'boolean', required: false, helpText: 'Record a private note for your team instead of replying to the member.' },
+      { key: 'internal', label: 'Private Note', type: 'boolean', required: false, helpText: 'Record a private note for your team instead of replying to the member.' },
+      { key: 'reply_to_message_id', label: 'Quote Message ID', type: 'string', required: false, helpText: 'Optional. A message in this same conversation to quote above the reply.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const conversationId = bundle.inputData.conversation_id as string;
@@ -25,6 +26,10 @@ export default {
         body: {
           body: bundle.inputData.body,
           internal: bundle.inputData.internal ?? false,
+          /* Omitted entirely when blank: the API rejects a non-uuid value. */
+          ...(bundle.inputData.reply_to_message_id
+            ? { reply_to_message_id: bundle.inputData.reply_to_message_id }
+            : {}),
         },
         headers: { 'Idempotency-Key': randomUUID() },
       });
