@@ -86,6 +86,14 @@ import dropdownProjects from './triggers/dropdown-projects';
 import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
+import projectBotStatusChanged from './triggers/project-bot-status-changed';
+import supportConversationOpened from './triggers/support-conversation-opened';
+import supportConversationAssigned from './triggers/support-conversation-assigned';
+import supportConversationResolved from './triggers/support-conversation-resolved';
+import supportConversationReopened from './triggers/support-conversation-reopened';
+import supportMessageReceived from './triggers/support-message-received';
+import supportMessageSent from './triggers/support-message-sent';
+import dropdownSupportConversations from './triggers/dropdown-support-conversations';
 import dropdownSubscriptions from './triggers/dropdown-subscriptions';
 import dropdownResources from './triggers/dropdown-resources';
 import dropdownWebhookEndpoints from './triggers/dropdown-webhook-endpoints';
@@ -106,6 +114,9 @@ import unpublishPlan from './creates/unpublish-plan';
 import deletePlan from './creates/delete-plan';
 import cancelSubscription from './creates/cancel-subscription';
 import banMember from './creates/ban-member';
+import replySupportConversation from './creates/reply-support-conversation';
+import resolveSupportConversation from './creates/resolve-support-conversation';
+import assignSupportConversation from './creates/assign-support-conversation';
 import unbanMember from './creates/unban-member';
 import kickMember from './creates/kick-member';
 import createResource from './creates/create-resource';
@@ -130,6 +141,9 @@ import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
 import listSubscriptions from './searches/list-subscriptions';
 import listMembers from './searches/list-members';
+import listSupportConversations from './searches/list-support-conversations';
+import findSupportConversation from './searches/find-support-conversation';
+import listSupportMessages from './searches/list-support-messages';
 import listAccessCodes from './searches/list-access-codes';
 import previewAccessCodeCost from './searches/preview-access-code-cost';
 import listResources from './searches/list-resources';
@@ -248,6 +262,14 @@ const triggers = {
   [dropdownPlans.key]: dropdownPlans,
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
+  [projectBotStatusChanged.key]: projectBotStatusChanged,
+  [supportConversationOpened.key]: supportConversationOpened,
+  [supportConversationAssigned.key]: supportConversationAssigned,
+  [supportConversationResolved.key]: supportConversationResolved,
+  [supportConversationReopened.key]: supportConversationReopened,
+  [supportMessageReceived.key]: supportMessageReceived,
+  [supportMessageSent.key]: supportMessageSent,
+  [dropdownSupportConversations.key]: dropdownSupportConversations,
   [dropdownSubscriptions.key]: dropdownSubscriptions,
   [dropdownResources.key]: dropdownResources,
   [dropdownWebhookEndpoints.key]: dropdownWebhookEndpoints,
@@ -270,6 +292,9 @@ const creates = {
   [deletePlan.key]: deletePlan,
   [cancelSubscription.key]: cancelSubscription,
   [banMember.key]: banMember,
+  [replySupportConversation.key]: replySupportConversation,
+  [resolveSupportConversation.key]: resolveSupportConversation,
+  [assignSupportConversation.key]: assignSupportConversation,
   [unbanMember.key]: unbanMember,
   [kickMember.key]: kickMember,
   [createResource.key]: createResource,
@@ -296,6 +321,9 @@ const searches = {
   [listPlans.key]: listPlans,
   [listSubscriptions.key]: listSubscriptions,
   [listMembers.key]: listMembers,
+  [listSupportConversations.key]: listSupportConversations,
+  [findSupportConversation.key]: findSupportConversation,
+  [listSupportMessages.key]: listSupportMessages,
   [listAccessCodes.key]: listAccessCodes,
   [previewAccessCodeCost.key]: previewAccessCodeCost,
   [listResources.key]: listResources,

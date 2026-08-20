@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.4.0 — 2026-08-20
+
+Added the member support inbox, and closed a gap that had left one event unexposed since it was introduced.
+
+### Added — 7 support triggers
+
+- **Support Conversation Opened** (`support.conversation.opened`) — the first time a member messages your bot with something it does not recognise. Fires once per member per channel; their later messages raise Support Message Received instead.
+- **Support Message Received** (`support.message.received`) — the workhorse. Routes member questions into a helpdesk, an ops channel or an on-call rota. **The message body is deliberately not in the payload**: fetch it with List Support Messages so member text never lands in webhook delivery logs.
+- **Support Message Sent** (`support.message.sent`) — your side of the exchange, for response-time reporting. Internal notes never raise it; they are private and are not delivered to the member.
+- **Support Conversation Assigned** (`support.conversation.assigned`) — handed to a team member, or cleared. `data.assigned_to_user_id` is null on a clear.
+- **Support Conversation Resolved** / **Reopened** (`support.conversation.resolved`, `support.conversation.reopened`) — resolving is not final: a conversation reopens by itself when the member writes again, which raises the reopened event.
+
+### Added — 1 missing trigger
+
+- **Bot Status Changed** (`project.bot.status_changed`) — present in Subscriby since the event was introduced but never exposed here, so no Zap could react to a bot losing admin rights or having its token revoked. A bot that cannot reach Telegram silently stops granting and revoking access, which is worth alerting on.
+
+### Added — 3 actions, 3 searches
+
+- **Reply to Support Conversation**, **Resolve Support Conversation**, **Assign Support Conversation** — replies reach a real person on Telegram, attributed to the creator rather than the bot.
+- **List Support Conversations**, **Find Support Conversation**, **List Support Messages**.
+
+### Notes
+
+- The catalogue is now at full parity with `WebhookEvent`: 87 events, 87 triggers.
+- Internal notes are returned by List Support Messages only when the token also holds `support-conversation:update`. Reading a private remark about a member takes the same permission as writing one.
+
 ## 2.3.0 — 2026-08-19
 
 Added the `coupon.*` event family, so every `WebhookEvent` Subscriby emits is exposed again.

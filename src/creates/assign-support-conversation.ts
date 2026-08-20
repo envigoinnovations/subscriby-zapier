@@ -1,0 +1,36 @@
+import { ZObject, Bundle, Create } from 'zapier-platform-core';
+import { randomUUID } from 'node:crypto';
+import { apiBaseUrl, handleHttpError } from '../utils/http';
+
+export default {
+  key: 'assign_support_conversation',
+  noun: 'Support Conversation',
+  display: {
+    label: 'Assign Support Conversation',
+    description:
+      'Hand a support conversation to a team member. Leave Assignee empty to clear an existing assignment.',
+  },
+  operation: {
+    inputFields: [
+      { key: 'conversation_id', label: 'Conversation ID', type: 'string', required: true, dynamic: 'dropdown_support_conversations.id.name' },
+      { key: 'assigned_to_user_id', label: 'Assignee', type: 'string', required: false, helpText: 'Team-member user ID. Leave empty to unassign.' },
+    ],
+    async perform(z: ZObject, bundle: Bundle) {
+      const conversationId = bundle.inputData.conversation_id as string;
+
+      const response = await z.request({
+        url: `${apiBaseUrl()}/support/conversations/${conversationId}/assign`,
+        method: 'POST',
+        // Sent explicitly rather than omitted: the API requires the key to be
+        // present so an unassign is a deliberate null, not a missing field.
+        body: { assigned_to_user_id: bundle.inputData.assigned_to_user_id ?? null },
+        headers: { 'Idempotency-Key': randomUUID() },
+      });
+
+      handleHttpError(response, z);
+
+      return (response.data as { data?: unknown }).data ?? response.data;
+    },
+    sample: { id: 'sup_01HXCONVERSATIONSAMPLE00000', assigned_to_user_id: 'usr_01HXTEAMMEMBERSAMPLE0000000' },
+  },
+} satisfies Create;
