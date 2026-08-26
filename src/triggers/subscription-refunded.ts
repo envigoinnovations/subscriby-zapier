@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Subscription',
   label: 'Subscription Refunded',
   description:
-    'Triggers when a subscription-level refund settles. NOTE: Subscriby does not emit this event yet — Zaps built on it stay subscribed and validate, but will not fire until it ships.',
+    'Triggers when a settled refund returns the whole charge, so the subscription is unwound and access revoked. A partial refund raises Payment Refunded instead. Emitted for Stripe, PayPal, Paystack, Razorpay and Skrill; CoinPayments and CeyPay expose no refund notification.',
   event: 'subscription.refunded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

@@ -22,7 +22,7 @@ npm run push
 ## Architecture
 
 - `src/authentication.ts` — API-key auth. Each user pastes a `sbt_` Sanctum personal access token minted at `https://app.subscriby.net/settings/tokens`. Zapier tests the token against `GET /v1/teams/current`.
-- `src/triggers/*` — event-driven triggers. On save, Zapier calls `performSubscribe` which `POST`s to `/v1/webhook-subscriptions` with `{target_url, events[]}`. On delete, `performUnsubscribe` DELETEs the resulting endpoint id.
+- `src/triggers/*` — event-driven triggers. On save, Zapier calls `performSubscribe` which `POST`s to `/v1/webhook-subscriptions` with `{name, url, events[]}`. On delete, `performUnsubscribe` DELETEs the resulting endpoint id.
 - `src/creates/*` — 27 write actions against the live REST surface (create/update/archive/ban/refund/…). Each sends an `Idempotency-Key` so a Zapier retry cannot double-apply.
 - `src/searches/*` — 44 search actions (list and find-by-id) against the same REST surface.
 - `src/triggers/dropdown-*.ts` — dynamic dropdowns that populate project/plan/member/token pickers on other steps. These are not event triggers and are hidden from the trigger list.
