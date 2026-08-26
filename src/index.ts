@@ -77,6 +77,7 @@ import billingInvoiceCreated from './triggers/billing-invoice-created';
 import billingInvoicePaid from './triggers/billing-invoice-paid';
 import billingInvoiceOverdue from './triggers/billing-invoice-overdue';
 import billingPaymentFailed from './triggers/billing-payment-failed';
+import billingTrialEnding from './triggers/billing-trial-ending';
 import billingGracePeriodWarning from './triggers/billing-grace-period-warning';
 import billingAccountLocked from './triggers/billing-account-locked';
 import billingTierUpgraded from './triggers/billing-tier-upgraded';
@@ -253,6 +254,7 @@ const triggers = {
   [billingInvoicePaid.key]: billingInvoicePaid,
   [billingInvoiceOverdue.key]: billingInvoiceOverdue,
   [billingPaymentFailed.key]: billingPaymentFailed,
+  [billingTrialEnding.key]: billingTrialEnding,
   [billingGracePeriodWarning.key]: billingGracePeriodWarning,
   [billingAccountLocked.key]: billingAccountLocked,
   [billingTierUpgraded.key]: billingTierUpgraded,

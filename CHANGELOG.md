@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.0 — 2026-08-27
+
+### Added — 1 billing trigger
+
+- **Tier Trial Ending** (`billing.trial_ending`) — your own Subscriby trial is about to convert and take its first payment. Until now the trial converted silently and the first thing announcing the charge was Stripe's receipt, so there was nothing a Zap could react to.
+
+  It fires **once per reminder milestone**, not once per trial — 72 hours out and again 24 hours out by default. If your Zap should only run once, filter on `hours_remaining` or de-duplicate on `subscription_id`.
+
+  `amount` is a decimal string with a separate uppercase `currency`, so it can go straight into a spreadsheet or an accounting row without parsing a symbol out of it. Check `amount_estimated` first: when it is `true` the figure is the plan's list price because the upcoming invoice could not be read, and it should not be reconciled against. A creator carrying an account credit will legitimately see `"0.00"`.
+
 ## 2.4.0 — 2026-08-20
 
 Added the member support inbox, and closed a gap that had left one event unexposed since it was introduced.
