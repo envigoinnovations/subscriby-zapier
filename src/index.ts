@@ -43,6 +43,9 @@ import planDeleted from './triggers/plan-deleted';
 import planSyncCompleted from './triggers/plan-sync-completed';
 import passWindowOpened from './triggers/pass-window-opened';
 import passWindowClosed from './triggers/pass-window-closed';
+import passWindowCancelled from './triggers/pass-window-cancelled';
+import passHolderMoved from './triggers/pass-holder-moved';
+import passHolderStranded from './triggers/pass-holder-stranded';
 import couponCreated from './triggers/coupon-created';
 import couponUpdated from './triggers/coupon-updated';
 import couponActivated from './triggers/coupon-activated';
@@ -220,6 +223,9 @@ const triggers = {
   [planSyncCompleted.key]: planSyncCompleted,
   [passWindowOpened.key]: passWindowOpened,
   [passWindowClosed.key]: passWindowClosed,
+  [passWindowCancelled.key]: passWindowCancelled,
+  [passHolderMoved.key]: passHolderMoved,
+  [passHolderStranded.key]: passHolderStranded,
   [couponCreated.key]: couponCreated,
   [couponUpdated.key]: couponUpdated,
   [couponActivated.key]: couponActivated,
