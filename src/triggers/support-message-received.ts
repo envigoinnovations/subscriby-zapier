@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Support Message',
   label: 'Support Message Received',
   description:
-    'Triggers whenever a member sends a support message to your bot — the workhorse trigger for routing questions into a helpdesk, an ops channel, or an on-call rota. The message body is NOT in the payload: fetch it with GET /v1/support/conversations/{id}/messages so member text is never copied into webhook logs.',
+    'Triggers when a member sends a support message to your bot — the workhorse trigger for routing questions into a helpdesk, an ops channel, or an on-call rota. The message body is NOT in the payload: fetch it with GET /v1/support/conversations/{id}/messages so member text is never copied into webhook logs.',
   event: 'support.message.received',
   sample: {
     id: 'evt_01HXEXAMPLE666666666666666',

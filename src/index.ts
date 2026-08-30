@@ -41,11 +41,22 @@ import planDeactivated from './triggers/plan-deactivated';
 import planActivated from './triggers/plan-activated';
 import planDeleted from './triggers/plan-deleted';
 import planSyncCompleted from './triggers/plan-sync-completed';
+import passWindowScheduled from './triggers/pass-window-scheduled';
 import passWindowOpened from './triggers/pass-window-opened';
 import passWindowClosed from './triggers/pass-window-closed';
 import passWindowCancelled from './triggers/pass-window-cancelled';
+import passHolderQueued from './triggers/pass-holder-queued';
 import passHolderMoved from './triggers/pass-holder-moved';
+import passHolderMissed from './triggers/pass-holder-missed';
 import passHolderStranded from './triggers/pass-holder-stranded';
+import passSeriesPurchased from './triggers/pass-series-purchased';
+import passSeriesLegCompleted from './triggers/pass-series-leg-completed';
+import passSeriesCompleted from './triggers/pass-series-completed';
+import passSeriesLegAdded from './triggers/pass-series-leg-added';
+import passSeriesLegSubstituted from './triggers/pass-series-leg-substituted';
+import passSeriesLegDropped from './triggers/pass-series-leg-dropped';
+import passSeriesSeatsExhausted from './triggers/pass-series-seats-exhausted';
+import passSeriesPresaleOpened from './triggers/pass-series-presale-opened';
 import couponCreated from './triggers/coupon-created';
 import couponUpdated from './triggers/coupon-updated';
 import couponActivated from './triggers/coupon-activated';
@@ -143,6 +154,7 @@ import findSubscriptionById from './searches/find-subscription-by-id';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
+import findPassWindows from './searches/find-pass-windows';
 import listSubscriptions from './searches/list-subscriptions';
 import listMembers from './searches/list-members';
 import listSupportConversations from './searches/list-support-conversations';
@@ -221,11 +233,22 @@ const triggers = {
   [planActivated.key]: planActivated,
   [planDeleted.key]: planDeleted,
   [planSyncCompleted.key]: planSyncCompleted,
+  [passWindowScheduled.key]: passWindowScheduled,
   [passWindowOpened.key]: passWindowOpened,
   [passWindowClosed.key]: passWindowClosed,
   [passWindowCancelled.key]: passWindowCancelled,
+  [passHolderQueued.key]: passHolderQueued,
   [passHolderMoved.key]: passHolderMoved,
+  [passHolderMissed.key]: passHolderMissed,
   [passHolderStranded.key]: passHolderStranded,
+  [passSeriesPurchased.key]: passSeriesPurchased,
+  [passSeriesLegCompleted.key]: passSeriesLegCompleted,
+  [passSeriesCompleted.key]: passSeriesCompleted,
+  [passSeriesLegAdded.key]: passSeriesLegAdded,
+  [passSeriesLegSubstituted.key]: passSeriesLegSubstituted,
+  [passSeriesLegDropped.key]: passSeriesLegDropped,
+  [passSeriesSeatsExhausted.key]: passSeriesSeatsExhausted,
+  [passSeriesPresaleOpened.key]: passSeriesPresaleOpened,
   [couponCreated.key]: couponCreated,
   [couponUpdated.key]: couponUpdated,
   [couponActivated.key]: couponActivated,
@@ -327,6 +350,7 @@ const searches = {
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
+  [findPassWindows.key]: findPassWindows,
   [listSubscriptions.key]: listSubscriptions,
   [listMembers.key]: listMembers,
   [listSupportConversations.key]: listSupportConversations,

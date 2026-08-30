@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Pass Holder',
   label: 'Pass Holder Moved',
   description:
-    'Triggers once per pass holder moved off a cancelled access window onto the next available one on the same plan. They are not charged again. `was_queued` tells you whether they had already tapped their invite link — if true the move asks nothing of them, if false they still need to join the queue for the new date. Timestamps are UTC.',
+    'Triggers when a pass holder is moved off a cancelled access window onto the next available one on the same plan. Fires once per holder. They are not charged again. `was_queued` tells you whether they had already tapped their invite link — if true the move asks nothing of them, if false they still need to join the queue for the new date. Timestamps are UTC.',
   event: 'pass.holder_moved',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

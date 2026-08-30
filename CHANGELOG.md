@@ -1,5 +1,55 @@
 # Changelog
 
+## 3.0.0 — 2026-08-31
+
+**Breaking.** Create Plan and Update Plan now take a **Plan Kind** and the fields that belong to it. Existing Zaps using those two actions will need their fields re-mapped; every other trigger, action and search is untouched.
+
+### Changed — Create Plan and Update Plan are kind-scoped
+
+Both actions now open with a **Plan Kind** dropdown — *Recurring Subscription*, *Time-Limited Pass* or *Pass Series* — and the fields below it change to match. Only the fields your chosen kind actually accepts are shown.
+
+This mirrors a breaking change in the Subscriby API, which moved plans to a discriminated union: `kind` names exactly one nested object, and sending a block belonging to another kind is now refused rather than ignored. The old flat shape emitted `billing_cycle` and `trial_days` on passes where they mean nothing, and offered no way to express a third plan shape at all.
+
+**What breaks:** the field keys behind Create Plan and Update Plan changed. A Zap that set *Billing Cycle* still sets a billing cycle — the field is now inside the subscription kind's group — but the mapping has to be re-made. Nothing else in this integration changed its field keys.
+
+### Added — Pass Series, a season ticket
+
+A **Pass Series** sells a curated slate of *other* pass plans' dated windows for one payment. It owns no windows of its own, so:
+
+- **Find Pass Windows** (new search) — lists the dated windows a project's pass plans generate, with their IDs, local times, status and holder counts. **Run this first:** a series points at windows that already exist, so this is where its Pass Window IDs come from.
+- Create Plan's Pass Series group takes those IDs, plus a seat limit, a sales cutoff measured against the whole season, a next-season link with a holders-only presale, and **Automatic Inclusion Rules**.
+- Rules are the part worth understanding. A rule describes windows rather than naming them, and it keeps matching after the save: a window scheduled later is added to the slate **and granted to everyone already holding the series**, at no charge. Handpicked IDs never grow on their own. The two compose.
+
+### Added — 8 pass series triggers
+
+- **Pass Series Purchased** — a season ticket bought and its whole slate issued. **Fires in addition to Subscription Activated**, because a series is a subscription; if you use both, de-duplicate on `subscription_id`.
+- **Pass Series Pass Completed** — one date of a holder's season finished, with running attendance. `granted` and `joined` are separate questions: granted means access was issued, joined means they actually appeared.
+- **Pass Series Completed** — a holder reached their last date, with the final tallies. Eight of ten attended is a very different customer from two of ten.
+- **Pass Series Pass Added** — a rule absorbed a new window into a live season. Wire a calendar sync to this one.
+- **Pass Series Pass Substituted** — a cancelled date was replaced and a holder moved. `was_queued` tells you whether they had already tapped their invite link.
+- **Pass Series Pass Dropped** — a cancelled date left a season with no replacement. **`refund_per_holder` is a figure, not an action** — Subscriby never moves the money, so treating it as "already refunded" will double-refund. The amount is per holder: a mid-season buyer paid the same price for fewer dates, so each of theirs is worth more.
+- **Pass Series Sold Out** — a capped season sold its last seat. Not permanent; a cancellation releases a seat and it can fire again.
+- **Pass Series Presale Opened** — a finished season's holders got first refusal on the next one. Who is invited is worked out at that moment, not at checkout, so linking a next season months later still reaches everyone.
+
+### Added — 3 pass triggers that were missing
+
+- **Pass Window Scheduled** — a window coming into existence. The `pass.*` family reported windows being cancelled, opened and closed but never *created*, so a schedule could not be mirrored outward without polling. Note that editing a schedule regenerates windows in bulk, so one plan save can fire this many times.
+- **Pass Holder Queued** — a holder tapped their invite link and their request is held. The moment a buyer stops being a risk, and previously invisible outside the product.
+- **Pass Holder Missed a Window** — a window closed and one holder never turned up. Pass Window Closed only reported an aggregate count; this is the half you can act on. A window that never opened, or a purchase that landed too late to use, is deliberately *not* reported as missed.
+
+### Fixed
+
+- The `User-Agent` version was pinned at `2.0.0` while the package was at 2.6.0. It now tracks the real version.
+- `pass_series.leg_added` carried the series plan's own timezone, which is always empty — a series has no schedule of its own. It now carries the source plan's zone, so timestamps can be rendered correctly.
+
+### Note on 2.6.0
+
+2.6.0 was published without a changelog entry. It added the five original `pass.*` triggers (window opened / closed / cancelled, holder moved / stranded).
+
+### Catalogue
+
+102 events, 102 triggers — full parity with the `WebhookEvent` enum.
+
 ## 2.5.0 — 2026-08-27
 
 ### Added — 1 billing trigger

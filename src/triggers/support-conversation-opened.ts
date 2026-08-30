@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Support Conversation',
   label: 'Support Conversation Opened',
   description:
-    'Triggers the first time a member messages your bot with something it does not recognise, opening a support conversation. Fires once per member per channel — their later messages raise Support Message Received instead.',
+    'Triggers when a member messages your bot with something it does not recognise for the first time, opening a support conversation. Fires once per member per channel — their later messages raise Support Message Received instead.',
   event: 'support.conversation.opened',
   sample: {
     id: 'evt_01HXEXAMPLE222222222222222',

@@ -30,27 +30,20 @@ npm run push
 
 ## Supported triggers
 
-The trigger catalog is generated from Subscriby's `WebhookEvent` enum and currently covers **all 88 events** across 13 families — one `src/triggers/*.ts` file per event, each registered in `src/index.ts`.
-
-| Family           | Triggers |
-| ---------------- | -------- |
-| subscription     | 16       |
-| project          | 12       |
-| member           | 10       |
-| billing          | 10       |
-| coupon           | 7        |
-| plan             | 6        |
-| support          | 6        |
-| team             | 6        |
-| payment          | 4        |
-| access_code      | 3        |
-| group            | 3        |
-| role             | 3        |
-| pass             | 2        |
-| **Total**        | **88**   |
+The trigger catalog is generated from Subscriby's `WebhookEvent` enum and covers **every event in it** — one `src/triggers/*.ts` file per event, each registered in `src/index.ts`.
 
 Do not hand-maintain this list against the enum. The canonical, machine-readable catalog is published at `https://api.subscriby.net/webhook-events.json` and mirrored by the `subscriby://enums/webhook-event` MCP resource; the prose version lives at `https://docs.subscriby.net/webhooks/event-reference`. Each event's required token ability is a column in that JSON — read it from there rather than copying abilities into this file, which is how the previous table came to name abilities that did not match the enum.
 
 ## Release
 
 `zapier push` uploads a new version; `zapier promote <version>` rolls it out to directory users.
+
+### Releasing a breaking version
+
+3.0.0 changed the field keys behind **Create Plan** and **Update Plan**, which breaks live Zaps using those two actions. Zapier has a mechanism for exactly this and it must be run in order:
+
+1. `zapier push` — upload 3.0.0.
+2. `zapier promote 3.0.0` — make it the version new Zaps are built on.
+3. `zapier migrate 2.6.0 3.0.0` — move existing users across.
+
+Step 3 is the one that is easy to forget, and skipping it leaves everyone on 2.6.0 indefinitely. Migrating a percentage first (`zapier migrate 2.6.0 3.0.0 10`) is worth doing here, because the two changed actions cannot be auto-remapped — a Zap that set *Billing Cycle* will need its field re-mapped by the person who built it.

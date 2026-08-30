@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Pass Holder',
   label: 'Pass Holder Stranded',
   description:
-    'Triggers once per pass holder whose access window was cancelled with no replacement available, so their pass ended. They have paid and received nothing, and Subscriby does not refund automatically — this event carries the amount, currency and gateway payment reference precisely because nothing in the dashboard records who is owed money. Timestamps are UTC.',
+    'Triggers when a pass holder has their access window cancelled with no replacement available, so their pass ends. Fires once per holder. They have paid and received nothing, and Subscriby does not refund automatically — this event carries the amount, currency and gateway payment reference precisely because nothing in the dashboard records who is owed money. Timestamps are UTC.',
   event: 'pass.holder_stranded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
