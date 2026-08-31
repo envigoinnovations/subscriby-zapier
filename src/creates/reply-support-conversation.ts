@@ -39,8 +39,8 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      id: 'msg_01HXMESSAGESAMPLE0000000001',
-      conversation_id: 'sup_01HXCONVERSATIONSAMPLE00000',
+      id: '2f80d641-9c37-4a58-b1e6-0459ac7d3e82',
+      conversation_id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45',
       direction: 'outbound',
       delivery_status: 'pending',
     },

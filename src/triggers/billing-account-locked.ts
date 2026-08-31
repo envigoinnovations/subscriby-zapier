@@ -14,7 +14,7 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: null,
     data: {
-      creator_id: 'usr_01HXUSERSAMPLE0000000000000',
+      creator_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
       past_due_since: '2026-03-19T10:05:00Z',
       locked_at: '2026-05-18T10:05:00Z',
     },

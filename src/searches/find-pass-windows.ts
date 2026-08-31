@@ -92,8 +92,8 @@ export default {
       return (response.data as { data?: Record<string, unknown>[] }).data ?? [];
     },
     sample: {
-      id: 'psw_01HXWINDOWSAMPLE00000000000',
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      id: '3d5a8c72-b016-4e94-8fa7-61c209d4e738',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       plan_name: 'Match Day Pass',
       starts_at: '2026-09-20T13:00:00Z',
       ends_at: '2026-09-20T16:00:00Z',

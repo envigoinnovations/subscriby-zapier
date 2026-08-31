@@ -31,6 +31,6 @@ export default {
 
       return (response.data as { data?: unknown }).data ?? response.data;
     },
-    sample: { id: 'sup_01HXCONVERSATIONSAMPLE00000', assigned_to_user_id: 'usr_01HXTEAMMEMBERSAMPLE0000000' },
+    sample: { id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45', assigned_to_user_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80' },
   },
 } satisfies Create;

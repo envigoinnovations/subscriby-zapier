@@ -25,6 +25,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'acc_01HXACCESSCODESAMPLE0000000', code: 'ABC-123' },
+    sample: { id: '30a7f5c1-8e94-4b26-a07d-6c15b9e2f483', code: 'ABC-123' },
   },
 } satisfies Trigger;

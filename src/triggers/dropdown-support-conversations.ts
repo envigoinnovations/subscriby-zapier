@@ -37,6 +37,6 @@ export default {
         name: row.member_name ?? row.subject ?? row.id,
       }));
     },
-    sample: { id: 'sup_01HXCONVERSATIONSAMPLE00000', name: 'Jane Doe' },
+    sample: { id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45', name: 'Jane Doe' },
   },
 } satisfies Trigger;

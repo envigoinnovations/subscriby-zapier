@@ -34,7 +34,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'tok_01HXTOKENSAMPLE000000000000',
+      id: '1284',
       name: 'Zapier Integration',
     },
   },

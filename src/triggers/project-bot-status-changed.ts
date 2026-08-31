@@ -12,10 +12,10 @@ export default defineWebhookTrigger({
     type: 'project.bot.status_changed',
     created_at: '2026-05-18T10:35:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
-      project_id: 'prj_01HXPROJECTSAMPLE000000000',
-      bot_id: 'bot_01HXBOTSAMPLE00000000000000',
+      project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
+      bot_id: '5e93b1d7-4a20-4c68-8f51-9b0d27e6a34c',
       status: 'degraded',
       reason: 'telegram_api_unauthorized',
     },

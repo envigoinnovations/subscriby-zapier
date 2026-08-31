@@ -57,7 +57,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      id: 'pln_01HXPLANSAMPLE0000000000000',
+      id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       kind: 'subscription',
       name: 'Premium Monthly',
       price: '29.00',

@@ -16,6 +16,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'whe_01HXENDPOINTSAMPLE000000000', url: 'https://hooks.example.com/mp' },
+    sample: { id: 'c62a08f4-1b7d-4e35-9860-a37f5d21e0b9', url: 'https://hooks.example.com/mp' },
   },
 } satisfies Trigger;

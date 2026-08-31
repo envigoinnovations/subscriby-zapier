@@ -26,7 +26,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      id: 'bot_01HXBOTSAMPLE00000000000000',
+      id: '5e93b1d7-4a20-4c68-8f51-9b0d27e6a34c',
       username: 'research_premium_bot',
       connected: true,
     },

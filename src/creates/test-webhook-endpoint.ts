@@ -35,7 +35,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      id: 'whe_01HXWEBHOOKENDPOINTSAMPLE00',
+      id: 'c62a08f4-1b7d-4e35-9860-a37f5d21e0b9',
       test_event_id: 'evt_01HXEXAMPLE000000000000000',
     },
   },

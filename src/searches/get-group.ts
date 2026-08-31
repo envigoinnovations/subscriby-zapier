@@ -26,7 +26,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      id: 'grp_01HXGROUPSAMPLE00000000000',
+      id: '1f68d92a-04c5-4e83-97b1-3d6a05e2f847',
       code: 'support',
       name: 'Support',
     },

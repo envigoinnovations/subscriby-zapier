@@ -25,8 +25,8 @@ export default {
       return [conversation];
     },
     sample: {
-      id: 'sup_01HXCONVERSATIONSAMPLE00000',
-      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45',
+      project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       status: 'open',
     },
   },

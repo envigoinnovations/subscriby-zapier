@@ -28,7 +28,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      id: 'usr_01HXUSERSAMPLE0000000000000',
+      id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
       name: 'Jane Doe',
       email: 'jane@example.com',
     },

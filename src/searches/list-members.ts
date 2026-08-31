@@ -31,8 +31,8 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'mem_01HXMEMBERSAMPLE00000000000',
-      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      id: '6f9b2e37-c184-4a05-8d72-30e16bc9f458',
+      project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       status: 'active',
     },
   },

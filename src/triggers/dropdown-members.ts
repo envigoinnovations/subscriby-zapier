@@ -23,6 +23,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'usr_01HXUSERSAMPLE0000000000000', name: 'John Doe' },
+    sample: { id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80', name: 'John Doe' },
   },
 } satisfies Trigger;

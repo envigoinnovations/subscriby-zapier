@@ -72,7 +72,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      id: 'prj_01HXPROJECTSAMPLE000000000',
+      id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       name: 'Research Premium',
       handle: 'research-premium',
       type: 'telegram',

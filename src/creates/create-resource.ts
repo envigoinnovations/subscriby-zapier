@@ -46,7 +46,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      id: 'res_01HXRESOURCESAMPLE00000000',
+      id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
       title: 'Welcome Kit',
       type: 'manual',
       active: true,

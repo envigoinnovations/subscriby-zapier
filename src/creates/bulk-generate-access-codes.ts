@@ -95,7 +95,7 @@ export default {
     },
     sample: {
       unique_key: 'user_plan_unique_key',
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       quantity: 50,
       status: 'generation_queued',
       preview: {

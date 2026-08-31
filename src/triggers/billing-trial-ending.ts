@@ -14,9 +14,9 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: null,
     data: {
-      creator_id: 'usr_01HXUSERSAMPLE0000000000000',
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
-      subscription_id: 'sub_01HXSUBSAMPLE00000000000000',
+      creator_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
+      subscription_id: '5b7e2d40-1a86-4c39-97f2-e83d0b16c5a4',
       trial_ends_at: '2026-05-18T10:05:00Z',
       hours_remaining: 72,
       amount: '19.00',

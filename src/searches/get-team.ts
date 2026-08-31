@@ -26,7 +26,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      id: 'tem_01HXTEAMSAMPLE0000000000000',
+      id: 'a83f0d51-4c92-4b7e-8615-2fd9e70a3c86',
       name: 'Creator Team',
     },
   },

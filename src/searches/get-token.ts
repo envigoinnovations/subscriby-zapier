@@ -26,7 +26,7 @@ export default {
       return data ? [data] : [];
     },
     sample: {
-      id: 'tok_01HXTOKENSAMPLE000000000000',
+      id: '1284',
       name: 'Zapier Integration',
     },
   },

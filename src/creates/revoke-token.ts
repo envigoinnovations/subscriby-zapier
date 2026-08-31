@@ -35,7 +35,7 @@ export default {
       return { id: tokenId, deleted: true };
     },
     sample: {
-      id: 'tok_01HXTOKENSAMPLE000000000000',
+      id: '1284',
       deleted: true,
     },
   },

@@ -61,8 +61,8 @@ export default {
       return (envelope.data ?? []);
     },
     sample: {
-      id: 'txn_01HXTXNSAMPLE00000000000000',
-      project_id: 'prj_01HXPROJECTSAMPLE000000000',
+      id: '8b0c4a15-e792-4360-95d8-1f47c0b3e926',
+      project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       amount: '29.00',
       currency_id: 'USD',
       status: 'succeeded',

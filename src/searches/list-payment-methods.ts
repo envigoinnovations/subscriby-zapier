@@ -24,7 +24,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'pmt_01HXPAYMENTMETHODSAMPLE0000',
+      id: 'a15d70c8-3e46-4b92-b70f-58c9d2140e63',
       provider: 'stripe',
       status: 'active',
     },

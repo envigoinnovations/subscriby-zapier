@@ -32,7 +32,7 @@ export default {
       return row ? [row] : [];
     },
     sample: {
-      id: 'pln_01HXPLANSAMPLE0000000000000',
+      id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       name: 'Premium Monthly',
       price: '9.99',
       billing_cycle: 'month',

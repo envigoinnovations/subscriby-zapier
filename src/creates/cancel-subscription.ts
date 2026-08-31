@@ -33,7 +33,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
-      subscription_id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
+      subscription_id: '5b7e2d40-1a86-4c39-97f2-e83d0b16c5a4',
       status: 'cancellation_queued',
     },
   },

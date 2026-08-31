@@ -23,6 +23,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'res_01HXRESOURCESAMPLE000000000', name: 'Premium Channel' },
+    sample: { id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6', name: 'Premium Channel' },
   },
 } satisfies Trigger;

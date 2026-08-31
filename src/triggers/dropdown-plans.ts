@@ -22,7 +22,7 @@ export default {
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
     sample: {
-      id: 'pln_01HXPLANSAMPLE0000000000000',
+      id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       name: 'Premium Monthly',
     },
   },

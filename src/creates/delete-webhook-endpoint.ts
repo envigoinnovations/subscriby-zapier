@@ -35,7 +35,7 @@ export default {
       return { id: endpointId, deleted: true };
     },
     sample: {
-      id: 'whe_01HXWEBHOOKENDPOINTSAMPLE00',
+      id: 'c62a08f4-1b7d-4e35-9860-a37f5d21e0b9',
       deleted: true,
     },
   },

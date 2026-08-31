@@ -16,6 +16,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'tok_01HXTOKENSAMPLE0000000000', name: 'Zapier Token' },
+    sample: { id: '1284', name: 'Zapier Token' },
   },
 } satisfies Trigger;

@@ -16,6 +16,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'grp_01HXGROUPSAMPLE0000000000', name: 'VIP Members' },
+    sample: { id: '1f68d92a-04c5-4e83-97b1-3d6a05e2f847', name: 'VIP Members' },
   },
 } satisfies Trigger;

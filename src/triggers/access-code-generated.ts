@@ -12,9 +12,9 @@ export default defineWebhookTrigger({
     type: 'access_code.generated',
     created_at: '2026-05-18T11:00:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       plan_name: 'Premium Monthly',
       count: 50,
       expires_at: '2026-06-18T11:00:00Z',

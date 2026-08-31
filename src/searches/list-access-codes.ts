@@ -39,7 +39,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'acc_01HXACCESSCODESAMPLE0000000',
+      id: '30a7f5c1-8e94-4b26-a07d-6c15b9e2f483',
       code: 'PREMIUM-2026',
       status: 'unredeemed',
     },

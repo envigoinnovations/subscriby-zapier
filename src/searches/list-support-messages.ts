@@ -27,8 +27,8 @@ export default {
       return (response.data as { data?: Record<string, unknown>[] }).data ?? [];
     },
     sample: {
-      id: 'msg_01HXMESSAGESAMPLE0000000000',
-      conversation_id: 'sup_01HXCONVERSATIONSAMPLE00000',
+      id: '6c18f7a3-2e95-4d60-b47a-c093e5182b7f',
+      conversation_id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45',
       direction: 'inbound',
       body: 'My invite link stopped working.',
     },

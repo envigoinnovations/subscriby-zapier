@@ -43,9 +43,9 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'act_01HXACTIVITYSAMPLE000000000',
+      id: '92e4c1b6-70da-4f38-8517-b036ae94d7c2',
       subject_type: 'project',
-      subject_id: 'prj_01HXPROJECTSAMPLE000000000',
+      subject_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       event: 'project.updated',
       created_at: '2026-05-18T10:05:00Z',
     },

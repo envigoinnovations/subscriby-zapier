@@ -12,9 +12,9 @@ export default defineWebhookTrigger({
     type: 'coupon.exhausted',
     created_at: '2026-11-29T19:04:55Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
-      coupon_id: 'cpn_01HXCOUPONSAMPLE0000000000',
+      coupon_id: '4b9d3e08-a1f6-4275-9c83-7e01d6a2f594',
       code: 'BLACKFRIDAY',
       max_redemptions: 500,
       redemptions_count: 500,

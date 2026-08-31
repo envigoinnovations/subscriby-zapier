@@ -31,8 +31,8 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'sub_01HXSUBSCRIPTIONSAMPLE00000',
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      id: '5b7e2d40-1a86-4c39-97f2-e83d0b16c5a4',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       status: 'active',
     },
   },

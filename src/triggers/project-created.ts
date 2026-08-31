@@ -12,14 +12,14 @@ export default defineWebhookTrigger({
     type: 'project.created',
     created_at: '2026-05-18T08:00:00Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
       project: {
-        id: 'prj_01HXPROJECTSAMPLE000000000',
+        id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
         name: 'Research Premium',
         handle: 'research-premium',
         active: true,
-        team_id: 'tem_01HXTEAMSAMPLE0000000000000',
+        team_id: 'a83f0d51-4c92-4b7e-8615-2fd9e70a3c86',
       },
     },
   },

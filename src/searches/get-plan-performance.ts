@@ -34,7 +34,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      plan_id: 'pln_01HXPLANSAMPLE0000000000000',
+      plan_id: 'c4e82f16-93a7-4d5b-b81c-6e0f27a94d3b',
       name: 'Premium Monthly',
       active_subscribers: 42,
       gross_revenue: '1218.00',

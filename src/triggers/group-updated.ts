@@ -13,8 +13,8 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: null,
     data: {
-      team_id: 'tem_01HXTEAMSAMPLE0000000000000',
-      group_id: 'grp_01HXGROUPSAMPLE00000000000',
+      team_id: 'a83f0d51-4c92-4b7e-8615-2fd9e70a3c86',
+      group_id: '1f68d92a-04c5-4e83-97b1-3d6a05e2f847',
       code: 'support',
       name: 'Support',
     },

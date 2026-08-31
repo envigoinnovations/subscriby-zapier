@@ -27,6 +27,6 @@ export default {
 
       return (response.data as { data?: unknown }).data ?? response.data;
     },
-    sample: { id: 'sup_01HXCONVERSATIONSAMPLE00000', status: 'resolved' },
+    sample: { id: '9e042b6f-5d81-4c37-a920-7b3e18cf6d45', status: 'resolved' },
   },
 } satisfies Create;

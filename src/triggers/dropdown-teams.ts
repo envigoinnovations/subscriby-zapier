@@ -16,6 +16,6 @@ export default {
       handleHttpError(response, z);
       return (response.data as { data?: { id: string }[] }).data ?? [];
     },
-    sample: { id: 'team_01HXTEAMSAMPLE0000000000', name: 'My Team' },
+    sample: { id: 'a83f0d51-4c92-4b7e-8615-2fd9e70a3c86', name: 'My Team' },
   },
 } satisfies Trigger;

@@ -34,7 +34,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'whe_01HXWEBHOOKENDPOINTSAMPLE00',
+      id: 'c62a08f4-1b7d-4e35-9860-a37f5d21e0b9',
       url: 'https://hooks.zapier.com/hooks/catch/1/abc123/',
       is_active: true,
     },

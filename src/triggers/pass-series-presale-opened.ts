@@ -12,11 +12,11 @@ export default defineWebhookTrigger({
     type: 'pass_series.presale_opened',
     created_at: '2026-09-20T13:00:04Z',
     api_version: '2026-05-01',
-    project_id: 'prj_01HXPROJECTSAMPLE000000000',
+    project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
-          plan_id: 'pln_01HXSERIESSAMPLE000000000',
+          plan_id: 'e07b4a29-51c6-4d83-9f10-2b8ac635d174',
           plan_name: 'Autumn Season Ticket',
-          successor_plan_id: 'pln_01HXNEXTSEASON00000000000',
+          successor_plan_id: '1d6c93f8-a204-4e71-b58c-7f03e2a91d46',
           eligible_holders: 38,
           presale_hours: 48,
           closes_at: '2026-12-01T21:00:11Z'

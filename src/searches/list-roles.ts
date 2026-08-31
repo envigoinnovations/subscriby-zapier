@@ -34,7 +34,7 @@ export default {
       return ((response.data as { data?: Record<string, unknown>[] }).data ?? []);
     },
     sample: {
-      id: 'rol_01HXROLESAMPLE0000000000000',
+      id: 'd05e1a83-7c46-4f29-b613-8ae407c9d251',
       code: 'manager',
       name: 'Manager',
     },

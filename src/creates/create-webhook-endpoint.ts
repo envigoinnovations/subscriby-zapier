@@ -96,7 +96,7 @@ export default {
       };
     },
     sample: {
-      id: 'whe_01HXWEBHOOKENDPOINTSAMPLE00',
+      id: 'c62a08f4-1b7d-4e35-9860-a37f5d21e0b9',
       name: 'Zapier — All Events',
       url: 'https://hooks.zapier.com/hooks/catch/1/abc123/',
       events: ['subscription.created', 'payment.succeeded'],
