@@ -1,8 +1,10 @@
 # Changelog
 
-## 3.0.0 — 2026-08-31
+## 2.0.0 — 2026-08-31
 
-**If you are coming from 1.3.0, this release is everything since May.** The 2.x entries below describe versions that were written but never pushed to Zapier, so 1.3.0 is the last version anyone has actually run. They are kept for the detail; read them as part of this release.
+**This is everything since 1.3.0, which is the last version anyone has actually run.** The sections below marked *never released* were written and versioned locally but never pushed to Zapier — 2.1.0 through 2.6.0 exist only in this file. Their detail is part of this release; read them as continuations of this entry rather than as separate upgrades.
+
+The number is 2.0.0 rather than 3.0.0 because relative to 1.3.0 this is one major step, and Zapier requires every intervening version to exist on the platform before it will accept a higher one.
 
 **Breaking.** Create Plan and Update Plan now take a **Plan Kind** and the fields that belong to it. Existing Zaps using those two actions will need their fields re-mapped; every other trigger, action and search is untouched.
 
@@ -70,13 +72,13 @@ Both events are new in Subscriby. **Change Team Member Role also makes an existi
 
 ### Note on 2.6.0
 
-2.6.0 was never pushed to Zapier, and had no changelog entry of its own. It added the five original `pass.*` triggers (window opened / closed / cancelled, holder moved / stranded), which ship here.
+2.6.0 was never pushed to Zapier and had no changelog entry of its own. It added the five original `pass.*` triggers (window opened / closed / cancelled, holder moved / stranded), which ship here.
 
 ### Catalogue
 
 104 events, 104 triggers, 41 actions, 45 searches — full parity with the `WebhookEvent` enum.
 
-## 2.5.0 — 2026-08-27
+## 2.5.0 — never released — 2026-08-27
 
 ### Added — 1 billing trigger
 
@@ -86,7 +88,7 @@ Both events are new in Subscriby. **Change Team Member Role also makes an existi
 
   `amount` is a decimal string with a separate uppercase `currency`, so it can go straight into a spreadsheet or an accounting row without parsing a symbol out of it. Check `amount_estimated` first: when it is `true` the figure is the plan's list price because the upcoming invoice could not be read, and it should not be reconciled against. A creator carrying an account credit will legitimately see `"0.00"`.
 
-## 2.4.0 — 2026-08-20
+## 2.4.0 — never released — 2026-08-20
 
 Added the member support inbox, and closed a gap that had left one event unexposed since it was introduced.
 
@@ -112,7 +114,7 @@ Added the member support inbox, and closed a gap that had left one event unexpos
 - The catalogue is now at full parity with `WebhookEvent`: 87 events, 87 triggers.
 - Internal notes are returned by List Support Messages only when the token also holds `support-conversation:update`. Reading a private remark about a member takes the same permission as writing one.
 
-## 2.3.0 — 2026-08-19
+## 2.3.0 — never released — 2026-08-19
 
 Added the `coupon.*` event family, so every `WebhookEvent` Subscriby emits is exposed again.
 
@@ -127,7 +129,7 @@ Added the `coupon.*` event family, so every `WebhookEvent` Subscriby emits is ex
 - A coupon is one code many subscribers can redeem for money off. It is not an access code, which is one code for one person and grants access outright — the two have separate triggers and separate payload shapes.
 - Switching a code on or off fires Coupon Activated / Coupon Deactivated rather than Coupon Updated, so an automation reacting to a code being pulled does not have to diff payloads to notice.
 
-## 2.1.0 — 2026-08-12
+## 2.1.0 — never released — 2026-08-12
 
 Corrected every trigger sample payload against the live `WebhookEvent` emission sites. The previous samples described a payload shape Subscriby has never sent, so fields mapped in the Zap editor arrived empty at runtime.
 
