@@ -1,33 +1,34 @@
 {
-  "name": "subscriby-zapier",
-  "version": "3.0.0",
-  "description": "Zapier Platform integration for Subscriby — monetised Telegram community automation.",
-  "main": "index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "index.js",
-    "dist/"
-  ],
-  "private": true,
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "test": "zapier test",
-    "validate": "zapier validate",
-    "push": "npm run build && zapier push",
-    "promote": "zapier promote",
-    "push:win": "powershell -NoProfile -Command \"Move-Item -Path .git -Destination ../.git-mp-zap; npm run build; zapier push; Move-Item -Path ../.git-mp-zap -Destination .git\""
-  },
-  "dependencies": {
-    "zapier-platform-core": "18.5.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.9.0",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.6.3",
-    "zapier-platform-cli": "^18.5.1"
-  }
+    "name": "subscriby-zapier",
+    "version": "3.0.0",
+    "description": "Zapier Platform integration for Subscriby \u2014 monetised Telegram community automation.",
+    "main": "index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "index.js",
+        "dist/"
+    ],
+    "private": true,
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "prebuild": "node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' \u2014 the User-Agent would report the wrong version.');process.exit(1)}\"",
+        "build": "tsc",
+        "clean": "rimraf dist",
+        "test": "zapier test",
+        "validate": "zapier validate",
+        "push": "npm run build && zapier push",
+        "promote": "zapier promote",
+        "push:win": "powershell -NoProfile -Command \"Move-Item -Path .git -Destination ../.git-mp-zap; npm run build; zapier push; Move-Item -Path ../.git-mp-zap -Destination .git\""
+    },
+    "dependencies": {
+        "zapier-platform-core": "18.5.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.9.0",
+        "rimraf": "^6.0.1",
+        "typescript": "^5.6.3",
+        "zapier-platform-cli": "^18.5.1"
+    }
 }

@@ -2,6 +2,8 @@
 
 ## 3.0.0 — 2026-08-31
 
+**If you are coming from 1.3.0, this release is everything since May.** The 2.x entries below describe versions that were written but never pushed to Zapier, so 1.3.0 is the last version anyone has actually run. They are kept for the detail; read them as part of this release.
+
 **Breaking.** Create Plan and Update Plan now take a **Plan Kind** and the fields that belong to it. Existing Zaps using those two actions will need their fields re-mapped; every other trigger, action and search is untouched.
 
 ### Changed — Create Plan and Update Plan are kind-scoped
@@ -37,18 +39,42 @@ A **Pass Series** sells a curated slate of *other* pass plans' dated windows for
 - **Pass Holder Queued** — a holder tapped their invite link and their request is held. The moment a buyer stops being a risk, and previously invisible outside the product.
 - **Pass Holder Missed a Window** — a window closed and one holder never turned up. Pass Window Closed only reported an aggregate count; this is the half you can act on. A window that never opened, or a purchase that landed too late to use, is deliberately *not* reported as missed.
 
+### Added — Teams, roles and groups are writable
+
+Every one of these existed as a trigger and a search already: you could be told a role changed and read what it granted, but not change one. Fourteen actions close that.
+
+- **Teams** — Create Team, Update Team, Delete Team.
+- **Team members** — Invite Team Member, Change Team Member Role, Remove Team Member, Cancel Team Invitation. Inviting is addressed by **email**, because the invitee may not have a Subscriby account yet; the role is a role **code** that must already exist on the team.
+- **Roles** — Create Role, Update Role, Delete Role.
+- **Groups** — Create Group, Update Group, Delete Group, Sync Group Members.
+
+Two things worth knowing before you build with them:
+
+- **Permissions replace, they do not merge.** Setting the permission field on Update Role or Update Group makes that list the whole set. Leave it empty to keep what is there.
+- **Sync Group Members is a sync, not an add.** Anyone left out of the list is removed from the group, and an empty list empties it.
+
+Creating and re-permissioning require the Growth plan. Deleting and removing do not — a creator whose plan lapsed still has collaborators attached, and has to be able to take access away.
+
+### Added — 2 triggers
+
+- **Team Updated** — a team is renamed. `name` is the only mutable field on a team.
+- **Group Members Synced** — the people in a group changed. Carries `added_ids` and `removed_ids` as well as the final list, so an access-control mirror does not have to diff two snapshots to work out who moved.
+
+Both events are new in Subscriby. **Change Team Member Role also makes an existing trigger reachable:** `team.member.role_changed` was in the catalogue and offered here, but nothing in Subscriby could raise it until this release.
+
 ### Fixed
 
+- Sample records advertised ids like `prj_01HXPROJECTSAMPLE000000000`. Subscriby has never issued a prefixed id — every id is a plain UUID — so the samples in the Zap editor showed a shape no real record has. All 418 of them now show UUIDs.
 - The `User-Agent` version was pinned at `2.0.0` while the package was at 2.6.0. It now tracks the real version.
 - `pass_series.leg_added` carried the series plan's own timezone, which is always empty — a series has no schedule of its own. It now carries the source plan's zone, so timestamps can be rendered correctly.
 
 ### Note on 2.6.0
 
-2.6.0 was published without a changelog entry. It added the five original `pass.*` triggers (window opened / closed / cancelled, holder moved / stranded).
+2.6.0 was never pushed to Zapier, and had no changelog entry of its own. It added the five original `pass.*` triggers (window opened / closed / cancelled, holder moved / stranded), which ship here.
 
 ### Catalogue
 
-102 events, 102 triggers — full parity with the `WebhookEvent` enum.
+104 events, 104 triggers, 41 actions, 45 searches — full parity with the `WebhookEvent` enum.
 
 ## 2.5.0 — 2026-08-27
 
