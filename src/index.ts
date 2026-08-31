@@ -76,6 +76,7 @@ import projectResourceLinked from './triggers/project-resource-linked';
 import projectResourceUnlinked from './triggers/project-resource-unlinked';
 import projectResourceDeleted from './triggers/project-resource-deleted';
 import teamCreated from './triggers/team-created';
+import teamUpdated from './triggers/team-updated';
 import teamDeleted from './triggers/team-deleted';
 import teamMemberInvited from './triggers/team-member-invited';
 import teamMemberJoined from './triggers/team-member-joined';
@@ -86,6 +87,7 @@ import roleUpdated from './triggers/role-updated';
 import roleDeleted from './triggers/role-deleted';
 import groupCreated from './triggers/group-created';
 import groupUpdated from './triggers/group-updated';
+import groupMembersSynced from './triggers/group-members-synced';
 import groupDeleted from './triggers/group-deleted';
 import billingInvoiceCreated from './triggers/billing-invoice-created';
 import billingInvoicePaid from './triggers/billing-invoice-paid';
@@ -118,6 +120,20 @@ import dropdownGroups from './triggers/dropdown-groups';
 import dropdownAccessCodes from './triggers/dropdown-access-codes';
 
 import createProject from './creates/create-project';
+import syncGroupMembers from './creates/sync-group-members';
+import deleteGroup from './creates/delete-group';
+import updateGroup from './creates/update-group';
+import createGroup from './creates/create-group';
+import deleteRole from './creates/delete-role';
+import updateRole from './creates/update-role';
+import createRole from './creates/create-role';
+import cancelTeamInvitation from './creates/cancel-team-invitation';
+import removeTeamMember from './creates/remove-team-member';
+import updateTeamMemberRole from './creates/update-team-member-role';
+import inviteTeamMember from './creates/invite-team-member';
+import deleteTeam from './creates/delete-team';
+import updateTeam from './creates/update-team';
+import createTeam from './creates/create-team';
 import updateProject from './creates/update-project';
 import archiveProject from './creates/archive-project';
 import restoreProject from './creates/restore-project';
@@ -268,6 +284,7 @@ const triggers = {
   [projectResourceUnlinked.key]: projectResourceUnlinked,
   [projectResourceDeleted.key]: projectResourceDeleted,
   [teamCreated.key]: teamCreated,
+  [teamUpdated.key]: teamUpdated,
   [teamDeleted.key]: teamDeleted,
   [teamMemberInvited.key]: teamMemberInvited,
   [teamMemberJoined.key]: teamMemberJoined,
@@ -278,6 +295,7 @@ const triggers = {
   [roleDeleted.key]: roleDeleted,
   [groupCreated.key]: groupCreated,
   [groupUpdated.key]: groupUpdated,
+  [groupMembersSynced.key]: groupMembersSynced,
   [groupDeleted.key]: groupDeleted,
   [billingInvoiceCreated.key]: billingInvoiceCreated,
   [billingInvoicePaid.key]: billingInvoicePaid,
@@ -311,6 +329,20 @@ const triggers = {
 };
 
 const creates = {
+  [syncGroupMembers.key]: syncGroupMembers,
+  [deleteGroup.key]: deleteGroup,
+  [updateGroup.key]: updateGroup,
+  [createGroup.key]: createGroup,
+  [deleteRole.key]: deleteRole,
+  [updateRole.key]: updateRole,
+  [createRole.key]: createRole,
+  [cancelTeamInvitation.key]: cancelTeamInvitation,
+  [removeTeamMember.key]: removeTeamMember,
+  [updateTeamMemberRole.key]: updateTeamMemberRole,
+  [inviteTeamMember.key]: inviteTeamMember,
+  [deleteTeam.key]: deleteTeam,
+  [updateTeam.key]: updateTeam,
+  [createTeam.key]: createTeam,
   [createProject.key]: createProject,
   [updateProject.key]: updateProject,
   [archiveProject.key]: archiveProject,
