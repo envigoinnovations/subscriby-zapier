@@ -24,6 +24,8 @@ import paymentPending from './triggers/payment-pending';
 import paymentRefunded from './triggers/payment-refunded';
 import accessCodeGenerated from './triggers/access-code-generated';
 import accessCodeRedeemed from './triggers/access-code-redeemed';
+import broadcastCompleted from './triggers/broadcast-completed';
+import broadcastQueued from './triggers/broadcast-queued';
 import accessCodeExpired from './triggers/access-code-expired';
 import memberJoined from './triggers/member-joined';
 import memberTrialJoined from './triggers/member-trial-joined';
@@ -145,6 +147,7 @@ import unpublishPlan from './creates/unpublish-plan';
 import deletePlan from './creates/delete-plan';
 import cancelSubscription from './creates/cancel-subscription';
 import banMember from './creates/ban-member';
+import broadcastMessage from './creates/broadcast-message';
 import replySupportConversation from './creates/reply-support-conversation';
 import resolveSupportConversation from './creates/resolve-support-conversation';
 import assignSupportConversation from './creates/assign-support-conversation';
@@ -232,6 +235,8 @@ const triggers = {
   [paymentRefunded.key]: paymentRefunded,
   [accessCodeGenerated.key]: accessCodeGenerated,
   [accessCodeRedeemed.key]: accessCodeRedeemed,
+  [broadcastQueued.key]: broadcastQueued,
+  [broadcastCompleted.key]: broadcastCompleted,
   [accessCodeExpired.key]: accessCodeExpired,
   [memberJoined.key]: memberJoined,
   [memberTrialJoined.key]: memberTrialJoined,
@@ -355,6 +360,7 @@ const creates = {
   [deletePlan.key]: deletePlan,
   [cancelSubscription.key]: cancelSubscription,
   [banMember.key]: banMember,
+  [broadcastMessage.key]: broadcastMessage,
   [replySupportConversation.key]: replySupportConversation,
   [resolveSupportConversation.key]: resolveSupportConversation,
   [assignSupportConversation.key]: assignSupportConversation,

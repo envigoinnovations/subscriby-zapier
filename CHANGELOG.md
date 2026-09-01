@@ -1,8 +1,24 @@
 # Changelog
 
+## 2.1.0 — 2026-09-01
+
+Supersedes the `2.1.0 — never released` entry further down this file; that number was freed when its detail was folded into 2.0.0.
+
+### Added — message broadcasting
+
+Broadcasting existed in the Subscriby dashboard and the Telegram bot and on no integration surface at all. A Zap could react to 106 events but could not send the one message a creator most wants to automate: telling their members something happened.
+
+- **Broadcast Message** (action) — send a Telegram message to an audience segment. The send is queued, so the action returns the resolved audience and the recipient count rather than a delivery result.
+- **Broadcast Queued** (trigger) — fires as a broadcast starts, with the segment it resolved to and how many members it will reach. Fires for broadcasts started anywhere, including the dashboard and the bot.
+- **Broadcast Completed** (trigger) — fires when the send finishes, carrying `sent` and `failed`. Failures are overwhelmingly members who blocked or deleted the bot.
+
+Pair them: **Broadcast Message** to send, **Broadcast Completed** to log the outcome or alert on a failure spike.
+
+The two single-window pass segments (`pass_holders`, `pass_holders_not_in_queue`) additionally require a Pass Window ID; the API refuses the send without one rather than silently addressing nobody.
+
 ## 2.0.0 — 2026-08-31
 
-**This is everything since 1.3.0, which is the last version anyone has actually run.** The sections below marked *never released* were written and versioned locally but never pushed to Zapier — 2.1.0 through 2.6.0 exist only in this file. Their detail is part of this release; read them as continuations of this entry rather than as separate upgrades.
+**This is everything since 1.3.0, which is the last version anyone has actually run.** The sections below marked _never released_ were written and versioned locally but never pushed to Zapier — 2.1.0 through 2.6.0 exist only in this file. Their detail is part of this release; read them as continuations of this entry rather than as separate upgrades.
 
 The number is 2.0.0 rather than 3.0.0 because relative to 1.3.0 this is one major step, and Zapier requires every intervening version to exist on the platform before it will accept a higher one.
 
@@ -10,15 +26,15 @@ The number is 2.0.0 rather than 3.0.0 because relative to 1.3.0 this is one majo
 
 ### Changed — Create Plan and Update Plan are kind-scoped
 
-Both actions now open with a **Plan Kind** dropdown — *Recurring Subscription*, *Time-Limited Pass* or *Pass Series* — and the fields below it change to match. Only the fields your chosen kind actually accepts are shown.
+Both actions now open with a **Plan Kind** dropdown — _Recurring Subscription_, _Time-Limited Pass_ or _Pass Series_ — and the fields below it change to match. Only the fields your chosen kind actually accepts are shown.
 
 This mirrors a breaking change in the Subscriby API, which moved plans to a discriminated union: `kind` names exactly one nested object, and sending a block belonging to another kind is now refused rather than ignored. The old flat shape emitted `billing_cycle` and `trial_days` on passes where they mean nothing, and offered no way to express a third plan shape at all.
 
-**What breaks:** the field keys behind Create Plan and Update Plan changed. A Zap that set *Billing Cycle* still sets a billing cycle — the field is now inside the subscription kind's group — but the mapping has to be re-made. Nothing else in this integration changed its field keys.
+**What breaks:** the field keys behind Create Plan and Update Plan changed. A Zap that set _Billing Cycle_ still sets a billing cycle — the field is now inside the subscription kind's group — but the mapping has to be re-made. Nothing else in this integration changed its field keys.
 
 ### Added — Pass Series, a season ticket
 
-A **Pass Series** sells a curated slate of *other* pass plans' dated windows for one payment. It owns no windows of its own, so:
+A **Pass Series** sells a curated slate of _other_ pass plans' dated windows for one payment. It owns no windows of its own, so:
 
 - **Find Pass Windows** (new search) — lists the dated windows a project's pass plans generate, with their IDs, local times, status and holder counts. **Run this first:** a series points at windows that already exist, so this is where its Pass Window IDs come from.
 - Create Plan's Pass Series group takes those IDs, plus a seat limit, a sales cutoff measured against the whole season, a next-season link with a holders-only presale, and **Automatic Inclusion Rules**.
@@ -37,9 +53,9 @@ A **Pass Series** sells a curated slate of *other* pass plans' dated windows for
 
 ### Added — 3 pass triggers that were missing
 
-- **Pass Window Scheduled** — a window coming into existence. The `pass.*` family reported windows being cancelled, opened and closed but never *created*, so a schedule could not be mirrored outward without polling. Note that editing a schedule regenerates windows in bulk, so one plan save can fire this many times.
+- **Pass Window Scheduled** — a window coming into existence. The `pass.*` family reported windows being cancelled, opened and closed but never _created_, so a schedule could not be mirrored outward without polling. Note that editing a schedule regenerates windows in bulk, so one plan save can fire this many times.
 - **Pass Holder Queued** — a holder tapped their invite link and their request is held. The moment a buyer stops being a risk, and previously invisible outside the product.
-- **Pass Holder Missed a Window** — a window closed and one holder never turned up. Pass Window Closed only reported an aggregate count; this is the half you can act on. A window that never opened, or a purchase that landed too late to use, is deliberately *not* reported as missed.
+- **Pass Holder Missed a Window** — a window closed and one holder never turned up. Pass Window Closed only reported an aggregate count; this is the half you can act on. A window that never opened, or a purchase that landed too late to use, is deliberately _not_ reported as missed.
 
 ### Added — Teams, roles and groups are writable
 
@@ -165,16 +181,16 @@ Full-parity sync with the live Subscriby REST + webhook surface.
 
 All 71 events from the `WebhookEvent` catalog are now exposed as instant (REST Hook) triggers.
 
-- **project.*** (6): `project.updated`, `.archived`, `.restored`, `.deleted`, `.bot.connected`, `.bot.disconnected`
-- **project.resource.*** (4): `.created`, `.linked`, `.unlinked`, `.deleted`
-- **plan.*** (3): `plan.activated`, `.deleted`, `.sync_completed`
-- **subscription.*** (11): `.trial_started`, `.trial_converting`, `.trial_expired`, `.reactivated`, `.paused`, `.unpaused`, `.past_due`, `.unpaid`, `.refunded`, `.upgraded`, `.downgraded`
-- **payment.*** (2): `payment.pending`, `.refunded`
-- **member.*** (5): `.converted`, `.churned`, `.removed`, `.resource_added`, `.resource_removed`
-- **team.*** (6): `team.created`, `.deleted`, `.member.invited`, `.member.joined`, `.member.removed`, `.member.role_changed`
-- **role.*** (3): `role.created`, `.updated`, `.deleted`
-- **group.*** (3): `group.created`, `.updated`, `.deleted`
-- **billing.*** (9): `billing.invoice_created`, `.invoice_paid`, `.invoice_overdue`, `.payment_failed`, `.grace_period_warning`, `.account_locked`, `.tier_upgraded`, `.tier_downgraded`, `.tier_cancelled`
+- **project.\*** (6): `project.updated`, `.archived`, `.restored`, `.deleted`, `.bot.connected`, `.bot.disconnected`
+- **project.resource.\*** (4): `.created`, `.linked`, `.unlinked`, `.deleted`
+- **plan.\*** (3): `plan.activated`, `.deleted`, `.sync_completed`
+- **subscription.\*** (11): `.trial_started`, `.trial_converting`, `.trial_expired`, `.reactivated`, `.paused`, `.unpaused`, `.past_due`, `.unpaid`, `.refunded`, `.upgraded`, `.downgraded`
+- **payment.\*** (2): `payment.pending`, `.refunded`
+- **member.\*** (5): `.converted`, `.churned`, `.removed`, `.resource_added`, `.resource_removed`
+- **team.\*** (6): `team.created`, `.deleted`, `.member.invited`, `.member.joined`, `.member.removed`, `.member.role_changed`
+- **role.\*** (3): `role.created`, `.updated`, `.deleted`
+- **group.\*** (3): `group.created`, `.updated`, `.deleted`
+- **billing.\*** (9): `billing.invoice_created`, `.invoice_paid`, `.invoice_overdue`, `.payment_failed`, `.grace_period_warning`, `.account_locked`, `.tier_upgraded`, `.tier_downgraded`, `.tier_cancelled`
 
 ### New actions (+10)
 
