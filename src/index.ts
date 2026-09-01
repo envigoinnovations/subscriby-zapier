@@ -146,6 +146,9 @@ import publishPlan from './creates/publish-plan';
 import unpublishPlan from './creates/unpublish-plan';
 import deletePlan from './creates/delete-plan';
 import cancelSubscription from './creates/cancel-subscription';
+import pauseSubscription from './creates/pause-subscription';
+import reactivateSubscription from './creates/reactivate-subscription';
+import unpauseSubscription from './creates/unpause-subscription';
 import banMember from './creates/ban-member';
 import broadcastMessage from './creates/broadcast-message';
 import replySupportConversation from './creates/reply-support-conversation';
@@ -359,6 +362,9 @@ const creates = {
   [unpublishPlan.key]: unpublishPlan,
   [deletePlan.key]: deletePlan,
   [cancelSubscription.key]: cancelSubscription,
+  [reactivateSubscription.key]: reactivateSubscription,
+  [unpauseSubscription.key]: unpauseSubscription,
+  [pauseSubscription.key]: pauseSubscription,
   [banMember.key]: banMember,
   [broadcastMessage.key]: broadcastMessage,
   [replySupportConversation.key]: replySupportConversation,
