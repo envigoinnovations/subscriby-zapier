@@ -1,5 +1,38 @@
 # Changelog
 
+## 2.2.0 — 2026-09-03
+
+Additive. The audience a broadcast addresses stops being a description of a member's status and becomes a description of their subscription.
+
+### Added — four subscription-state segments
+
+The five original segments answered a member's *status*, which cannot express most of what a creator writes to people about. Someone who cancelled but has three weeks left is a Customer — the same segment as someone renewing happily — and until now the two could only be messaged together.
+
+- **Expiring Soon** — access runs out within the horizon you set.
+- **Cancelled, Still Inside Their Period** — renewal is off but they have not gone yet. Still reachable, still winnable.
+- **Paused Subscriptions** — paused rather than ended.
+- **Trialing Without a Card** — on trial with no card on file, so they will not convert on their own.
+
+**An auto-renewing subscription is never Expiring Soon**, and that is the one thing to know before wiring a renewal nudge. A subscription's end date is rewritten to the new period end on every renewal, so a date alone describes the next *invoice* rather than an expiry — treating it as one would sweep every monthly subscriber into the segment once a month. A member appears only once their access genuinely lapses: they turned renewal off, or the plan does not renew at all.
+
+### Added — Narrow to a Plan
+
+A new optional field on **Broadcast Message** that composes with the audience above it rather than replacing it. *Customers* plus a plan reaches people paying for that plan right now; *Churned* plus a plan reaches people who held it and left.
+
+The plan and the state always describe the **same** subscription. Someone paying for Silver who once tried Gold is not a Gold customer and will not receive a Gold-only announcement.
+
+It is refused, not ignored, for the audiences that cannot use it — *Leads*, who never subscribed, and the pass segments, whose plan is already implied by the window. A silently dropped filter would return a recipient count for a different audience than the Zap described.
+
+Retired plans stay in the dropdown on purpose: the audiences most worth a plan filter are the ones who have already left, and a churned cohort very often churned from a plan that has since been withdrawn.
+
+### Added — Running Out Within (Days)
+
+Sets the **Expiring Soon** horizon, 1–90, default 7. Ignored by every other audience.
+
+### Changed — broadcast trigger payloads
+
+**Broadcast Queued** and **Broadcast Completed** now also carry `plan_id` and `expiring_within_days`, so a workflow can tell two broadcasts to the same segment apart. Both are `null` where they do not apply. Existing Zaps are unaffected — no field was renamed or removed.
+
 ## 2.1.0 — 2026-09-01
 
 Supersedes the `2.1.0 — never released` entry further down this file; that number was freed when its detail was folded into 2.0.0.

@@ -17,6 +17,8 @@ export default defineWebhookTrigger({
       project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       audience: 'customer',
       pass_window_id: null,
+      plan_id: null,
+      expiring_within_days: null,
       sent: 126,
       failed: 2,
     },
