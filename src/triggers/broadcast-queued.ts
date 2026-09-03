@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Broadcast',
   label: 'Broadcast Queued',
   description:
-    'Triggers the moment a broadcast starts sending, with the audience it resolved to and how many members it will reach. Fires for broadcasts started anywhere — the dashboard, the Telegram bot, the API or a Zap.',
+    'Triggers when a broadcast starts sending, with the audience it resolved to and how many members it will reach. Fires for broadcasts started anywhere — the dashboard, the Telegram bot, the API or a Zap.',
   event: 'broadcast.queued',
   sample: {
     id: 'evt_01HXEXAMPLE777777777777777',
