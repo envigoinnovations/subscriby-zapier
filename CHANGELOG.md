@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.3.0 — 7 September 2026
 
 Additive. Every creator operation the Subscriby dashboard offers now has a Zapier action, search or trigger, and the one search that pointed at the wrong endpoint is fixed.
 

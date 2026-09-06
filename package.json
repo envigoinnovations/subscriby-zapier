@@ -1,7 +1,7 @@
 {
     "name": "subscriby-zapier",
-    "version": "2.2.0",
-    "description": "Zapier Platform integration for Subscriby \u2014 monetised Telegram community automation.",
+    "version": "2.3.0",
+    "description": "Zapier Platform integration for Subscriby — monetised Telegram community automation.",
     "main": "index.js",
     "types": "dist/index.d.ts",
     "files": [
@@ -13,7 +13,7 @@
         "node": ">=18"
     },
     "scripts": {
-        "prebuild": "node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' \u2014 the User-Agent would report the wrong version.');process.exit(1)}\"",
+        "prebuild": "node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' — the User-Agent would report the wrong version.');process.exit(1)}\"",
         "build": "tsc",
         "clean": "rimraf dist",
         "test": "zapier test",

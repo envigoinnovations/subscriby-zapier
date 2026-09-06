@@ -5,7 +5,7 @@ import { BeforeRequestMiddleware, ZObject } from "zapier-platform-core";
  * because tsconfig sets `rootDir` to `src`, and a JSON import from outside that
  * root breaks the emit.
  */
-const INTEGRATION_VERSION = "2.2.0";
+const INTEGRATION_VERSION = "2.3.0";
 
 /**
  * Base URL for the Subscriby public REST API. Overridable via the
