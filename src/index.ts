@@ -64,6 +64,15 @@ import couponUpdated from './triggers/coupon-updated';
 import couponActivated from './triggers/coupon-activated';
 import couponDeactivated from './triggers/coupon-deactivated';
 import couponDeleted from './triggers/coupon-deleted';
+import projectResourceUpdated from './triggers/project-resource-updated';
+import projectPaymentMethodUpdated from './triggers/project-payment-method-updated';
+import projectPaymentMethodDeleted from './triggers/project-payment-method-deleted';
+import supportConversationBlocked from './triggers/support-conversation-blocked';
+import supportConversationUnblocked from './triggers/support-conversation-unblocked';
+import supportCannedReplyCreated from './triggers/support-canned-reply-created';
+import supportCannedReplyUpdated from './triggers/support-canned-reply-updated';
+import supportCannedReplyDeleted from './triggers/support-canned-reply-deleted';
+import supportSettingsUpdated from './triggers/support-settings-updated';
 import couponRedeemed from './triggers/coupon-redeemed';
 import couponExhausted from './triggers/coupon-exhausted';
 import projectCreated from './triggers/project-created';
@@ -166,6 +175,35 @@ import deleteWebhookEndpoint from './creates/delete-webhook-endpoint';
 import rotateWebhookSecret from './creates/rotate-webhook-secret';
 import testWebhookEndpoint from './creates/test-webhook-endpoint';
 import revokeToken from './creates/revoke-token';
+import createCoupon from './creates/create-coupon';
+import updateCoupon from './creates/update-coupon';
+import deleteCoupon from './creates/delete-coupon';
+import activateCoupon from './creates/activate-coupon';
+import deactivateCoupon from './creates/deactivate-coupon';
+import reopenSupportConversation from './creates/reopen-support-conversation';
+import blockSupportContact from './creates/block-support-contact';
+import unblockSupportContact from './creates/unblock-support-contact';
+import createCannedReply from './creates/create-canned-reply';
+import updateCannedReply from './creates/update-canned-reply';
+import deleteCannedReply from './creates/delete-canned-reply';
+import updateSupportSettings from './creates/update-support-settings';
+import updateResource from './creates/update-resource';
+import activateResource from './creates/activate-resource';
+import deactivateResource from './creates/deactivate-resource';
+import disconnectBot from './creates/disconnect-bot';
+import createPassWindow from './creates/create-pass-window';
+import cancelPassWindow from './creates/cancel-pass-window';
+import remindPassWindowQueue from './creates/remind-pass-window-queue';
+import remindPassHolder from './creates/remind-pass-holder';
+import startNextSeason from './creates/start-next-season';
+import activatePaymentMethod from './creates/activate-payment-method';
+import deactivatePaymentMethod from './creates/deactivate-payment-method';
+import syncPaymentMethodPlans from './creates/sync-payment-method-plans';
+import deletePaymentMethod from './creates/delete-payment-method';
+import pauseWebhookEndpoint from './creates/pause-webhook-endpoint';
+import resumeWebhookEndpoint from './creates/resume-webhook-endpoint';
+import retryWebhookDelivery from './creates/retry-webhook-delivery';
+import retryDeadWebhookDeliveries from './creates/retry-dead-webhook-deliveries';
 
 import findProjectByHandle from './searches/find-project-by-handle';
 import findPlanByName from './searches/find-plan-by-name';
@@ -212,6 +250,14 @@ import getSubscriberAnalytics from './searches/get-subscriber-analytics';
 import getTransactionBreakdown from './searches/get-transaction-breakdown';
 import getPlanPerformance from './searches/get-plan-performance';
 import listTransactions from './searches/list-transactions';
+import findCoupons from './searches/find-coupons';
+import getCoupon from './searches/get-coupon';
+import findCannedReplies from './searches/find-canned-replies';
+import getCannedReply from './searches/get-canned-reply';
+import getSupportSettings from './searches/get-support-settings';
+import getPassWindow from './searches/get-pass-window';
+import getWebhookEndpoint from './searches/get-webhook-endpoint';
+import getWebhookDelivery from './searches/get-webhook-delivery';
 
 import pkg from '../package.json';
 
@@ -278,6 +324,15 @@ const triggers = {
   [couponActivated.key]: couponActivated,
   [couponDeactivated.key]: couponDeactivated,
   [couponDeleted.key]: couponDeleted,
+  [projectResourceUpdated.key]: projectResourceUpdated,
+  [projectPaymentMethodUpdated.key]: projectPaymentMethodUpdated,
+  [projectPaymentMethodDeleted.key]: projectPaymentMethodDeleted,
+  [supportConversationBlocked.key]: supportConversationBlocked,
+  [supportConversationUnblocked.key]: supportConversationUnblocked,
+  [supportCannedReplyCreated.key]: supportCannedReplyCreated,
+  [supportCannedReplyUpdated.key]: supportCannedReplyUpdated,
+  [supportCannedReplyDeleted.key]: supportCannedReplyDeleted,
+  [supportSettingsUpdated.key]: supportSettingsUpdated,
   [couponRedeemed.key]: couponRedeemed,
   [couponExhausted.key]: couponExhausted,
   [projectCreated.key]: projectCreated,
@@ -382,6 +437,35 @@ const creates = {
   [rotateWebhookSecret.key]: rotateWebhookSecret,
   [testWebhookEndpoint.key]: testWebhookEndpoint,
   [revokeToken.key]: revokeToken,
+  [createCoupon.key]: createCoupon,
+  [updateCoupon.key]: updateCoupon,
+  [deleteCoupon.key]: deleteCoupon,
+  [activateCoupon.key]: activateCoupon,
+  [deactivateCoupon.key]: deactivateCoupon,
+  [reopenSupportConversation.key]: reopenSupportConversation,
+  [blockSupportContact.key]: blockSupportContact,
+  [unblockSupportContact.key]: unblockSupportContact,
+  [createCannedReply.key]: createCannedReply,
+  [updateCannedReply.key]: updateCannedReply,
+  [deleteCannedReply.key]: deleteCannedReply,
+  [updateSupportSettings.key]: updateSupportSettings,
+  [updateResource.key]: updateResource,
+  [activateResource.key]: activateResource,
+  [deactivateResource.key]: deactivateResource,
+  [disconnectBot.key]: disconnectBot,
+  [createPassWindow.key]: createPassWindow,
+  [cancelPassWindow.key]: cancelPassWindow,
+  [remindPassWindowQueue.key]: remindPassWindowQueue,
+  [remindPassHolder.key]: remindPassHolder,
+  [startNextSeason.key]: startNextSeason,
+  [activatePaymentMethod.key]: activatePaymentMethod,
+  [deactivatePaymentMethod.key]: deactivatePaymentMethod,
+  [syncPaymentMethodPlans.key]: syncPaymentMethodPlans,
+  [deletePaymentMethod.key]: deletePaymentMethod,
+  [pauseWebhookEndpoint.key]: pauseWebhookEndpoint,
+  [resumeWebhookEndpoint.key]: resumeWebhookEndpoint,
+  [retryWebhookDelivery.key]: retryWebhookDelivery,
+  [retryDeadWebhookDeliveries.key]: retryDeadWebhookDeliveries,
 };
 
 const searches = {
@@ -430,6 +514,14 @@ const searches = {
   [getTransactionBreakdown.key]: getTransactionBreakdown,
   [getPlanPerformance.key]: getPlanPerformance,
   [listTransactions.key]: listTransactions,
+  [findCoupons.key]: findCoupons,
+  [getCoupon.key]: getCoupon,
+  [findCannedReplies.key]: findCannedReplies,
+  [getCannedReply.key]: getCannedReply,
+  [getSupportSettings.key]: getSupportSettings,
+  [getPassWindow.key]: getPassWindow,
+  [getWebhookEndpoint.key]: getWebhookEndpoint,
+  [getWebhookDelivery.key]: getWebhookDelivery,
 };
 
 const app: App<typeof triggers, typeof creates, typeof searches> = {

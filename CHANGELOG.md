@@ -1,5 +1,31 @@
 # Changelog
 
+## Unreleased
+
+Additive. Every creator operation the Subscriby dashboard offers now has a Zapier action, search or trigger, and the one search that pointed at the wrong endpoint is fixed.
+
+### Added — coupons
+
+Zapier had no coupon operations at all. **Create Coupon**, **Update Coupon**, **Activate Coupon**, **Deactivate Coupon** and **Delete Coupon** join **Find Coupons** and **Get Coupon**. The field help carries the two traps the API documents: a discount applies to the first payment only, and an empty **Plan IDs** covers every plan in the project, including ones added later — name the plan when you mean one plan.
+
+### Added — the rest of the dashboard's verbs
+
+- **Support inbox** — Reopen Support Conversation, Block Support Contact, Unblock Support Contact; Create / Update / Delete Canned Reply with Find Canned Replies and Get Canned Reply; Update Support Settings and Get Support Settings. Blocking silences the member behind a thread without touching their paid access.
+- **Resources** — Update Resource (partial: a title-only update leaves the description as stored), Activate Resource, Deactivate Resource.
+- **Bot** — Disconnect Bot. Connecting a bot stays in the dashboard, where the token is typed.
+- **Pass windows** — Create Pass Window, Cancel Pass Window (the resettlement tallies come back under `meta`), Remind Pass Window Queue, Get Pass Window. **Remind Pass Holder** nudges one subscriber and answers `reminded: false` when there was nothing to send, which is a normal answer rather than an error.
+- **Plans** — Start Next Season creates the successor of a pass series.
+- **Payment methods** — Activate, Deactivate, Sync Plans and Delete. Activating a Stripe method whose Connect onboarding never finished is refused; finish onboarding in the dashboard.
+- **Webhooks** — Pause / Resume Webhook Endpoint and Get Webhook Endpoint; Get Webhook Delivery, Retry Webhook Delivery and Retry Dead Webhook Deliveries.
+
+### Added — nine triggers
+
+One per new event: Resource Updated, Payment Method Updated, Payment Method Deleted, Support Contact Blocked, Support Contact Unblocked, New Canned Reply, Canned Reply Updated, Canned Reply Deleted and Support Settings Updated. Update payloads carry a `changes` map naming only what moved; payment-method payloads name changed credential keys and never a value.
+
+### Fixed
+
+- **List Webhook Deliveries** called `/webhook-events` with an event-type filter, which is the polling feed and not the delivery log. It now reads `GET /v1/webhook-deliveries`, filters by delivery status (`pending`, `delivered`, `failed`, `dead`) and returns the delivery rows the dashboard shows, including what the endpoint answered.
+
 ## 2.2.0 — 2026-09-03
 
 Additive. The audience a broadcast addresses stops being a description of a member's status and becomes a description of their subscription.
