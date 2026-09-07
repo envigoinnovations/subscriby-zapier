@@ -115,6 +115,7 @@ import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
 import projectBotStatusChanged from './triggers/project-bot-status-changed';
+import projectResourceStatusChanged from './triggers/project-resource-status-changed';
 import supportConversationOpened from './triggers/support-conversation-opened';
 import supportConversationAssigned from './triggers/support-conversation-assigned';
 import supportConversationResolved from './triggers/support-conversation-resolved';
@@ -375,6 +376,7 @@ const triggers = {
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
   [projectBotStatusChanged.key]: projectBotStatusChanged,
+  [projectResourceStatusChanged.key]: projectResourceStatusChanged,
   [supportConversationOpened.key]: supportConversationOpened,
   [supportConversationAssigned.key]: supportConversationAssigned,
   [supportConversationResolved.key]: supportConversationResolved,
