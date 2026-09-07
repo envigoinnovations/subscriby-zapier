@@ -43,6 +43,8 @@ import planDeactivated from './triggers/plan-deactivated';
 import planActivated from './triggers/plan-activated';
 import planDeleted from './triggers/plan-deleted';
 import planSyncCompleted from './triggers/plan-sync-completed';
+import planSoldOut from './triggers/plan-sold-out';
+import planOrderChanged from './triggers/plan-order-changed';
 import passWindowScheduled from './triggers/pass-window-scheduled';
 import passWindowOpened from './triggers/pass-window-opened';
 import passWindowClosed from './triggers/pass-window-closed';
@@ -377,6 +379,8 @@ const triggers = {
   [dropdownMembers.key]: dropdownMembers,
   [projectBotStatusChanged.key]: projectBotStatusChanged,
   [projectResourceStatusChanged.key]: projectResourceStatusChanged,
+  [planSoldOut.key]: planSoldOut,
+  [planOrderChanged.key]: planOrderChanged,
   [supportConversationOpened.key]: supportConversationOpened,
   [supportConversationAssigned.key]: supportConversationAssigned,
   [supportConversationResolved.key]: supportConversationResolved,
