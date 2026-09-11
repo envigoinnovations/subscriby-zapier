@@ -39,6 +39,8 @@ import memberResourceAdded from './triggers/member-resource-added';
 import memberResourcePending from './triggers/member-resource-pending';
 import memberResourceReissued from './triggers/member-resource-reissued';
 import memberResourceRemoved from './triggers/member-resource-removed';
+import creatorTaskOpened from './triggers/creator-task-opened';
+import creatorTaskCompleted from './triggers/creator-task-completed';
 import memberIdentityLinked from './triggers/member-identity-linked';
 import memberIdentityUnlinked from './triggers/member-identity-unlinked';
 import planCreated from './triggers/plan-created';
@@ -204,6 +206,7 @@ import cancelPassWindow from './creates/cancel-pass-window';
 import remindPassWindowQueue from './creates/remind-pass-window-queue';
 import remindPassHolder from './creates/remind-pass-holder';
 import reissueSubscriptionGrants from './creates/reissue-subscription-grants';
+import completeCreatorTask from './creates/complete-creator-task';
 import startNextSeason from './creates/start-next-season';
 import activatePaymentMethod from './creates/activate-payment-method';
 import deactivatePaymentMethod from './creates/deactivate-payment-method';
@@ -221,6 +224,7 @@ import findSubscriberByTelegramId from './searches/find-subscriber-by-telegram-i
 import findMemberById from './searches/find-member-by-id';
 import findSubscriptionById from './searches/find-subscription-by-id';
 import listSubscriptionGrants from './searches/list-subscription-grants';
+import listCreatorTasks from './searches/list-creator-tasks';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -311,6 +315,8 @@ const triggers = {
   [memberResourcePending.key]: memberResourcePending,
   [memberResourceReissued.key]: memberResourceReissued,
   [memberResourceRemoved.key]: memberResourceRemoved,
+  [creatorTaskOpened.key]: creatorTaskOpened,
+  [creatorTaskCompleted.key]: creatorTaskCompleted,
   [memberIdentityLinked.key]: memberIdentityLinked,
   [memberIdentityUnlinked.key]: memberIdentityUnlinked,
   [planCreated.key]: planCreated,
@@ -478,6 +484,7 @@ const creates = {
   [remindPassWindowQueue.key]: remindPassWindowQueue,
   [remindPassHolder.key]: remindPassHolder,
   [reissueSubscriptionGrants.key]: reissueSubscriptionGrants,
+  [completeCreatorTask.key]: completeCreatorTask,
   [startNextSeason.key]: startNextSeason,
   [activatePaymentMethod.key]: activatePaymentMethod,
   [deactivatePaymentMethod.key]: deactivatePaymentMethod,
@@ -497,6 +504,7 @@ const searches = {
   [findMemberById.key]: findMemberById,
   [findSubscriptionById.key]: findSubscriptionById,
   [listSubscriptionGrants.key]: listSubscriptionGrants,
+  [listCreatorTasks.key]: listCreatorTasks,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
