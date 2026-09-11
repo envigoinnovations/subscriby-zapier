@@ -17,6 +17,9 @@ export default defineWebhookTrigger({
       subscriber_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
       resource_id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
       resource_type: 'channel',
+      connector: 'telegram',
+      grant_id: '7d1c3e9a-2b64-4f0e-9a58-3c6b1d8e2f47',
+      mode: 'bearer_link',
     },
   },
 });
