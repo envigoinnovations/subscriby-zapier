@@ -240,6 +240,7 @@ import getToken from './searches/get-token';
 import listTeams from './searches/list-teams';
 import getTeam from './searches/get-team';
 import getCurrentTeam from './searches/get-current-team';
+import getMe from './searches/get-me';
 import listTeamMembers from './searches/list-team-members';
 import getTeamMember from './searches/get-team-member';
 import listRoles from './searches/list-roles';
@@ -511,6 +512,7 @@ const searches = {
   [listTeams.key]: listTeams,
   [getTeam.key]: getTeam,
   [getCurrentTeam.key]: getCurrentTeam,
+  [getMe.key]: getMe,
   [listTeamMembers.key]: listTeamMembers,
   [getTeamMember.key]: getTeamMember,
   [listRoles.key]: listRoles,

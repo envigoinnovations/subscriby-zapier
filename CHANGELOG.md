@@ -10,6 +10,10 @@ Additive. Members can now connect more than one platform account to a membership
 - **Unlink Member Identity** (action) calls `DELETE …/identities/{link}`. Pass the link `id` from List Member Identities, not the platform's account id. The API refuses to remove a member's last way to sign in, which surfaces as a `422`.
 - Triggers **Member Connected Account** (`member.identity_linked`) and **Member Disconnected Account** (`member.identity_unlinked`), taking the catalogue to 120 events.
 
+### Added — account
+
+- **Get Me** (search) reads `GET /v1/me`: the creator the token belongs to, the team it is scoped to (`current_team`, the id every other step acts in), every team they hold, the platform `plan` and its `capabilities`, the accounts linked on the connectors (`identities`) and where alerts go (`alert_destinations`, with `alert_destinations_default` true while nothing has been written). Use it as the first step of a Zap that branches on plan capabilities or needs the team id.
+
 ## 2.3.0 — 7 September 2026
 
 Additive. Every creator operation the Subscriby dashboard offers now has a Zapier action, search or trigger, and the one search that pointed at the wrong endpoint is fixed.
