@@ -37,6 +37,8 @@ import memberChurned from './triggers/member-churned';
 import memberRemoved from './triggers/member-removed';
 import memberResourceAdded from './triggers/member-resource-added';
 import memberResourceRemoved from './triggers/member-resource-removed';
+import memberIdentityLinked from './triggers/member-identity-linked';
+import memberIdentityUnlinked from './triggers/member-identity-unlinked';
 import planCreated from './triggers/plan-created';
 import planUpdated from './triggers/plan-updated';
 import planDeactivated from './triggers/plan-deactivated';
@@ -167,6 +169,7 @@ import replySupportConversation from './creates/reply-support-conversation';
 import resolveSupportConversation from './creates/resolve-support-conversation';
 import assignSupportConversation from './creates/assign-support-conversation';
 import unbanMember from './creates/unban-member';
+import unlinkMemberIdentity from './creates/unlink-member-identity';
 import kickMember from './creates/kick-member';
 import createResource from './creates/create-resource';
 import unlinkResource from './creates/unlink-resource';
@@ -220,6 +223,7 @@ import listPlans from './searches/list-plans';
 import findPassWindows from './searches/find-pass-windows';
 import listSubscriptions from './searches/list-subscriptions';
 import listMembers from './searches/list-members';
+import listMemberIdentities from './searches/list-member-identities';
 import listSupportConversations from './searches/list-support-conversations';
 import findSupportConversation from './searches/find-support-conversation';
 import listSupportMessages from './searches/list-support-messages';
@@ -300,6 +304,8 @@ const triggers = {
   [memberRemoved.key]: memberRemoved,
   [memberResourceAdded.key]: memberResourceAdded,
   [memberResourceRemoved.key]: memberResourceRemoved,
+  [memberIdentityLinked.key]: memberIdentityLinked,
+  [memberIdentityUnlinked.key]: memberIdentityUnlinked,
   [planCreated.key]: planCreated,
   [planUpdated.key]: planUpdated,
   [planDeactivated.key]: planDeactivated,
@@ -432,6 +438,7 @@ const creates = {
   [resolveSupportConversation.key]: resolveSupportConversation,
   [assignSupportConversation.key]: assignSupportConversation,
   [unbanMember.key]: unbanMember,
+  [unlinkMemberIdentity.key]: unlinkMemberIdentity,
   [kickMember.key]: kickMember,
   [createResource.key]: createResource,
   [unlinkResource.key]: unlinkResource,
@@ -487,6 +494,7 @@ const searches = {
   [findPassWindows.key]: findPassWindows,
   [listSubscriptions.key]: listSubscriptions,
   [listMembers.key]: listMembers,
+  [listMemberIdentities.key]: listMemberIdentities,
   [listSupportConversations.key]: listSupportConversations,
   [findSupportConversation.key]: findSupportConversation,
   [listSupportMessages.key]: listSupportMessages,

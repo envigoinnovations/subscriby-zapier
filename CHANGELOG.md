@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+Additive. Members can now connect more than one platform account to a membership, and the integration follows.
+
+### Added — member identities
+
+- **List Member Identities** (search) reads `GET /v1/projects/{project}/members/{member}/identities`: the accounts a member has connected, with `connector`, the platform's `external_id`, `display_name` and `username`, how the link was proven (`source`) and which one the project reaches first (`preferred`).
+- **Unlink Member Identity** (action) calls `DELETE …/identities/{link}`. Pass the link `id` from List Member Identities, not the platform's account id. The API refuses to remove a member's last way to sign in, which surfaces as a `422`.
+- Triggers **Member Connected Account** (`member.identity_linked`) and **Member Disconnected Account** (`member.identity_unlinked`), taking the catalogue to 120 events.
+
 ## 2.3.0 — 7 September 2026
 
 Additive. Every creator operation the Subscriby dashboard offers now has a Zapier action, search or trigger, and the one search that pointed at the wrong endpoint is fixed.
