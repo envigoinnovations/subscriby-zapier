@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Reissue Subscription Grants',
     description:
-      'Revoke the access grants a member holds on a subscription — every resource, or one — and have fresh ones issued. The invite links they held die and the bot sends them the new ones. Raises Subscriber Access Reissued per resource, then Subscriber Gained Resource Access for each fresh grant.',
+      'Revoke the access grants a member holds on a subscription — every resource, or one — and have fresh ones issued. The invite links they held die and the bot sends them the new ones. Raises Member Access Reissued per resource, then Member Added to Resource for each fresh grant.',
   },
   operation: {
     inputFields: [

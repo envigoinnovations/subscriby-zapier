@@ -3,9 +3,9 @@ import { defineWebhookTrigger } from './webhook-trigger-factory';
 export default defineWebhookTrigger({
   key: 'member_resource_reissued',
   noun: 'Member',
-  label: 'Subscriber Access Reissued',
+  label: 'Member Access Reissued',
   description:
-    'Triggers when a subscriber\'s access to a resource is being reissued — the grant they held is revoked (the invite link dies) and a fresh one follows on Subscriber Gained Resource Access. Raised by Reissue Subscription Grants, the members page and the member\'s own refresh in the bot.',
+    'Triggers when a subscriber\'s access to a resource is being reissued — the grant they held is revoked (the invite link dies) and a fresh one follows on Member Added to Resource. Raised by Reissue Subscription Grants, the members page and the member\'s own refresh in the bot.',
   event: 'member.resource_reissued',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

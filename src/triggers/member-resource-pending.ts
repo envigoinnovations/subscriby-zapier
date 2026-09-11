@@ -3,9 +3,9 @@ import { defineWebhookTrigger } from './webhook-trigger-factory';
 export default defineWebhookTrigger({
   key: 'member_resource_pending',
   noun: 'Member',
-  label: 'Subscriber Access Pending',
+  label: 'Member Access Pending',
   description:
-    'Triggers when a subscriber is entitled to a resource but has no account on its connector yet, so access waits for them to connect one; Subscriber Gained Resource Access follows with the same grant_id once they do.',
+    'Triggers when a subscriber is entitled to a resource but has no account on its connector yet, so access waits for them to connect one; Member Added to Resource follows with the same grant_id once they do.',
   event: 'member.resource_pending',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
