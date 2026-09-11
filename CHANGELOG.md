@@ -14,6 +14,7 @@ Additive. Members can now connect more than one platform account to a membership
 
 - **List Subscription Grants** (search) reads `GET /v1/subscriptions/{subscription}/grants`: the access ledger for one purchase, one row per resource (and per pass window) with `connector`, `mode` (`bearer_link`, `membership`, `role`, `creator_task`), `state` (`pending_identity`, `pending`, `held`, `granted`, `revoked`, `failed`), the connector's `reference` (the invite link on Telegram) and, for a failure, `failure_kind` and `failure_detail`. Use it to branch on whether a member actually got in, instead of inferring it from the payment status. **Find Subscription by ID** now returns the same rows as `grants`.
 - The **Subscriber Gained Resource Access** trigger (`member.resource_added`) now carries `connector`, `grant_id` and `mode` alongside the resource, so a Zap can branch by platform or look the grant up.
+- Trigger **Subscriber Access Pending** (`member.resource_pending`): a purchase entitles a member to a resource on a connector they hold no account on (an email-only portal buyer, a plan spanning a connector they have not linked), so the ledger records a `pending_identity` grant and access is issued the moment they connect one — **Subscriber Gained Resource Access** then fires with the same `grant_id`. Takes the catalogue to 121 events.
 
 ### Added — account
 

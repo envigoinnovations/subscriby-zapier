@@ -36,6 +36,7 @@ import memberConverted from './triggers/member-converted';
 import memberChurned from './triggers/member-churned';
 import memberRemoved from './triggers/member-removed';
 import memberResourceAdded from './triggers/member-resource-added';
+import memberResourcePending from './triggers/member-resource-pending';
 import memberResourceRemoved from './triggers/member-resource-removed';
 import memberIdentityLinked from './triggers/member-identity-linked';
 import memberIdentityUnlinked from './triggers/member-identity-unlinked';
@@ -305,6 +306,7 @@ const triggers = {
   [memberChurned.key]: memberChurned,
   [memberRemoved.key]: memberRemoved,
   [memberResourceAdded.key]: memberResourceAdded,
+  [memberResourcePending.key]: memberResourcePending,
   [memberResourceRemoved.key]: memberResourceRemoved,
   [memberIdentityLinked.key]: memberIdentityLinked,
   [memberIdentityUnlinked.key]: memberIdentityUnlinked,
