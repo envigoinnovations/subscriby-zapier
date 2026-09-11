@@ -10,6 +10,10 @@ Additive. Members can now connect more than one platform account to a membership
 - **Unlink Member Identity** (action) calls `DELETE …/identities/{link}`. Pass the link `id` from List Member Identities, not the platform's account id. The API refuses to remove a member's last way to sign in, which surfaces as a `422`.
 - Triggers **Member Connected Account** (`member.identity_linked`) and **Member Disconnected Account** (`member.identity_unlinked`), taking the catalogue to 120 events.
 
+### Added — access grants
+
+- **List Subscription Grants** (search) reads `GET /v1/subscriptions/{subscription}/grants`: the access ledger for one purchase, one row per resource (and per pass window) with `connector`, `mode` (`bearer_link`, `membership`, `role`, `creator_task`), `state` (`pending_identity`, `pending`, `held`, `granted`, `revoked`, `failed`), the connector's `reference` (the invite link on Telegram) and, for a failure, `failure_kind` and `failure_detail`. Use it to branch on whether a member actually got in, instead of inferring it from the payment status. **Find Subscription by ID** now returns the same rows as `grants`.
+
 ### Added — account
 
 - **Get Me** (search) reads `GET /v1/me`: the creator the token belongs to, the team it is scoped to (`current_team`, the id every other step acts in), every team they hold, the platform `plan` and its `capabilities`, the accounts linked on the connectors (`identities`) and where alerts go (`alert_destinations`, with `alert_destinations_default` true while nothing has been written). Use it as the first step of a Zap that branches on plan capabilities or needs the team id.

@@ -217,6 +217,7 @@ import findPlanById from './searches/find-plan-by-id';
 import findSubscriberByTelegramId from './searches/find-subscriber-by-telegram-id';
 import findMemberById from './searches/find-member-by-id';
 import findSubscriptionById from './searches/find-subscription-by-id';
+import listSubscriptionGrants from './searches/list-subscription-grants';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -489,6 +490,7 @@ const searches = {
   [findSubscriberByTelegramId.key]: findSubscriberByTelegramId,
   [findMemberById.key]: findMemberById,
   [findSubscriptionById.key]: findSubscriptionById,
+  [listSubscriptionGrants.key]: listSubscriptionGrants,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
