@@ -37,6 +37,7 @@ import memberChurned from './triggers/member-churned';
 import memberRemoved from './triggers/member-removed';
 import memberResourceAdded from './triggers/member-resource-added';
 import memberResourcePending from './triggers/member-resource-pending';
+import memberResourceReissued from './triggers/member-resource-reissued';
 import memberResourceRemoved from './triggers/member-resource-removed';
 import memberIdentityLinked from './triggers/member-identity-linked';
 import memberIdentityUnlinked from './triggers/member-identity-unlinked';
@@ -202,6 +203,7 @@ import createPassWindow from './creates/create-pass-window';
 import cancelPassWindow from './creates/cancel-pass-window';
 import remindPassWindowQueue from './creates/remind-pass-window-queue';
 import remindPassHolder from './creates/remind-pass-holder';
+import reissueSubscriptionGrants from './creates/reissue-subscription-grants';
 import startNextSeason from './creates/start-next-season';
 import activatePaymentMethod from './creates/activate-payment-method';
 import deactivatePaymentMethod from './creates/deactivate-payment-method';
@@ -307,6 +309,7 @@ const triggers = {
   [memberRemoved.key]: memberRemoved,
   [memberResourceAdded.key]: memberResourceAdded,
   [memberResourcePending.key]: memberResourcePending,
+  [memberResourceReissued.key]: memberResourceReissued,
   [memberResourceRemoved.key]: memberResourceRemoved,
   [memberIdentityLinked.key]: memberIdentityLinked,
   [memberIdentityUnlinked.key]: memberIdentityUnlinked,
@@ -474,6 +477,7 @@ const creates = {
   [cancelPassWindow.key]: cancelPassWindow,
   [remindPassWindowQueue.key]: remindPassWindowQueue,
   [remindPassHolder.key]: remindPassHolder,
+  [reissueSubscriptionGrants.key]: reissueSubscriptionGrants,
   [startNextSeason.key]: startNextSeason,
   [activatePaymentMethod.key]: activatePaymentMethod,
   [deactivatePaymentMethod.key]: deactivatePaymentMethod,
