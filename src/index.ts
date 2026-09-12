@@ -131,6 +131,8 @@ import billingTierDowngraded from './triggers/billing-tier-downgraded';
 import billingTierCancelled from './triggers/billing-tier-cancelled';
 import dropdownProjects from './triggers/dropdown-projects';
 import dropdownRecoveryOperations from './triggers/dropdown-recovery-operations';
+import dropdownConnectors from './triggers/dropdown-connectors';
+import dropdownConnectorInstallations from './triggers/dropdown-connector-installations';
 import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
@@ -256,6 +258,10 @@ import getRecoveryRollCall from './searches/get-recovery-roll-call';
 import getRecoveryAllowances from './searches/get-recovery-allowances';
 import getRecoverySettings from './searches/get-recovery-settings';
 import getResourceStandby from './searches/get-resource-standby';
+import listConnectors from './searches/list-connectors';
+import getConnector from './searches/get-connector';
+import listConnectorInstallations from './searches/list-connector-installations';
+import getConnectorInstallation from './searches/get-connector-installation';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -436,6 +442,8 @@ const triggers = {
   [billingTierCancelled.key]: billingTierCancelled,
   [dropdownProjects.key]: dropdownProjects,
   [dropdownRecoveryOperations.key]: dropdownRecoveryOperations,
+  [dropdownConnectors.key]: dropdownConnectors,
+  [dropdownConnectorInstallations.key]: dropdownConnectorInstallations,
   [dropdownPlans.key]: dropdownPlans,
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
@@ -567,6 +575,10 @@ const searches = {
   [getRecoveryAllowances.key]: getRecoveryAllowances,
   [getRecoverySettings.key]: getRecoverySettings,
   [getResourceStandby.key]: getResourceStandby,
+  [listConnectors.key]: listConnectors,
+  [getConnector.key]: getConnector,
+  [listConnectorInstallations.key]: listConnectorInstallations,
+  [getConnectorInstallation.key]: getConnectorInstallation,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
