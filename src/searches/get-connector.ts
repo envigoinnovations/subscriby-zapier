@@ -7,7 +7,7 @@ export default {
   display: {
     label: 'Get Connector',
     description:
-      'Retrieve one Connector Directory card by key — its lane, badges and, for a connector that exists as a package, its manifest and the form that connects it.',
+      'Retrieve one Connectors Marketplace card by key — its lane, badges and, for a connector that exists as a package, its manifest and the form that connects it.',
   },
   operation: {
     inputFields: [

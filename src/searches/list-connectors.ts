@@ -7,7 +7,7 @@ export default {
   display: {
     label: 'List Connectors',
     description:
-      'List the Connector Directory — every connector Subscriby knows, lane by lane, with its badges, manifest and the declarative form that connects it.',
+      'List the Connectors Marketplace — every connector Subscriby knows, lane by lane, with its badges, manifest and the declarative form that connects it.',
   },
   operation: {
     inputFields: [

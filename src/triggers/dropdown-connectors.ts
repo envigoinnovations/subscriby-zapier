@@ -12,7 +12,7 @@ export default {
   noun: 'Connector',
   display: {
     label: 'New Connector (Dropdown)',
-    description: 'Powers the Connector dropdown in search fields, fed by the live Connector Directory.',
+    description: 'Powers the Connector dropdown in search fields, fed by the live Connectors Marketplace.',
     hidden: true,
   },
   operation: {
