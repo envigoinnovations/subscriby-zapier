@@ -104,6 +104,7 @@ import connectorConnected from './triggers/connector-connected';
 import connectorStatusChanged from './triggers/connector-status-changed';
 import connectorSettingsUpdated from './triggers/connector-settings-updated';
 import connectorDisconnected from './triggers/connector-disconnected';
+import connectorUninstalled from './triggers/connector-uninstalled';
 import projectBotConnected from './triggers/project-bot-connected';
 import projectBotDisconnected from './triggers/project-bot-disconnected';
 import projectResourceCreated from './triggers/project-resource-created';
@@ -224,6 +225,7 @@ import installConnector from './creates/install-connector';
 import verifyConnectorInstallation from './creates/verify-connector-installation';
 import updateConnectorInstallationSettings from './creates/update-connector-installation-settings';
 import disconnectConnector from './creates/disconnect-connector';
+import uninstallConnector from './creates/uninstall-connector';
 import createPassWindow from './creates/create-pass-window';
 import cancelPassWindow from './creates/cancel-pass-window';
 import remindPassWindowQueue from './creates/remind-pass-window-queue';
@@ -271,6 +273,7 @@ import listConnectors from './searches/list-connectors';
 import getConnector from './searches/get-connector';
 import listConnectorInstallations from './searches/list-connector-installations';
 import getConnectorInstallation from './searches/get-connector-installation';
+import getConnectorUninstallPreview from './searches/get-connector-uninstall-preview';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -424,6 +427,7 @@ const triggers = {
   [connectorStatusChanged.key]: connectorStatusChanged,
   [connectorSettingsUpdated.key]: connectorSettingsUpdated,
   [connectorDisconnected.key]: connectorDisconnected,
+  [connectorUninstalled.key]: connectorUninstalled,
   [projectBotConnected.key]: projectBotConnected,
   [projectBotDisconnected.key]: projectBotDisconnected,
   [projectResourceCreated.key]: projectResourceCreated,
@@ -548,6 +552,7 @@ const creates = {
   [verifyConnectorInstallation.key]: verifyConnectorInstallation,
   [updateConnectorInstallationSettings.key]: updateConnectorInstallationSettings,
   [disconnectConnector.key]: disconnectConnector,
+  [uninstallConnector.key]: uninstallConnector,
   [createPassWindow.key]: createPassWindow,
   [cancelPassWindow.key]: cancelPassWindow,
   [remindPassWindowQueue.key]: remindPassWindowQueue,
@@ -597,6 +602,7 @@ const searches = {
   [getConnector.key]: getConnector,
   [listConnectorInstallations.key]: listConnectorInstallations,
   [getConnectorInstallation.key]: getConnectorInstallation,
+  [getConnectorUninstallPreview.key]: getConnectorUninstallPreview,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
