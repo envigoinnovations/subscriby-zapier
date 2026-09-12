@@ -47,6 +47,7 @@ import recoveryOperationStarted from './triggers/recovery-operation-started';
 import recoveryOperationCompleted from './triggers/recovery-operation-completed';
 import recoveryOperationFailed from './triggers/recovery-operation-failed';
 import recoveryOperationReverted from './triggers/recovery-operation-reverted';
+import recoveryReadinessChanged from './triggers/recovery-readiness-changed';
 import recoveryStandbyRegistered from './triggers/recovery-standby-registered';
 import recoveryStandbyRemoved from './triggers/recovery-standby-removed';
 import recoveryResourceFailedOver from './triggers/recovery-resource-failed-over';
@@ -372,6 +373,7 @@ const triggers = {
   [recoveryOperationCompleted.key]: recoveryOperationCompleted,
   [recoveryOperationFailed.key]: recoveryOperationFailed,
   [recoveryOperationReverted.key]: recoveryOperationReverted,
+  [recoveryReadinessChanged.key]: recoveryReadinessChanged,
   [recoveryStandbyRegistered.key]: recoveryStandbyRegistered,
   [recoveryStandbyRemoved.key]: recoveryStandbyRemoved,
   [recoveryResourceFailedOver.key]: recoveryResourceFailedOver,
