@@ -99,6 +99,11 @@ import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
 import projectRestored from './triggers/project-restored';
 import projectDeleted from './triggers/project-deleted';
+import connectorInstalled from './triggers/connector-installed';
+import connectorConnected from './triggers/connector-connected';
+import connectorStatusChanged from './triggers/connector-status-changed';
+import connectorSettingsUpdated from './triggers/connector-settings-updated';
+import connectorDisconnected from './triggers/connector-disconnected';
 import projectBotConnected from './triggers/project-bot-connected';
 import projectBotDisconnected from './triggers/project-bot-disconnected';
 import projectResourceCreated from './triggers/project-resource-created';
@@ -215,6 +220,10 @@ import updateResource from './creates/update-resource';
 import activateResource from './creates/activate-resource';
 import deactivateResource from './creates/deactivate-resource';
 import disconnectBot from './creates/disconnect-bot';
+import installConnector from './creates/install-connector';
+import verifyConnectorInstallation from './creates/verify-connector-installation';
+import updateConnectorInstallationSettings from './creates/update-connector-installation-settings';
+import disconnectConnector from './creates/disconnect-connector';
 import createPassWindow from './creates/create-pass-window';
 import cancelPassWindow from './creates/cancel-pass-window';
 import remindPassWindowQueue from './creates/remind-pass-window-queue';
@@ -410,6 +419,11 @@ const triggers = {
   [projectArchived.key]: projectArchived,
   [projectRestored.key]: projectRestored,
   [projectDeleted.key]: projectDeleted,
+  [connectorInstalled.key]: connectorInstalled,
+  [connectorConnected.key]: connectorConnected,
+  [connectorStatusChanged.key]: connectorStatusChanged,
+  [connectorSettingsUpdated.key]: connectorSettingsUpdated,
+  [connectorDisconnected.key]: connectorDisconnected,
   [projectBotConnected.key]: projectBotConnected,
   [projectBotDisconnected.key]: projectBotDisconnected,
   [projectResourceCreated.key]: projectResourceCreated,
@@ -530,6 +544,10 @@ const creates = {
   [activateResource.key]: activateResource,
   [deactivateResource.key]: deactivateResource,
   [disconnectBot.key]: disconnectBot,
+  [installConnector.key]: installConnector,
+  [verifyConnectorInstallation.key]: verifyConnectorInstallation,
+  [updateConnectorInstallationSettings.key]: updateConnectorInstallationSettings,
+  [disconnectConnector.key]: disconnectConnector,
   [createPassWindow.key]: createPassWindow,
   [cancelPassWindow.key]: cancelPassWindow,
   [remindPassWindowQueue.key]: remindPassWindowQueue,
