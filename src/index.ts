@@ -119,6 +119,7 @@ import billingTierUpgraded from './triggers/billing-tier-upgraded';
 import billingTierDowngraded from './triggers/billing-tier-downgraded';
 import billingTierCancelled from './triggers/billing-tier-cancelled';
 import dropdownProjects from './triggers/dropdown-projects';
+import dropdownRecoveryOperations from './triggers/dropdown-recovery-operations';
 import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
@@ -225,6 +226,11 @@ import findMemberById from './searches/find-member-by-id';
 import findSubscriptionById from './searches/find-subscription-by-id';
 import listSubscriptionGrants from './searches/list-subscription-grants';
 import listCreatorTasks from './searches/list-creator-tasks';
+import getRecoveryReadiness from './searches/get-recovery-readiness';
+import listRecoveryIncidents from './searches/list-recovery-incidents';
+import listRecoveryOperations from './searches/list-recovery-operations';
+import getRecoveryRollCall from './searches/get-recovery-roll-call';
+import getRecoveryAllowances from './searches/get-recovery-allowances';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -393,6 +399,7 @@ const triggers = {
   [billingTierDowngraded.key]: billingTierDowngraded,
   [billingTierCancelled.key]: billingTierCancelled,
   [dropdownProjects.key]: dropdownProjects,
+  [dropdownRecoveryOperations.key]: dropdownRecoveryOperations,
   [dropdownPlans.key]: dropdownPlans,
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
@@ -505,6 +512,11 @@ const searches = {
   [findSubscriptionById.key]: findSubscriptionById,
   [listSubscriptionGrants.key]: listSubscriptionGrants,
   [listCreatorTasks.key]: listCreatorTasks,
+  [getRecoveryReadiness.key]: getRecoveryReadiness,
+  [listRecoveryIncidents.key]: listRecoveryIncidents,
+  [listRecoveryOperations.key]: listRecoveryOperations,
+  [getRecoveryRollCall.key]: getRecoveryRollCall,
+  [getRecoveryAllowances.key]: getRecoveryAllowances,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
