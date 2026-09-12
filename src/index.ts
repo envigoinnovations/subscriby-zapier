@@ -219,6 +219,18 @@ import remindPassWindowQueue from './creates/remind-pass-window-queue';
 import remindPassHolder from './creates/remind-pass-holder';
 import reissueSubscriptionGrants from './creates/reissue-subscription-grants';
 import completeCreatorTask from './creates/complete-creator-task';
+import updateRecoverySettings from './creates/update-recovery-settings';
+import removeStandbyInstallation from './creates/remove-standby-installation';
+import requestResourceStandby from './creates/request-resource-standby';
+import withdrawResourceStandbyRequest from './creates/withdraw-resource-standby-request';
+import useResourceStandby from './creates/use-resource-standby';
+import removeResourceStandby from './creates/remove-resource-standby';
+import setResourceStandbyMirror from './creates/set-resource-standby-mirror';
+import requestResourceReplacement from './creates/request-resource-replacement';
+import withdrawResourceReplacementRequest from './creates/withdraw-resource-replacement-request';
+import revertRecoveryOperation from './creates/revert-recovery-operation';
+import nudgePendingReadmissions from './creates/nudge-pending-readmissions';
+import notifyMembersOfRecovery from './creates/notify-members-of-recovery';
 import startNextSeason from './creates/start-next-season';
 import activatePaymentMethod from './creates/activate-payment-method';
 import deactivatePaymentMethod from './creates/deactivate-payment-method';
@@ -242,6 +254,8 @@ import listRecoveryIncidents from './searches/list-recovery-incidents';
 import listRecoveryOperations from './searches/list-recovery-operations';
 import getRecoveryRollCall from './searches/get-recovery-roll-call';
 import getRecoveryAllowances from './searches/get-recovery-allowances';
+import getRecoverySettings from './searches/get-recovery-settings';
+import getResourceStandby from './searches/get-resource-standby';
 import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
@@ -514,6 +528,18 @@ const creates = {
   [remindPassHolder.key]: remindPassHolder,
   [reissueSubscriptionGrants.key]: reissueSubscriptionGrants,
   [completeCreatorTask.key]: completeCreatorTask,
+  [updateRecoverySettings.key]: updateRecoverySettings,
+  [removeStandbyInstallation.key]: removeStandbyInstallation,
+  [requestResourceStandby.key]: requestResourceStandby,
+  [withdrawResourceStandbyRequest.key]: withdrawResourceStandbyRequest,
+  [useResourceStandby.key]: useResourceStandby,
+  [removeResourceStandby.key]: removeResourceStandby,
+  [setResourceStandbyMirror.key]: setResourceStandbyMirror,
+  [requestResourceReplacement.key]: requestResourceReplacement,
+  [withdrawResourceReplacementRequest.key]: withdrawResourceReplacementRequest,
+  [revertRecoveryOperation.key]: revertRecoveryOperation,
+  [nudgePendingReadmissions.key]: nudgePendingReadmissions,
+  [notifyMembersOfRecovery.key]: notifyMembersOfRecovery,
   [startNextSeason.key]: startNextSeason,
   [activatePaymentMethod.key]: activatePaymentMethod,
   [deactivatePaymentMethod.key]: deactivatePaymentMethod,
@@ -539,6 +565,8 @@ const searches = {
   [listRecoveryOperations.key]: listRecoveryOperations,
   [getRecoveryRollCall.key]: getRecoveryRollCall,
   [getRecoveryAllowances.key]: getRecoveryAllowances,
+  [getRecoverySettings.key]: getRecoverySettings,
+  [getResourceStandby.key]: getResourceStandby,
   [listProjects.key]: listProjects,
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
