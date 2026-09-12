@@ -34,6 +34,13 @@ export default {
         },
         helpText: 'One class of alert; leave blank for every class.',
       },
+      {
+        key: 'q',
+        label: 'Search',
+        type: 'string',
+        required: false,
+        helpText: 'Words a title or body must contain; leave blank for every entry.',
+      },
       { key: 'limit', label: 'Limit', type: 'integer', required: false, default: '50' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -41,6 +48,7 @@ export default {
 
       if (bundle.inputData.unread === true || bundle.inputData.unread === 'true') params.unread = 1;
       if (bundle.inputData.class) params.class = bundle.inputData.class;
+      if (bundle.inputData.q) params.q = bundle.inputData.q;
       params.per_page = Math.min(Number(bundle.inputData.limit ?? 50), 100);
 
       const response = await z.request({
