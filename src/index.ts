@@ -102,6 +102,7 @@ import projectRestored from './triggers/project-restored';
 import projectDeleted from './triggers/project-deleted';
 import connectorInstalled from './triggers/connector-installed';
 import connectorConnected from './triggers/connector-connected';
+import connectorDoctorCompleted from './triggers/connector-doctor-completed';
 import connectorStatusChanged from './triggers/connector-status-changed';
 import connectorSettingsUpdated from './triggers/connector-settings-updated';
 import connectorDisconnected from './triggers/connector-disconnected';
@@ -225,6 +226,7 @@ import deactivateResource from './creates/deactivate-resource';
 import disconnectBot from './creates/disconnect-bot';
 import installConnector from './creates/install-connector';
 import verifyConnectorInstallation from './creates/verify-connector-installation';
+import runConnectorDoctor from './creates/run-connector-doctor';
 import updateConnectorInstallationSettings from './creates/update-connector-installation-settings';
 import disconnectConnector from './creates/disconnect-connector';
 import uninstallConnector from './creates/uninstall-connector';
@@ -431,6 +433,7 @@ const triggers = {
   [projectDeleted.key]: projectDeleted,
   [connectorInstalled.key]: connectorInstalled,
   [connectorConnected.key]: connectorConnected,
+  [connectorDoctorCompleted.key]: connectorDoctorCompleted,
   [connectorStatusChanged.key]: connectorStatusChanged,
   [connectorSettingsUpdated.key]: connectorSettingsUpdated,
   [connectorDisconnected.key]: connectorDisconnected,
@@ -558,6 +561,7 @@ const creates = {
   [disconnectBot.key]: disconnectBot,
   [installConnector.key]: installConnector,
   [verifyConnectorInstallation.key]: verifyConnectorInstallation,
+  [runConnectorDoctor.key]: runConnectorDoctor,
   [updateConnectorInstallationSettings.key]: updateConnectorInstallationSettings,
   [disconnectConnector.key]: disconnectConnector,
   [uninstallConnector.key]: uninstallConnector,
