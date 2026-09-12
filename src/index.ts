@@ -41,6 +41,17 @@ import memberResourceReissued from './triggers/member-resource-reissued';
 import memberResourceRemoved from './triggers/member-resource-removed';
 import creatorTaskOpened from './triggers/creator-task-opened';
 import creatorTaskCompleted from './triggers/creator-task-completed';
+import recoveryIncidentOpened from './triggers/recovery-incident-opened';
+import recoveryIncidentResolved from './triggers/recovery-incident-resolved';
+import recoveryOperationStarted from './triggers/recovery-operation-started';
+import recoveryOperationCompleted from './triggers/recovery-operation-completed';
+import recoveryOperationFailed from './triggers/recovery-operation-failed';
+import recoveryOperationReverted from './triggers/recovery-operation-reverted';
+import recoveryStandbyRegistered from './triggers/recovery-standby-registered';
+import recoveryStandbyRemoved from './triggers/recovery-standby-removed';
+import recoveryResourceFailedOver from './triggers/recovery-resource-failed-over';
+import recoveryResourceReplaced from './triggers/recovery-resource-replaced';
+import recoveryIdentityRelinked from './triggers/recovery-identity-relinked';
 import memberIdentityLinked from './triggers/member-identity-linked';
 import memberIdentityUnlinked from './triggers/member-identity-unlinked';
 import planCreated from './triggers/plan-created';
@@ -323,6 +334,17 @@ const triggers = {
   [memberResourceRemoved.key]: memberResourceRemoved,
   [creatorTaskOpened.key]: creatorTaskOpened,
   [creatorTaskCompleted.key]: creatorTaskCompleted,
+  [recoveryIncidentOpened.key]: recoveryIncidentOpened,
+  [recoveryIncidentResolved.key]: recoveryIncidentResolved,
+  [recoveryOperationStarted.key]: recoveryOperationStarted,
+  [recoveryOperationCompleted.key]: recoveryOperationCompleted,
+  [recoveryOperationFailed.key]: recoveryOperationFailed,
+  [recoveryOperationReverted.key]: recoveryOperationReverted,
+  [recoveryStandbyRegistered.key]: recoveryStandbyRegistered,
+  [recoveryStandbyRemoved.key]: recoveryStandbyRemoved,
+  [recoveryResourceFailedOver.key]: recoveryResourceFailedOver,
+  [recoveryResourceReplaced.key]: recoveryResourceReplaced,
+  [recoveryIdentityRelinked.key]: recoveryIdentityRelinked,
   [memberIdentityLinked.key]: memberIdentityLinked,
   [memberIdentityUnlinked.key]: memberIdentityUnlinked,
   [planCreated.key]: planCreated,
