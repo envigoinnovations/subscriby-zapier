@@ -319,6 +319,7 @@ import getDeepLink from './searches/get-deep-link';
 import getDashboardMetrics from './searches/get-dashboard-metrics';
 import getEarningsReport from './searches/get-earnings-report';
 import getConnectorAnalytics from './searches/get-connector-analytics';
+import getRevenueComposition from './searches/get-revenue-composition';
 import getSubscriberAnalytics from './searches/get-subscriber-analytics';
 import getTransactionBreakdown from './searches/get-transaction-breakdown';
 import getPlanPerformance from './searches/get-plan-performance';
@@ -656,6 +657,7 @@ const searches = {
   [getDashboardMetrics.key]: getDashboardMetrics,
   [getEarningsReport.key]: getEarningsReport,
   [getConnectorAnalytics.key]: getConnectorAnalytics,
+  [getRevenueComposition.key]: getRevenueComposition,
   [getSubscriberAnalytics.key]: getSubscriberAnalytics,
   [getTransactionBreakdown.key]: getTransactionBreakdown,
   [getPlanPerformance.key]: getPlanPerformance,
