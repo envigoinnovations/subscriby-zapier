@@ -154,6 +154,7 @@ import supportMessageSent from './triggers/support-message-sent';
 import dropdownSupportConversations from './triggers/dropdown-support-conversations';
 import dropdownSubscriptions from './triggers/dropdown-subscriptions';
 import dropdownResources from './triggers/dropdown-resources';
+import notificationReceived from './triggers/notification-received';
 import dropdownWebhookEndpoints from './triggers/dropdown-webhook-endpoints';
 import dropdownTokens from './triggers/dropdown-tokens';
 import dropdownRoles from './triggers/dropdown-roles';
@@ -233,6 +234,8 @@ import remindPassWindowQueue from './creates/remind-pass-window-queue';
 import remindPassHolder from './creates/remind-pass-holder';
 import reissueSubscriptionGrants from './creates/reissue-subscription-grants';
 import completeCreatorTask from './creates/complete-creator-task';
+import markNotificationRead from './creates/mark-notification-read';
+import markAllNotificationsRead from './creates/mark-all-notifications-read';
 import updateRecoverySettings from './creates/update-recovery-settings';
 import removeStandbyInstallation from './creates/remove-standby-installation';
 import requestResourceStandby from './creates/request-resource-standby';
@@ -299,6 +302,7 @@ import listTeams from './searches/list-teams';
 import getTeam from './searches/get-team';
 import getCurrentTeam from './searches/get-current-team';
 import getMe from './searches/get-me';
+import listNotifications from './searches/list-notifications';
 import listTeamMembers from './searches/list-team-members';
 import getTeamMember from './searches/get-team-member';
 import listRoles from './searches/list-roles';
@@ -480,6 +484,7 @@ const triggers = {
   [dropdownSupportConversations.key]: dropdownSupportConversations,
   [dropdownSubscriptions.key]: dropdownSubscriptions,
   [dropdownResources.key]: dropdownResources,
+  [notificationReceived.key]: notificationReceived,
   [dropdownWebhookEndpoints.key]: dropdownWebhookEndpoints,
   [dropdownTokens.key]: dropdownTokens,
   [dropdownRoles.key]: dropdownRoles,
@@ -561,6 +566,8 @@ const creates = {
   [remindPassHolder.key]: remindPassHolder,
   [reissueSubscriptionGrants.key]: reissueSubscriptionGrants,
   [completeCreatorTask.key]: completeCreatorTask,
+  [markNotificationRead.key]: markNotificationRead,
+  [markAllNotificationsRead.key]: markAllNotificationsRead,
   [updateRecoverySettings.key]: updateRecoverySettings,
   [removeStandbyInstallation.key]: removeStandbyInstallation,
   [requestResourceStandby.key]: requestResourceStandby,
@@ -629,6 +636,7 @@ const searches = {
   [getTeam.key]: getTeam,
   [getCurrentTeam.key]: getCurrentTeam,
   [getMe.key]: getMe,
+  [listNotifications.key]: listNotifications,
   [listTeamMembers.key]: listTeamMembers,
   [getTeamMember.key]: getTeamMember,
   [listRoles.key]: listRoles,
