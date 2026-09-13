@@ -13,14 +13,6 @@ export default {
   operation: {
     inputFields: [
       { key: 'name', label: 'Name', type: 'string', required: true, helpText: 'Project name, 5-255 characters.' },
-      {
-        key: 'type',
-        label: 'Platform Type',
-        type: 'string',
-        required: false,
-        default: 'telegram',
-        helpText: 'Defaults to telegram. Only telegram is available today; Slack / Discord / Viber unlock as each platform launches.',
-      },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 characters. HTML is filtered server-side.' },
       {
         key: 'handle',
@@ -42,7 +34,6 @@ export default {
       };
 
       const passthrough: Array<keyof typeof bundle.inputData> = [
-        'type',
         'description',
         'handle',
         'terms',
