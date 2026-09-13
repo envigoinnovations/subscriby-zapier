@@ -14,18 +14,33 @@ export default {
     inputFields: [
       { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'connector', label: 'Installed Connector', type: 'string', required: true, dynamic: 'dropdown_connector_installations.connector.display_name' },
-      { key: 'settings', label: 'Settings', dict: true, required: true, helpText: 'One row per declared settings field: the field name as the key, the new value as the value.' },
+      { key: 'capabilities', label: 'Capability Switches', dict: true, required: false, helpText: 'One row per capability to switch: the capability as the key (messaging, broadcasts, support_relay, native_payments, recovery_probes, recovery_standby_installations, recovery_resource_standby, recovery_mirror, recovery_identity_relink) and true or false as the value. A capability the connector does not declare, or one that cannot be switched off, is refused. Switches left out keep their value.' },
+      { key: 'settings', label: 'Settings', dict: true, required: false, helpText: 'One row per declared settings field: the field name as the key, the new value as the value.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;
       const connector = bundle.inputData.connector as string;
       const settings = (bundle.inputData.settings ?? {}) as Record<string, unknown>;
+      const switches = (bundle.inputData.capabilities ?? {}) as Record<string, unknown>;
+      const capabilities = Object.fromEntries(
+        Object.entries(switches).map(([capability, value]) => [capability, value === true || String(value).toLowerCase() === 'true']),
+      );
+
+      const body: Record<string, unknown> = {};
+
+      if (Object.keys(settings).length > 0) {
+        body.settings = settings;
+      }
+
+      if (Object.keys(capabilities).length > 0) {
+        body.capabilities = capabilities;
+      }
 
       const response = await z.request({
         url: `${apiBaseUrl()}/projects/${projectId}/connectors/${encodeURIComponent(connector)}/installation/settings`,
         method: 'PATCH',
         headers: { 'Idempotency-Key': randomUUID() },
-        body: { settings },
+        body,
       });
 
       handleHttpError(response, z);
@@ -45,6 +60,11 @@ export default {
       display_name: 'Research Premium',
       handle: 'research-premium',
       created_at: '2026-09-12T10:05:00+00:00',
+      capabilities: {
+        messaging: { enabled: true, toggleable: true },
+        broadcasts: { enabled: false, toggleable: true },
+        access_control: { enabled: true, toggleable: false },
+      },
     },
   },
 } satisfies Create;
