@@ -200,6 +200,7 @@ import unlinkMemberIdentity from './creates/unlink-member-identity';
 import kickMember from './creates/kick-member';
 import createResource from './creates/create-resource';
 import unlinkResource from './creates/unlink-resource';
+import requestResourceLink from './creates/request-resource-link';
 import deleteResource from './creates/delete-resource';
 import bulkGenerateAccessCodes from './creates/bulk-generate-access-codes';
 import deleteAccessCode from './creates/delete-access-code';
@@ -536,6 +537,7 @@ const creates = {
   [kickMember.key]: kickMember,
   [createResource.key]: createResource,
   [unlinkResource.key]: unlinkResource,
+  [requestResourceLink.key]: requestResourceLink,
   [deleteResource.key]: deleteResource,
   [bulkGenerateAccessCodes.key]: bulkGenerateAccessCodes,
   [deleteAccessCode.key]: deleteAccessCode,
