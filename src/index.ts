@@ -106,6 +106,8 @@ import connectorDoctorCompleted from './triggers/connector-doctor-completed';
 import connectorStatusChanged from './triggers/connector-status-changed';
 import connectorSettingsUpdated from './triggers/connector-settings-updated';
 import connectorDisconnected from './triggers/connector-disconnected';
+import connectorOutageOpened from './triggers/connector-outage-opened';
+import connectorOutageClosed from './triggers/connector-outage-closed';
 import connectorUninstalled from './triggers/connector-uninstalled';
 import projectBotConnected from './triggers/project-bot-connected';
 import projectBotDisconnected from './triggers/project-bot-disconnected';
@@ -439,6 +441,8 @@ const triggers = {
   [connectorStatusChanged.key]: connectorStatusChanged,
   [connectorSettingsUpdated.key]: connectorSettingsUpdated,
   [connectorDisconnected.key]: connectorDisconnected,
+  [connectorOutageOpened.key]: connectorOutageOpened,
+  [connectorOutageClosed.key]: connectorOutageClosed,
   [connectorUninstalled.key]: connectorUninstalled,
   [projectBotConnected.key]: projectBotConnected,
   [projectBotDisconnected.key]: projectBotDisconnected,
