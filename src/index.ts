@@ -38,6 +38,7 @@ import memberRemoved from './triggers/member-removed';
 import memberResourceAdded from './triggers/member-resource-added';
 import memberResourcePending from './triggers/member-resource-pending';
 import memberResourceReissued from './triggers/member-resource-reissued';
+import memberAccessExtended from './triggers/member-access-extended';
 import memberResourceRemoved from './triggers/member-resource-removed';
 import creatorTaskOpened from './triggers/creator-task-opened';
 import creatorTaskCompleted from './triggers/creator-task-completed';
@@ -108,6 +109,7 @@ import connectorSettingsUpdated from './triggers/connector-settings-updated';
 import connectorDisconnected from './triggers/connector-disconnected';
 import connectorOutageOpened from './triggers/connector-outage-opened';
 import connectorOutageClosed from './triggers/connector-outage-closed';
+import connectorOutageCompensated from './triggers/connector-outage-compensated';
 import connectorUninstalled from './triggers/connector-uninstalled';
 import projectBotConnected from './triggers/project-bot-connected';
 import projectBotDisconnected from './triggers/project-bot-disconnected';
@@ -375,6 +377,7 @@ const triggers = {
   [memberResourceAdded.key]: memberResourceAdded,
   [memberResourcePending.key]: memberResourcePending,
   [memberResourceReissued.key]: memberResourceReissued,
+  [memberAccessExtended.key]: memberAccessExtended,
   [memberResourceRemoved.key]: memberResourceRemoved,
   [creatorTaskOpened.key]: creatorTaskOpened,
   [creatorTaskCompleted.key]: creatorTaskCompleted,
@@ -443,6 +446,7 @@ const triggers = {
   [connectorDisconnected.key]: connectorDisconnected,
   [connectorOutageOpened.key]: connectorOutageOpened,
   [connectorOutageClosed.key]: connectorOutageClosed,
+  [connectorOutageCompensated.key]: connectorOutageCompensated,
   [connectorUninstalled.key]: connectorUninstalled,
   [projectBotConnected.key]: projectBotConnected,
   [projectBotDisconnected.key]: projectBotDisconnected,
