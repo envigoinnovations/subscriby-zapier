@@ -13,7 +13,8 @@
         "node": ">=18"
     },
     "scripts": {
-        "prebuild": "node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' — the User-Agent would report the wrong version.');process.exit(1)}\"",
+        "verify:surface": "node scripts/verify-surface.mjs",
+        "prebuild": "npm run verify:surface && node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' — the User-Agent would report the wrong version.');process.exit(1)}\"",
         "build": "tsc",
         "clean": "rimraf dist",
         "test": "zapier test",
