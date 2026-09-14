@@ -233,6 +233,7 @@ import disconnectBot from './creates/disconnect-bot';
 import installConnector from './creates/install-connector';
 import verifyConnectorInstallation from './creates/verify-connector-installation';
 import runConnectorDoctor from './creates/run-connector-doctor';
+import restoreConnectorAccess from './creates/restore-connector-access';
 import updateConnectorInstallationSettings from './creates/update-connector-installation-settings';
 import disconnectConnector from './creates/disconnect-connector';
 import uninstallConnector from './creates/uninstall-connector';
@@ -575,6 +576,7 @@ const creates = {
   [installConnector.key]: installConnector,
   [verifyConnectorInstallation.key]: verifyConnectorInstallation,
   [runConnectorDoctor.key]: runConnectorDoctor,
+  [restoreConnectorAccess.key]: restoreConnectorAccess,
   [updateConnectorInstallationSettings.key]: updateConnectorInstallationSettings,
   [disconnectConnector.key]: disconnectConnector,
   [uninstallConnector.key]: uninstallConnector,
