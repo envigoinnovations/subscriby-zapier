@@ -17,15 +17,18 @@
  *
  * Endpoints that deliberately have no operation are listed below with their
  * reason; an entry whose endpoint gains an operation fails as stale, so the
- * list only shrinks.
+ * list only shrinks. When the docs repo is checked out beside this one, its
+ * copy of this app's operations (`npm run export:operations`) must match the
+ * source too, or the Zapier docs page would be generated from yesterday's app.
  */
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { operationsIn, scanOperations, walk } from "./lib/scan-operations.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const dataDir = join(root, "scripts/data");
-const srcDir = join(root, "src");
+const docsCopy = join(root, "..", "SubscribyDocs", "scripts", "data", "zapier-operations.json");
 
 /**
  * Endpoints this app deliberately offers no operation for.
@@ -38,7 +41,6 @@ const DELIBERATELY_ABSENT = new Map([
   ["PUT /me/alert-destinations", "Where a creator's own alerts go is set on the dashboard or in the apps; the parity matrix leaves it off Zapier."],
   ["GET /me/identities", "The creator's own linked accounts are account security, managed in person."],
   ["DELETE /me/identities/{}", "The creator's own linked accounts are account security, managed in person."],
-  ["POST /me/notifications/read-all", "Zapier reads the inbox through the New Notification polling trigger; marking it read is the reader's act on the dashboard."],
   ["GET /me/recovery", "Relinking the creator's own account is a human act at the connector; the dashboard's recovery steps drive it."],
   ["POST /me/recovery/backup-identity", "Relinking the creator's own account is a human act at the connector; the dashboard's recovery steps drive it."],
   ["POST /me/recovery/backup-identity/switch", "Relinking the creator's own account is a human act at the connector; the dashboard's recovery steps drive it."],
@@ -78,78 +80,21 @@ function readCatalog(name) {
   return JSON.parse(raw).items;
 }
 
-function walk(dir) {
-  const out = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    if (statSync(full).isDirectory()) {
-      out.push(...walk(full));
-    } else if (full.endsWith(".ts")) {
-      out.push(full);
-    }
-  }
-  return out;
-}
-
 /** `/api/v1/projects/{project}/members/{member}` → `/projects/{}/members/{}`. */
 function normaliseExported(uri) {
   return uri.replace(/^\/api\/v1/, "").replace(/\{[^}]+\}/g, "{}");
 }
 
-/** `${apiBaseUrl()}/projects/${projectId}/members?status=x` → `/projects/{}/members`. */
-function normaliseSource(template) {
-  return template
-    .replace(/^\$\{apiBaseUrl\(\)\}/, "")
-    .replace(/\$\{[^}]*\}/g, "{}")
-    .replace(/\?.*$/, "")
-    .replace(/\/$/, "");
-}
+const scanned = scanOperations(join(root, "src"));
+const every = [...scanned.triggers, ...scanned.creates, ...scanned.searches];
 
-/**
- * Every `METHOD /path` one source file calls: the `z.request({ url, method })`
- * blocks, and the `path: (input) => ...` of a create built by `defineRpcCreate`
- * (POST unless the file says DELETE).
+/*
+ * What the app calls is wider than what it lists as operations: the trigger
+ * factory subscribes and unsubscribes REST hooks, and helpers read catalogues.
+ * Coverage counts every call in `src`, not only the operation files.
  */
-function operationsIn(source) {
-  const found = new Set();
-
-  for (const block of source.matchAll(/z\.request\(\{([\s\S]*?)\}\)/g)) {
-    const url = block[1].match(/url:\s*`([^`]*)`/);
-    if (!url || !url[1].startsWith("${apiBaseUrl()}")) {
-      continue;
-    }
-    const path = normaliseSource(url[1]);
-    if (!path.startsWith("/")) {
-      continue;
-    }
-    const method = block[1].match(/method:\s*['"]([A-Z]+)['"]/);
-    found.add(`${method ? method[1] : "GET"} ${path}`);
-  }
-
-  const rpcPath = source.match(/path:\s*\([^)]*\)\s*=>\s*`([^`]*)`/);
-  if (rpcPath) {
-    const method = source.match(/^\s*method:\s*['"]([A-Z]+)['"]/m);
-    found.add(`${method ? method[1] : "POST"} ${normaliseSource(rpcPath[1])}`);
-  }
-
-  return found;
-}
-
-const sources = walk(srcDir).map((file) => readFileSync(file, "utf8"));
-
-const offered = new Set();
-for (const source of sources) {
-  for (const operation of operationsIn(source)) {
-    offered.add(operation);
-  }
-}
-
-const triggered = new Set();
-for (const source of sources) {
-  for (const match of source.matchAll(/^\s*event:\s*'([^']+)'/gm)) {
-    triggered.add(match[1]);
-  }
-}
+const offered = new Set(walk(join(root, "src")).flatMap((file) => operationsIn(readFileSync(file, "utf8"))));
+const triggered = new Set(scanned.triggers.map((trigger) => trigger.event).filter(Boolean));
 
 const problems = [];
 
@@ -185,10 +130,14 @@ for (const name of triggered) {
   }
 }
 
+if (existsSync(docsCopy) && readFileSync(docsCopy, "utf8").trim() !== JSON.stringify(scanned, null, 2)) {
+  problems.push("the docs repo's copy of this app's operations is behind the source; run: npm run export:operations");
+}
+
 if (problems.length > 0) {
   fail(`${problems.length} surface gap(s):\n  - ${problems.join("\n  - ")}`);
 }
 
 console.log(
-  `verify-surface: ${endpoints.length} endpoints (${DELIBERATELY_ABSENT.size} deliberately absent) and ${eventNames.size} events all have a Zapier counterpart.`,
+  `verify-surface: ${endpoints.length} endpoints (${DELIBERATELY_ABSENT.size} deliberately absent) and ${eventNames.size} events all have a Zapier counterpart; ${every.length} operations scanned.`,
 );
