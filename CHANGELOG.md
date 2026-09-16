@@ -2,7 +2,15 @@
 
 ## Unreleased
 
-Breaking. The bot-family aliases Subscriby deprecated in 4.x are gone with Subscriby 5.0, so this release is a major; the neutral connector family replaces them one for one (see Removed). Members can now connect more than one platform account to a membership, and the integration follows.
+Breaking. The bot-family aliases Subscriby deprecated in 4.x are gone with Subscriby 5.0, so this release is a major; the neutral connector family replaces them one for one (see Removed). Members can now connect more than one platform account to a membership, and the integration follows. Resources speak kinds and places rather than Telegram types and chat ids (see Changed).
+
+### Changed — resources speak kinds
+
+- Every resource row (**Get Resource**, **List Resources**, **Create Resource**, **Update Resource**, **Activate Resource**, **Deactivate Resource**, **Unlink Resource**, and the `resource` object on **Project Resource Created**, **Resource Updated**, **Project Resource Deleted** and **Project Resource Unlinked**) is `{id, project_id, kind, connector, space, title, description, active, created_at, updated_at}`. `kind` is `manual` for a perk the creator hands over by hand, otherwise the connector's kind spelled `connector:kind` (`telegram:channel`, `telegram:group`, `telegram:supergroup`); `connector` names the platform (`null` for a perk); `space` is the place the resource is bound to (`id`, the platform's `external_id`, `title`) or `null` for a perk and for an unlinked row. `type` and `chat_id` are gone.
+- **Project Resource Linked** carries `connector`, `kind` and `space_id`. **Member Added to Resource**, **Member Access Pending**, **Member Access Reissued**, **Member Removed From Resource**, **Creator Task Opened** and **Creator Task Completed** carry `resource_kind` (`telegram:channel`, `manual`) in place of `resource_type`. A recovery swap's **Resource Updated** carries `changes.space_id` (and `changes.kind` when the platform upgraded the place, a Telegram group that became a supergroup) instead of `changes.chat_id`.
+- **Request Resource Link** takes **Kind** as `connector:kind` from a dropdown of the kinds the project's connected connectors gate, fed by the live Connectors Marketplace; `channel` alone is refused. **List Resources** gains optional **Kind** and **Connector** filters. **Create Resource** sends no type: it only ever creates a manual perk.
+- **Find Plan by ID**, **Find Plan by Name** and **List Plans** rows' `resources[]` carry `kind` and `connector` instead of `type`.
+- **List Connectors** and **Get Connector** rows' `resource_kinds[]` gain `upgrades_from` (the kind of the same connector a place can be an in-place upgrade of) and `plan_kinds` (the plan shapes the kind sells: `one_time`, `recurring`, `pass`, `pass_series`).
 
 ### Removed — bot-family aliases
 

@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Resource',
   label: 'Project Resource Created',
   description:
-    'Triggers when a project resource (manual link, Telegram channel/group/supergroup) is created.',
+    'Triggers when a manual perk is registered on a project. A place a connector gates arrives through Project Resource Linked instead.',
   event: 'project.resource.created',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
@@ -16,9 +16,10 @@ export default defineWebhookTrigger({
     data: {
       resource: {
         id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
-        title: 'Premium Channel',
-        type: 'channel',
-        chat_id: '-1001234567890',
+        title: 'Welcome packet',
+        kind: 'manual',
+        connector: null,
+        space: null,
         active: true,
       },
     },

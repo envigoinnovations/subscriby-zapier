@@ -17,8 +17,13 @@ export default defineWebhookTrigger({
       resource: {
         id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
         title: 'Members lounge (VIP)',
-        type: 'supergroup',
-        chat_id: 'e4a7d2c9-1b63-4f08-9d5a-72c81e0f3b46',
+        kind: 'telegram:supergroup',
+        connector: 'telegram',
+        space: {
+          id: 'e4a7d2c9-1b63-4f08-9d5a-72c81e0f3b46',
+          external_id: '-1001234567890',
+          title: 'Members lounge',
+        },
         active: true,
       },
       changes: {

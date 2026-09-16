@@ -157,6 +157,7 @@ import supportMessageSent from './triggers/support-message-sent';
 import dropdownSupportConversations from './triggers/dropdown-support-conversations';
 import dropdownSubscriptions from './triggers/dropdown-subscriptions';
 import dropdownResources from './triggers/dropdown-resources';
+import dropdownResourceKinds from './triggers/dropdown-resource-kinds';
 import notificationReceived from './triggers/notification-received';
 import dropdownWebhookEndpoints from './triggers/dropdown-webhook-endpoints';
 import dropdownTokens from './triggers/dropdown-tokens';
@@ -492,6 +493,7 @@ const triggers = {
   [dropdownSupportConversations.key]: dropdownSupportConversations,
   [dropdownSubscriptions.key]: dropdownSubscriptions,
   [dropdownResources.key]: dropdownResources,
+  [dropdownResourceKinds.key]: dropdownResourceKinds,
   [notificationReceived.key]: notificationReceived,
   [dropdownWebhookEndpoints.key]: dropdownWebhookEndpoints,
   [dropdownTokens.key]: dropdownTokens,

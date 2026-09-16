@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Create Resource',
     description:
-      'Create a Manual-type project resource (custom text content, external URL, etc.). Telegram channel / group / supergroup linking stays bot-only through the RequestChat flow — only manual resources can be created via REST.',
+      'Create a manual perk (custom text content, an external URL, a token the creator hands over by hand). A place a connector gates is linked through the connector with Request Resource Link; only manual perks are created here, and only once a connector on the project is connected.',
   },
   operation: {
     inputFields: [
@@ -21,7 +21,6 @@ export default {
       const projectId = bundle.inputData.project_id as string;
 
       const body: Record<string, unknown> = {
-        type: 'manual',
         title: bundle.inputData.title,
       };
 
@@ -47,9 +46,15 @@ export default {
     },
     sample: {
       id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
+      project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
+      kind: 'manual',
+      connector: null,
+      space: null,
       title: 'Welcome Kit',
-      type: 'manual',
+      description: null,
       active: true,
+      created_at: '2026-05-18T10:05:00Z',
+      updated_at: '2026-05-18T10:05:00Z',
     },
   },
 } satisfies Create;

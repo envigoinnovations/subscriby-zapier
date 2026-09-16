@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Resource',
   label: 'Project Resource Unlinked',
   description:
-    'Triggers when a Telegram destination is unlinked from a project resource.',
+    'Triggers when the place behind a project resource is detached; the resource keeps its kind and connector and is bound to no space until the creator links another.',
   event: 'project.resource.unlinked',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
@@ -17,8 +17,9 @@ export default defineWebhookTrigger({
       resource: {
         id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
         title: 'Premium Channel',
-        type: 'channel',
-        chat_id: null,
+        kind: 'telegram:channel',
+        connector: 'telegram',
+        space: null,
         active: true,
       },
     },

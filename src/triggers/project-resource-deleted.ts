@@ -16,8 +16,13 @@ export default defineWebhookTrigger({
       resource: {
         id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
         title: 'Premium Channel',
-        type: 'channel',
-        chat_id: '-1001234567890',
+        kind: 'telegram:channel',
+        connector: 'telegram',
+        space: {
+          id: '3c1f7a58-2b6e-4d90-8f41-6a2e9c5d7b10',
+          external_id: '-1001234567890',
+          title: 'Premium Channel',
+        },
         active: true,
       },
     },

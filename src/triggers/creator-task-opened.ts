@@ -19,7 +19,7 @@ export default defineWebhookTrigger({
       subscription_id: '5b7e2d40-1a86-4c39-97f2-e83d0b16c5a4',
       subscriber_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
       resource_id: 'b73c5f21-9d80-4a6e-8215-4f70ce13a9d6',
-      resource_type: 'manual',
+      resource_kind: 'manual',
       instructions: 'Give Ada Lovelace access to Welcome packet.',
       due_at: null,
     },
