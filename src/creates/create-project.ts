@@ -25,7 +25,6 @@ export default {
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false, helpText: 'Optional URL to the privacy page. Max 255 characters.' },
       { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false, helpText: 'Opt into aggregated metrics collection on this project.' },
       { key: 'active', label: 'Active', type: 'boolean', required: false, helpText: 'Defaults to true. Set false to create in draft state.' },
-      { key: 'bot_id', label: 'Telegram Bot ID', type: 'string', required: false, helpText: 'UUID of a telegram_bot row to attach at creation.' },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name', helpText: 'UUID of the owning team. Defaults to the token\'s scoped team.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -40,7 +39,6 @@ export default {
         'privacy',
         'metrics',
         'active',
-        'bot_id',
         'team_id',
       ];
 

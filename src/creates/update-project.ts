@@ -20,7 +20,6 @@ export default {
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false },
       { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false },
       { key: 'active', label: 'Active', type: 'boolean', required: false },
-      { key: 'bot_id', label: 'Telegram Bot ID', type: 'string', required: false },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -35,7 +34,6 @@ export default {
         'privacy',
         'metrics',
         'active',
-        'bot_id',
         'team_id',
       ];
 

@@ -112,8 +112,6 @@ import connectorOutageOpened from './triggers/connector-outage-opened';
 import connectorOutageClosed from './triggers/connector-outage-closed';
 import connectorOutageCompensated from './triggers/connector-outage-compensated';
 import connectorUninstalled from './triggers/connector-uninstalled';
-import projectBotConnected from './triggers/project-bot-connected';
-import projectBotDisconnected from './triggers/project-bot-disconnected';
 import projectResourceCreated from './triggers/project-resource-created';
 import projectResourceLinked from './triggers/project-resource-linked';
 import projectResourceUnlinked from './triggers/project-resource-unlinked';
@@ -149,7 +147,6 @@ import dropdownConnectorInstallations from './triggers/dropdown-connector-instal
 import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
-import projectBotStatusChanged from './triggers/project-bot-status-changed';
 import projectResourceStatusChanged from './triggers/project-resource-status-changed';
 import supportConversationOpened from './triggers/support-conversation-opened';
 import supportConversationAssigned from './triggers/support-conversation-assigned';
@@ -229,7 +226,6 @@ import updateSupportSettings from './creates/update-support-settings';
 import updateResource from './creates/update-resource';
 import activateResource from './creates/activate-resource';
 import deactivateResource from './creates/deactivate-resource';
-import disconnectBot from './creates/disconnect-bot';
 import installConnector from './creates/install-connector';
 import verifyConnectorInstallation from './creates/verify-connector-installation';
 import runConnectorDoctor from './creates/run-connector-doctor';
@@ -319,8 +315,6 @@ import getRole from './searches/get-role';
 import listGroups from './searches/list-groups';
 import getGroup from './searches/get-group';
 import listActivity from './searches/list-activity';
-import getBotStatus from './searches/get-bot-status';
-import getBotLink from './searches/get-bot-link';
 import getPortalUrl from './searches/get-portal-url';
 import getDeepLink from './searches/get-deep-link';
 import getDashboardMetrics from './searches/get-dashboard-metrics';
@@ -451,8 +445,6 @@ const triggers = {
   [connectorOutageClosed.key]: connectorOutageClosed,
   [connectorOutageCompensated.key]: connectorOutageCompensated,
   [connectorUninstalled.key]: connectorUninstalled,
-  [projectBotConnected.key]: projectBotConnected,
-  [projectBotDisconnected.key]: projectBotDisconnected,
   [projectResourceCreated.key]: projectResourceCreated,
   [projectResourceLinked.key]: projectResourceLinked,
   [projectResourceUnlinked.key]: projectResourceUnlinked,
@@ -488,7 +480,6 @@ const triggers = {
   [dropdownPlans.key]: dropdownPlans,
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
-  [projectBotStatusChanged.key]: projectBotStatusChanged,
   [projectResourceStatusChanged.key]: projectResourceStatusChanged,
   [planSoldOut.key]: planSoldOut,
   [planOrderChanged.key]: planOrderChanged,
@@ -572,7 +563,6 @@ const creates = {
   [updateResource.key]: updateResource,
   [activateResource.key]: activateResource,
   [deactivateResource.key]: deactivateResource,
-  [disconnectBot.key]: disconnectBot,
   [installConnector.key]: installConnector,
   [verifyConnectorInstallation.key]: verifyConnectorInstallation,
   [runConnectorDoctor.key]: runConnectorDoctor,
@@ -664,8 +654,6 @@ const searches = {
   [listGroups.key]: listGroups,
   [getGroup.key]: getGroup,
   [listActivity.key]: listActivity,
-  [getBotStatus.key]: getBotStatus,
-  [getBotLink.key]: getBotLink,
   [getPortalUrl.key]: getPortalUrl,
   [getDeepLink.key]: getDeepLink,
   [getDashboardMetrics.key]: getDashboardMetrics,

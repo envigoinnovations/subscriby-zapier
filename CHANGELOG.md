@@ -2,7 +2,14 @@
 
 ## Unreleased
 
-Additive. Members can now connect more than one platform account to a membership, and the integration follows.
+Breaking. The bot-family aliases Subscriby deprecated in 4.x are gone with Subscriby 5.0, so this release is a major; the neutral connector family replaces them one for one (see Removed). Members can now connect more than one platform account to a membership, and the integration follows.
+
+### Removed — bot-family aliases
+
+- Triggers **Project Bot Connected** (`project.bot.connected`), **Project Bot Disconnected** (`project.bot.disconnected`) and **Bot Status Changed** (`project.bot.status_changed`). Use **Connector Connected**, **Connector Disconnected** and **Connector Status Changed**; Subscriby's 5.0 migration re-points every existing subscription to the twin, so a Zap on the old trigger keeps receiving the fact under the new name and payload (`connector`, `installation_id` instead of `bot_id`).
+- Action **Disconnect Bot** (`DELETE /v1/projects/{project}/bot`). Use **Disconnect Connector**. A token minted with `bot:manage` was rewritten to `project-connector:delete`.
+- Searches **Get Bot Status** (`GET /v1/projects/{project}/bot`) and **Get Bot Link** (`GET …/distribution/bot-link`). Use **Get Connector Installation** (`display_name`, `handle`, `state`, health) and **Get Deep Link** (`bot_url`, `deep_link`).
+- The `bot_id` field on **Create Project** and **Update Project**; a project installs connectors with **Install Connector**.
 
 ### Added — member identities
 
