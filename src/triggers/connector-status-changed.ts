@@ -18,7 +18,7 @@ export default defineWebhookTrigger({
         project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
         previous_state: 'connected',
         state: 'degraded',
-        reason: 'telegram_api_unauthorized',
+        reason: 'connector_api_unauthorized',
     },
   },
 });
