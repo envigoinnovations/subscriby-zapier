@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Member',
   label: 'Member Access Extended',
   description:
-    'Triggers once per member when Outage Compensation banks the length of a connector outage on their purchase. applies_at says when they feel it: now for a one-time purchase (ends_at moved), membership_end for a recurring plan (the time runs after the last paid period, because no gateway can move a renewal by a few hours).',
+    'Triggers when Outage Compensation banks the length of a connector outage on a member purchase, once per member. applies_at says when they feel it: now for a one-time purchase (ends_at moved), membership_end for a recurring plan (the time runs after the last paid period, because no gateway can move a renewal by a few hours).',
   event: 'member.access_extended',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

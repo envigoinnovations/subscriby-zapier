@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Connector Outage',
   label: 'Connector Outage Compensated',
   description:
-    'Triggers once when a closed connector outage settles: how many members had the outage length banked on their purchase, how much each received, and how many invites that never reached a member during the outage were re-sent. Fires with zero members when the outage was shorter than an hour, ended by an uninstall, or the project switched Outage Compensation off.',
+    'Triggers when a closed connector outage settles, once per outage: how many members had the outage length banked on their purchase, how much each received, and how many invites that never reached a member during the outage were re-sent. Fires with zero members when the outage was shorter than an hour, ended by an uninstall, or the project switched Outage Compensation off.',
   event: 'connector.outage_compensated',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
