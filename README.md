@@ -40,10 +40,10 @@ Do not hand-maintain this list against the enum. The canonical, machine-readable
 
 ### Releasing a breaking version
 
-3.0.0 changed the field keys behind **Create Plan** and **Update Plan**, which breaks live Zaps using those two actions. Zapier has a mechanism for exactly this and it must be run in order:
+3.0.0 removed the bot-family triggers, action and searches that Subscriby 5.0 retired (**Project Bot Connected**, **Project Bot Disconnected**, **Bot Status Changed**, **Disconnect Bot**, **Get Bot Status**, **Get Bot Link**, and `bot_id` on the project actions) and changed the resource row to speak kinds and places (`kind`, `connector`, `space` in place of `type` and `chat_id`). A live Zap on a removed key cannot be carried across automatically; one on a changed row keeps running and sees the new fields. Zapier has a mechanism for exactly this and it must be run in order:
 
-1. `zapier push` — upload 3.0.0.
+1. `zapier push` — upload 3.0.0 (on Windows, `npm run push:win`, which parks the `.git` folder the CLI trips over).
 2. `zapier promote 3.0.0` — make it the version new Zaps are built on.
-3. `zapier migrate 2.6.0 3.0.0` — move existing users across.
+3. `zapier migrate 2.3.0 3.0.0` — move existing users across.
 
-Step 3 is the one that is easy to forget, and skipping it leaves everyone on 2.6.0 indefinitely. Migrating a percentage first (`zapier migrate 2.6.0 3.0.0 10`) is worth doing here, because the two changed actions cannot be auto-remapped — a Zap that set *Billing Cycle* will need its field re-mapped by the person who built it.
+Step 3 is the one that is easy to forget, and skipping it leaves everyone on 2.3.0 indefinitely. Migrating a percentage first (`zapier migrate 2.3.0 3.0.0 10`) is worth doing when Zaps use the removed keys, because those have to be rebuilt on **Connector Connected**, **Connector Disconnected**, **Connector Status Changed**, **Disconnect Connector**, **Get Connector Installation** and **Get Deep Link** by the person who built them.

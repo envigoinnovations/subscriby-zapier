@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 3.0.0 — 19 September 2026
 
 Breaking. The bot-family aliases Subscriby deprecated in 4.x are gone with Subscriby 5.0, so this release is a major; the neutral connector family replaces them one for one (see Removed). Members can now connect more than one platform account to a membership, and the integration follows. Resources speak kinds and places rather than Telegram types and chat ids (see Changed).
 
