@@ -16,7 +16,6 @@ export default defineWebhookTrigger({
     data: {
       subscriber: {
         id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
-        telegram_user_id: '123456789',
         status: 'banned',
       },
       reason: 'Spamming referral links',

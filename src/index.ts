@@ -267,7 +267,7 @@ import retryDeadWebhookDeliveries from './creates/retry-dead-webhook-deliveries'
 import findProjectByHandle from './searches/find-project-by-handle';
 import findPlanByName from './searches/find-plan-by-name';
 import findPlanById from './searches/find-plan-by-id';
-import findSubscriberByTelegramId from './searches/find-subscriber-by-telegram-id';
+import findMemberByIdentity from './searches/find-member-by-identity';
 import findMemberById from './searches/find-member-by-id';
 import findSubscriptionById from './searches/find-subscription-by-id';
 import listSubscriptionGrants from './searches/list-subscription-grants';
@@ -607,7 +607,7 @@ const searches = {
   [findProjectByHandle.key]: findProjectByHandle,
   [findPlanByName.key]: findPlanByName,
   [findPlanById.key]: findPlanById,
-  [findSubscriberByTelegramId.key]: findSubscriberByTelegramId,
+  [findMemberByIdentity.key]: findMemberByIdentity,
   [findMemberById.key]: findMemberById,
   [findSubscriptionById.key]: findSubscriptionById,
   [listSubscriptionGrants.key]: listSubscriptionGrants,

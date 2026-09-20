@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.0.0 — 20 September 2026
+
+Breaking. **Find Subscriber by Telegram ID** is removed: it asked the members endpoint for a `telegram_user_id` that Subscriby 5.0 no longer carries, so since 19 September it returned nothing. **Find Member by Connector Account** replaces it and works for every connector.
+
+### Added
+
+- **Find Member by Connector Account** (search) — `GET /v1/projects/{project}/members?identity=connector:external_id`. Pick the project, the connector (from the live Connectors Marketplace) and the platform's own id for the account, and get the member row with their `identities[]` embedded, or no rows. The lookup that turns the id a bot or a server hands you into a Subscriby member.
+
+### Removed
+
+- **Find Subscriber by Telegram ID** (search). Zaps using it must be re-pointed at **Find Member by Connector Account** with the connector set to the platform the id came from.
+
+### Changed
+
+- **Find Member by ID**'s sample row shows `identities[]` in place of the `telegram_user_id` field that no longer exists.
+
 ## 3.0.0 — 19 September 2026
 
 Breaking. The bot-family aliases Subscriby deprecated in 4.x are gone with Subscriby 5.0, so this release is a major; the neutral connector family replaces them one for one (see Removed). Members can now connect more than one platform account to a membership, and the integration follows. Resources speak kinds and places rather than Telegram types and chat ids (see Changed).

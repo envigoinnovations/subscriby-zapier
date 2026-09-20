@@ -33,7 +33,7 @@ export default {
     },
     sample: {
       id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
-      telegram_user_id: '123456789',
+      identities: [{ connector: 'telegram', external_id: '123456789', preferred: true }],
       status: 'customer',
     },
   },
