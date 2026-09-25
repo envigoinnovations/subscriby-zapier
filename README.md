@@ -32,7 +32,7 @@ npm run push
 
 The trigger catalog is generated from Subscriby's `WebhookEvent` enum and covers **every event in it** — one `src/triggers/*.ts` file per event, each registered in `src/index.ts`.
 
-Do not hand-maintain this list against the enum. The canonical, machine-readable catalog is published at `https://api.subscriby.net/webhook-events.json` and mirrored by the `subscriby://enums/webhook-event` MCP resource; the prose version lives at `https://docs.subscriby.net/webhooks/event-reference`. Each event's required token ability is a column in that JSON — read it from there rather than copying abilities into this file, which is how the previous table came to name abilities that did not match the enum.
+Do not hand-maintain this list against the enum. The canonical, machine-readable catalog is published at `https://api.subscriby.net/webhook-events.json` and mirrored by the `subscriby://enums/webhook-event` MCP resource; the prose version lives at `https://docs.subscriby.net/webhooks/v1/event-reference`. Each event's required token ability is a column in that JSON — read it from there rather than copying abilities into this file, which is how the previous table came to name abilities that did not match the enum.
 
 ## Release
 

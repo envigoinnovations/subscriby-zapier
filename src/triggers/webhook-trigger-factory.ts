@@ -3,7 +3,7 @@ import { apiBaseUrl, handleHttpError } from '../utils/http';
 
 /**
  * Shape of a webhook event delivered by Subscriby. Matches the
- * envelope documented at https://docs.subscriby.net/webhooks/index.
+ * envelope documented at https://docs.subscriby.net/webhooks/v1/index.
  */
 interface SubscribyEvent {
   id: string;
