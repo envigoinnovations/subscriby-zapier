@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.1 — 26 September 2026
+
+### Fixed
+
+- The **Create Project** sample output no longer shows a `type`: a project has no platform field, it installs connectors, and the sample now matches what the API answers.
+
 ## 4.0.0 — 20 September 2026
 
 Breaking. **Find Subscriber by Telegram ID** is removed: it asked the members endpoint for a `telegram_user_id` that Subscriby 5.0 no longer carries, so since 19 September it returned nothing. **Find Member by Connector Account** replaces it and works for every connector.
