@@ -37,6 +37,8 @@ const docsCopy = join(root, "..", "SubscribyDocs", "scripts", "data", "zapier-op
  * the checks below spell them, each with the reason it stays off Zapier.
  */
 const DELIBERATELY_ABSENT = new Map([
+  ["POST /me/export", "An archive of the creator's own account is asked for in person, from Settings or the API, and lands in their inbox; it is not an automation step."],
+  ["GET /me/export", "An archive of the creator's own account is asked for in person, from Settings or the API, and lands in their inbox; it is not an automation step."],
   ["GET /me/alert-destinations", "Where a creator's own alerts go is set on the dashboard or in the apps; the parity matrix leaves it off Zapier."],
   ["PUT /me/alert-destinations", "Where a creator's own alerts go is set on the dashboard or in the apps; the parity matrix leaves it off Zapier."],
   ["GET /me/identities", "The creator's own linked accounts are account security, managed in person."],
