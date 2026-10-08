@@ -97,6 +97,16 @@ import supportCannedReplyDeleted from './triggers/support-canned-reply-deleted';
 import supportSettingsUpdated from './triggers/support-settings-updated';
 import couponRedeemed from './triggers/coupon-redeemed';
 import couponExhausted from './triggers/coupon-exhausted';
+import referralProgramUpdated from './triggers/referral-program-updated';
+import referralAffiliateJoined from './triggers/referral-affiliate-joined';
+import referralAffiliateApproved from './triggers/referral-affiliate-approved';
+import referralAffiliateSuspended from './triggers/referral-affiliate-suspended';
+import referralCaptured from './triggers/referral-captured';
+import referralConverted from './triggers/referral-converted';
+import referralRewardEarned from './triggers/referral-reward-earned';
+import referralRewardApproved from './triggers/referral-reward-approved';
+import referralRewardReversed from './triggers/referral-reward-reversed';
+import referralPayoutRecorded from './triggers/referral-payout-recorded';
 import projectCreated from './triggers/project-created';
 import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
@@ -217,6 +227,14 @@ import updateCoupon from './creates/update-coupon';
 import deleteCoupon from './creates/delete-coupon';
 import activateCoupon from './creates/activate-coupon';
 import deactivateCoupon from './creates/deactivate-coupon';
+import updateReferralProgram from './creates/update-referral-program';
+import activateReferralProgram from './creates/activate-referral-program';
+import deactivateReferralProgram from './creates/deactivate-referral-program';
+import deleteReferralProgram from './creates/delete-referral-program';
+import addReferralAffiliate from './creates/add-referral-affiliate';
+import approveReferralAffiliate from './creates/approve-referral-affiliate';
+import suspendReferralAffiliate from './creates/suspend-referral-affiliate';
+import recordReferralPayout from './creates/record-referral-payout';
 import reopenSupportConversation from './creates/reopen-support-conversation';
 import blockSupportContact from './creates/block-support-contact';
 import unblockSupportContact from './creates/unblock-support-contact';
@@ -328,6 +346,13 @@ import getPlanPerformance from './searches/get-plan-performance';
 import listTransactions from './searches/list-transactions';
 import findCoupons from './searches/find-coupons';
 import getCoupon from './searches/get-coupon';
+import getReferralProgram from './searches/get-referral-program';
+import findReferralAffiliates from './searches/find-referral-affiliates';
+import getReferralAffiliate from './searches/get-referral-affiliate';
+import findReferrals from './searches/find-referrals';
+import getReferral from './searches/get-referral';
+import findReferralRewards from './searches/find-referral-rewards';
+import findReferralPayouts from './searches/find-referral-payouts';
 import findCannedReplies from './searches/find-canned-replies';
 import getCannedReply from './searches/get-canned-reply';
 import getSupportSettings from './searches/get-support-settings';
@@ -431,6 +456,16 @@ const triggers = {
   [supportSettingsUpdated.key]: supportSettingsUpdated,
   [couponRedeemed.key]: couponRedeemed,
   [couponExhausted.key]: couponExhausted,
+  [referralProgramUpdated.key]: referralProgramUpdated,
+  [referralAffiliateJoined.key]: referralAffiliateJoined,
+  [referralAffiliateApproved.key]: referralAffiliateApproved,
+  [referralAffiliateSuspended.key]: referralAffiliateSuspended,
+  [referralCaptured.key]: referralCaptured,
+  [referralConverted.key]: referralConverted,
+  [referralRewardEarned.key]: referralRewardEarned,
+  [referralRewardApproved.key]: referralRewardApproved,
+  [referralRewardReversed.key]: referralRewardReversed,
+  [referralPayoutRecorded.key]: referralPayoutRecorded,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
   [projectArchived.key]: projectArchived,
@@ -555,6 +590,14 @@ const creates = {
   [deleteCoupon.key]: deleteCoupon,
   [activateCoupon.key]: activateCoupon,
   [deactivateCoupon.key]: deactivateCoupon,
+  [updateReferralProgram.key]: updateReferralProgram,
+  [activateReferralProgram.key]: activateReferralProgram,
+  [deactivateReferralProgram.key]: deactivateReferralProgram,
+  [deleteReferralProgram.key]: deleteReferralProgram,
+  [addReferralAffiliate.key]: addReferralAffiliate,
+  [approveReferralAffiliate.key]: approveReferralAffiliate,
+  [suspendReferralAffiliate.key]: suspendReferralAffiliate,
+  [recordReferralPayout.key]: recordReferralPayout,
   [reopenSupportConversation.key]: reopenSupportConversation,
   [blockSupportContact.key]: blockSupportContact,
   [unblockSupportContact.key]: unblockSupportContact,
@@ -668,6 +711,13 @@ const searches = {
   [listTransactions.key]: listTransactions,
   [findCoupons.key]: findCoupons,
   [getCoupon.key]: getCoupon,
+  [getReferralProgram.key]: getReferralProgram,
+  [findReferralAffiliates.key]: findReferralAffiliates,
+  [getReferralAffiliate.key]: getReferralAffiliate,
+  [findReferrals.key]: findReferrals,
+  [getReferral.key]: getReferral,
+  [findReferralRewards.key]: findReferralRewards,
+  [findReferralPayouts.key]: findReferralPayouts,
   [findCannedReplies.key]: findCannedReplies,
   [getCannedReply.key]: getCannedReply,
   [getSupportSettings.key]: getSupportSettings,

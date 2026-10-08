@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.1.0 — 8 October 2026
+
+The Referral Program: members become affiliates with a code and a link, a friend who arrives through them is counted for thirty days, and when that friend's first payment settles the affiliate earns free membership days or a cash commission the creator pays out. Bundled with Growth; Free and Starter buy the Referral Program Addon. Requires Subscriby 5.1 on the API.
+
+### Added
+
+- **Triggers** (10): **Referral Program Updated**, **New Referral Affiliate**, **Referral Affiliate Approved**, **Referral Affiliate Suspended**, **New Referral**, **Referral Converted**, **Referral Reward Earned**, **Referral Reward Approved**, **Referral Reward Reversed** and **Referral Payout Recorded**, one per `referral.*` event, with the catalogue's payloads as their samples.
+- **Actions** (8): **Update Referral Program** (`PUT /v1/projects/{project}/referral-program`; the first call creates the programme, later calls change only the fields filled in, with Unset Fields for the nullable ones and Count Every Plan for an empty plan list), **Activate Referral Program**, **Deactivate Referral Program**, **Delete Referral Program**, **Add Referral Affiliate** (with the member dropdown), **Approve Referral Affiliate**, **Suspend Referral Affiliate** and **Record Referral Payout**.
+- **Searches** (7): **Get Referral Program** (no rows while the project has none), **Find Referral Affiliates**, **Get Referral Affiliate** (the one read that carries the per-currency balances), **Find Referrals** (with a `since` instant for scheduled Zaps), **Get Referral**, **Find Referral Rewards** and **Find Referral Payouts**.
+
 ## 4.0.1 — 26 September 2026
 
 ### Fixed
