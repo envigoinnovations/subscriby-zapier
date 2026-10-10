@@ -10,6 +10,13 @@ The Referral Program: members become affiliates with a code and a link, a friend
 - **Actions** (8): **Update Referral Program** (`PUT /v1/projects/{project}/referral-program`; the first call creates the programme, later calls change only the fields filled in, with Unset Fields for the nullable ones and Count Every Plan for an empty plan list), **Activate Referral Program**, **Deactivate Referral Program**, **Delete Referral Program**, **Add Referral Affiliate** (with the member dropdown), **Approve Referral Affiliate**, **Suspend Referral Affiliate** and **Record Referral Payout**.
 - **Searches** (7): **Get Referral Program** (no rows while the project has none), **Find Referral Affiliates**, **Get Referral Affiliate** (the one read that carries the per-currency balances), **Find Referrals** (with a `since` instant for scheduled Zaps), **Get Referral**, **Find Referral Rewards** and **Find Referral Payouts**.
 
+The Partner Program, Subscriby's own: a creator who brings other creators to Subscriby earns a share of every platform invoice they pay, for twelve months from each one's first paid plan, settled as Subscriby Credit or paid out in cash. Everything is the token's creator's own, under `/v1/me/partner`, behind `account:read` and `account:write`; applying is done on the dashboard or in the bot.
+
+- **Triggers** (10): **New Partner Referral**, **Partner Referral Converted**, **Partner Commission Earned**, **Partner Commission Approved**, **Partner Commission Credited**, **Partner Commission Reversed**, **Partner Payout Recorded**, **Partner Application Approved**, **Partner Application Rejected** and **Partner Rate Changed**, one per `partner.*` event, with the catalogue's payloads as their samples; `project_id` is `null` on every one.
+- **Actions** (2): **Update Partner Payout Details** (`PUT /v1/me/partner/payout-details`: the rail, what it pays to and the tax declaration; nothing ever returns the destination) and **Accept Partner Terms**.
+- **Searches** (5): **Get Partner Program** (no rows until you apply; never the payout destination), **Find Partner Referrals** (by status, each creator named by display name alone), **Get Partner Referral**, **Find Partner Rewards** (the commission ledger, by status) and **Find Partner Payouts**.
+- **Get Me** gains `partner_code` and `partner_link`, set once Subscriby approved you as a partner.
+
 ## 4.0.1 — 26 September 2026
 
 ### Fixed

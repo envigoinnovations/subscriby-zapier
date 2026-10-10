@@ -65,6 +65,8 @@ export default {
       identities: [],
       alert_destinations: [],
       alert_destinations_default: true,
+      partner_code: null,
+      partner_link: null,
       created_at: '2026-05-18T10:05:00Z',
     },
   },

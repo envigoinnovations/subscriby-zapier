@@ -107,6 +107,16 @@ import referralRewardEarned from './triggers/referral-reward-earned';
 import referralRewardApproved from './triggers/referral-reward-approved';
 import referralRewardReversed from './triggers/referral-reward-reversed';
 import referralPayoutRecorded from './triggers/referral-payout-recorded';
+import partnerReferralSignedUp from './triggers/partner-referral-signed-up';
+import partnerReferralConverted from './triggers/partner-referral-converted';
+import partnerRewardEarned from './triggers/partner-reward-earned';
+import partnerRewardApproved from './triggers/partner-reward-approved';
+import partnerRewardCredited from './triggers/partner-reward-credited';
+import partnerRewardReversed from './triggers/partner-reward-reversed';
+import partnerPayoutRecorded from './triggers/partner-payout-recorded';
+import partnerApplicationApproved from './triggers/partner-application-approved';
+import partnerApplicationRejected from './triggers/partner-application-rejected';
+import partnerRateChanged from './triggers/partner-rate-changed';
 import projectCreated from './triggers/project-created';
 import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
@@ -235,6 +245,8 @@ import addReferralAffiliate from './creates/add-referral-affiliate';
 import approveReferralAffiliate from './creates/approve-referral-affiliate';
 import suspendReferralAffiliate from './creates/suspend-referral-affiliate';
 import recordReferralPayout from './creates/record-referral-payout';
+import updatePartnerPayoutDetails from './creates/update-partner-payout-details';
+import acceptPartnerTerms from './creates/accept-partner-terms';
 import reopenSupportConversation from './creates/reopen-support-conversation';
 import blockSupportContact from './creates/block-support-contact';
 import unblockSupportContact from './creates/unblock-support-contact';
@@ -353,6 +365,11 @@ import findReferrals from './searches/find-referrals';
 import getReferral from './searches/get-referral';
 import findReferralRewards from './searches/find-referral-rewards';
 import findReferralPayouts from './searches/find-referral-payouts';
+import getPartnerProgram from './searches/get-partner-program';
+import findPartnerReferrals from './searches/find-partner-referrals';
+import getPartnerReferral from './searches/get-partner-referral';
+import findPartnerRewards from './searches/find-partner-rewards';
+import findPartnerPayouts from './searches/find-partner-payouts';
 import findCannedReplies from './searches/find-canned-replies';
 import getCannedReply from './searches/get-canned-reply';
 import getSupportSettings from './searches/get-support-settings';
@@ -466,6 +483,16 @@ const triggers = {
   [referralRewardApproved.key]: referralRewardApproved,
   [referralRewardReversed.key]: referralRewardReversed,
   [referralPayoutRecorded.key]: referralPayoutRecorded,
+  [partnerReferralSignedUp.key]: partnerReferralSignedUp,
+  [partnerReferralConverted.key]: partnerReferralConverted,
+  [partnerRewardEarned.key]: partnerRewardEarned,
+  [partnerRewardApproved.key]: partnerRewardApproved,
+  [partnerRewardCredited.key]: partnerRewardCredited,
+  [partnerRewardReversed.key]: partnerRewardReversed,
+  [partnerPayoutRecorded.key]: partnerPayoutRecorded,
+  [partnerApplicationApproved.key]: partnerApplicationApproved,
+  [partnerApplicationRejected.key]: partnerApplicationRejected,
+  [partnerRateChanged.key]: partnerRateChanged,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
   [projectArchived.key]: projectArchived,
@@ -598,6 +625,8 @@ const creates = {
   [approveReferralAffiliate.key]: approveReferralAffiliate,
   [suspendReferralAffiliate.key]: suspendReferralAffiliate,
   [recordReferralPayout.key]: recordReferralPayout,
+  [updatePartnerPayoutDetails.key]: updatePartnerPayoutDetails,
+  [acceptPartnerTerms.key]: acceptPartnerTerms,
   [reopenSupportConversation.key]: reopenSupportConversation,
   [blockSupportContact.key]: blockSupportContact,
   [unblockSupportContact.key]: unblockSupportContact,
@@ -718,6 +747,11 @@ const searches = {
   [getReferral.key]: getReferral,
   [findReferralRewards.key]: findReferralRewards,
   [findReferralPayouts.key]: findReferralPayouts,
+  [getPartnerProgram.key]: getPartnerProgram,
+  [findPartnerReferrals.key]: findPartnerReferrals,
+  [getPartnerReferral.key]: getPartnerReferral,
+  [findPartnerRewards.key]: findPartnerRewards,
+  [findPartnerPayouts.key]: findPartnerPayouts,
   [findCannedReplies.key]: findCannedReplies,
   [getCannedReply.key]: getCannedReply,
   [getSupportSettings.key]: getSupportSettings,
