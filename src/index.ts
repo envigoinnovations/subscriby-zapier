@@ -97,6 +97,9 @@ import supportCannedReplyDeleted from './triggers/support-canned-reply-deleted';
 import supportSettingsUpdated from './triggers/support-settings-updated';
 import couponRedeemed from './triggers/coupon-redeemed';
 import couponExhausted from './triggers/coupon-exhausted';
+import linkCreated from './triggers/link-created';
+import linkUpdated from './triggers/link-updated';
+import linkArchived from './triggers/link-archived';
 import referralProgramUpdated from './triggers/referral-program-updated';
 import referralAffiliateJoined from './triggers/referral-affiliate-joined';
 import referralAffiliateApproved from './triggers/referral-affiliate-approved';
@@ -237,6 +240,9 @@ import updateCoupon from './creates/update-coupon';
 import deleteCoupon from './creates/delete-coupon';
 import activateCoupon from './creates/activate-coupon';
 import deactivateCoupon from './creates/deactivate-coupon';
+import createLink from './creates/create-link';
+import updateLink from './creates/update-link';
+import archiveLink from './creates/archive-link';
 import updateReferralProgram from './creates/update-referral-program';
 import activateReferralProgram from './creates/activate-referral-program';
 import deactivateReferralProgram from './creates/deactivate-referral-program';
@@ -358,6 +364,9 @@ import getPlanPerformance from './searches/get-plan-performance';
 import listTransactions from './searches/list-transactions';
 import findCoupons from './searches/find-coupons';
 import getCoupon from './searches/get-coupon';
+import findLinks from './searches/find-links';
+import getLink from './searches/get-link';
+import getLinkFunnel from './searches/get-link-funnel';
 import getReferralProgram from './searches/get-referral-program';
 import findReferralAffiliates from './searches/find-referral-affiliates';
 import getReferralAffiliate from './searches/get-referral-affiliate';
@@ -458,6 +467,9 @@ const triggers = {
   [passSeriesSeatsExhausted.key]: passSeriesSeatsExhausted,
   [passSeriesPresaleOpened.key]: passSeriesPresaleOpened,
   [couponCreated.key]: couponCreated,
+  [linkCreated.key]: linkCreated,
+  [linkUpdated.key]: linkUpdated,
+  [linkArchived.key]: linkArchived,
   [couponUpdated.key]: couponUpdated,
   [couponActivated.key]: couponActivated,
   [couponDeactivated.key]: couponDeactivated,
@@ -613,6 +625,9 @@ const creates = {
   [testWebhookEndpoint.key]: testWebhookEndpoint,
   [revokeToken.key]: revokeToken,
   [createCoupon.key]: createCoupon,
+  [createLink.key]: createLink,
+  [updateLink.key]: updateLink,
+  [archiveLink.key]: archiveLink,
   [updateCoupon.key]: updateCoupon,
   [deleteCoupon.key]: deleteCoupon,
   [activateCoupon.key]: activateCoupon,
@@ -740,6 +755,9 @@ const searches = {
   [listTransactions.key]: listTransactions,
   [findCoupons.key]: findCoupons,
   [getCoupon.key]: getCoupon,
+  [findLinks.key]: findLinks,
+  [getLink.key]: getLink,
+  [getLinkFunnel.key]: getLinkFunnel,
   [getReferralProgram.key]: getReferralProgram,
   [findReferralAffiliates.key]: findReferralAffiliates,
   [getReferralAffiliate.key]: getReferralAffiliate,

@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+**Smart Links** (Subscriby 5.0.13) give a project a tracked address per channel: a video description, a bio, a newsletter, a flyer's QR. Each link counts its clicks, and every member who signs in within thirty days of clicking it is credited to it, so the funnel behind each channel (leads, purchases, payments, revenue) can be read apart from every other channel's. On every plan, under `/v1/projects/{project}/links` behind the `project-link:*` abilities.
+
+### Added
+
+- **Smart Link triggers** (3): **New Smart Link**, **Smart Link Updated** (with the fields that moved) and **Smart Link Archived**, one per `link.*` event, with the catalogue's payloads as their samples. Clicks and attributions fire no event; read them with the funnel search.
+- **Smart Link actions** (3): **Create Smart Link** (the name, the address segment, the destination and an optional expiry; answers the stable code and the three addresses to share), **Update Smart Link** (only the fields filled in change; Clear Expiry removes the expiry) and **Archive Smart Link** (the only removal; the figures stay).
+- **Smart Link searches** (3): **Find Smart Links** (by archived state and a name or address search), **Get Smart Link** and **Get Smart Link Funnel** (one link's row, or every link with the Direct row and totals that add up to the project's figures).
+
+### Changed
+
+- Every member row and every subscription row carries `source`: the Smart Link credited with the member, the door they came through and the campaign tags, or `null` for a member who arrived with none.
+
 ## 4.1.0 — 10 October 2026
 
 Two programmes arrive together, and everything already in the app stays as it was.
