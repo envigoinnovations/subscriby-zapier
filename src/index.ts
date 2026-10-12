@@ -26,6 +26,8 @@ import subscriptionDowngraded from './triggers/subscription-downgraded';
 import paymentSucceeded from './triggers/payment-succeeded';
 import paymentFailed from './triggers/payment-failed';
 import paymentPending from './triggers/payment-pending';
+import checkoutStalled from './triggers/checkout-stalled';
+import checkoutRecovered from './triggers/checkout-recovered';
 import paymentRefunded from './triggers/payment-refunded';
 import accessCodeGenerated from './triggers/access-code-generated';
 import accessCodeRedeemed from './triggers/access-code-redeemed';
@@ -39,6 +41,7 @@ import memberUnbanned from './triggers/member-unbanned';
 import memberKicked from './triggers/member-kicked';
 import memberConverted from './triggers/member-converted';
 import memberChurned from './triggers/member-churned';
+import memberLeadCreated from './triggers/member-lead-created';
 import memberRemoved from './triggers/member-removed';
 import memberResourceAdded from './triggers/member-resource-added';
 import memberResourcePending from './triggers/member-resource-pending';
@@ -436,6 +439,8 @@ const triggers = {
   [paymentSucceeded.key]: paymentSucceeded,
   [paymentFailed.key]: paymentFailed,
   [paymentPending.key]: paymentPending,
+  [checkoutStalled.key]: checkoutStalled,
+  [checkoutRecovered.key]: checkoutRecovered,
   [paymentRefunded.key]: paymentRefunded,
   [accessCodeGenerated.key]: accessCodeGenerated,
   [accessCodeRedeemed.key]: accessCodeRedeemed,
@@ -449,6 +454,7 @@ const triggers = {
   [memberKicked.key]: memberKicked,
   [memberConverted.key]: memberConverted,
   [memberChurned.key]: memberChurned,
+  [memberLeadCreated.key]: memberLeadCreated,
   [memberRemoved.key]: memberRemoved,
   [memberResourceAdded.key]: memberResourceAdded,
   [memberResourcePending.key]: memberResourcePending,

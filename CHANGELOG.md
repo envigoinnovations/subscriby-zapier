@@ -4,7 +4,11 @@
 
 **Revenue Recovery** (Subscriby's next release) is what a project does when a renewal fails, when a member cancels and after they leave: a grace window the creator sets, with a notice ladder that carries the rail's own way to pay again and ends in a pause until a charge settles; a cancellation screen that asks why and makes one offer for the member's rail (a pause, a discount or a coupon to come back with); and win-back sequences, the messages a member who left receives on the days the creator chose, each with the way back as a button. The notices and the grace window are on every plan; the offers and the sequences need Growth or the Revenue Recovery Addon. The settings, the figures and the two ledgers live under `/v1/projects/{project}/retention` behind `project-subscription:*`; the sequences under `/v1/projects/{project}/sequences` behind the new `project-sequence:*` abilities.
 
+**Lead nurture and checkout recovery** (the same release) completes the sequence engine: the lead, stalled-checkout and trial-ending triggers go live beside the churn one, every checkout a member starts on the portal or in the project bot is written to a ledger and counted as stalled once the window the project set has passed with no settled charge, the next charge that settles closes it as recovered, and three events say so.
+
 ### Added
+
+- **Lead nurture triggers** (3): **Member Lead Created** (a new lead, once, with the door they came through and the Smart Link credited), **Checkout Stalled** (once per member per day, with the plan, the rail, the surface and the passage opened) and **Checkout Recovered** (with the payment and subscription that finished the checkout), one per new event, with the catalogue's payloads as their samples.
 
 - **Revenue Recovery triggers** (5): **Subscription Payment Recovered**, **Subscription Access Suspended**, **Subscription Access Restored**, **Subscription Cancellation Feedback** and **Subscription Offer Taken**, one per new `subscription.*` event, with the catalogue's payloads as their samples.
 - **Sequence triggers** (7): **Sequence Created**, **Sequence Updated**, **Sequence Deleted**, **Sequence Enrolled**, **Sequence Step Sent**, **Sequence Converted** and **Sequence Exited**, one per `sequence.*` event, subscribed behind `project-sequence:view`.
