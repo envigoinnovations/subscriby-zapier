@@ -7,7 +7,7 @@ export default {
   display: {
     label: 'Get Retention Settings',
     description:
-      "Retrieve a project's Revenue Recovery settings: the grace window a failed renewal keeps access for (with the notice ladder in words), the daily digest, the cancellation question and the three offers the cancellation screen can make. The row is created with the defaults on the first read.",
+      "Retrieve a project's Revenue Recovery settings: the grace window a failed renewal keeps access for (with the notice ladder in words), the daily digest, the cancellation question, the three offers the cancellation screen can make, the checkout window after which a checkout counts as stalled and the trial reminder before a cardless trial ends. The row is created with the defaults on the first read.",
   },
   operation: {
     inputFields: [
@@ -39,6 +39,8 @@ export default {
       ladder: "A failed renewal keeps the member's access for 7 days: they are told at once with a link to settle the payment, reminded on day 3 and the day before the window closes, and paused when it does; access comes back by itself with the next successful payment.",
       digest_enabled: true,
       cancel_feedback_enabled: true,
+      checkout_stall_hours: 1,
+      trial_notice_days: 3,
       offers_available: true,
       offer_pause_enabled: true,
       offer_discount_coupon: { id: '3b7c9d1e-5f24-4a86-9c0b-2d4e6f8a1b3c', code: 'STAY20' },

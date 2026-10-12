@@ -390,6 +390,7 @@ import getRetentionSettings from './searches/get-retention-settings';
 import getRetentionStats from './searches/get-retention-stats';
 import findCancellationFeedback from './searches/find-cancellation-feedback';
 import findRetentionActivity from './searches/find-retention-activity';
+import findCheckouts from './searches/find-checkouts';
 import findSequences from './searches/find-sequences';
 import getSequence from './searches/get-sequence';
 import findSequenceEnrollments from './searches/find-sequence-enrollments';
@@ -807,6 +808,7 @@ const searches = {
   [getRetentionStats.key]: getRetentionStats,
   [findCancellationFeedback.key]: findCancellationFeedback,
   [findRetentionActivity.key]: findRetentionActivity,
+  [findCheckouts.key]: findCheckouts,
   [findSequences.key]: findSequences,
   [getSequence.key]: getSequence,
   [findSequenceEnrollments.key]: findSequenceEnrollments,

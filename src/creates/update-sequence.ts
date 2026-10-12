@@ -9,7 +9,7 @@ export default {
   display: {
     label: 'Update Sequence',
     description:
-      'Change a win-back sequence. Only the fields you fill in change; blank fields keep their value. Steps, when given, replace the whole list in order: a step still at its place keeps its id, the rest are added and the extra ones removed from the end. Switching the sequence off lets every member part-way through go.',
+      'Change a sequence. Only the fields you fill in change; blank fields keep their value. Steps, when given, replace the whole list in order: a step still at its place keeps its id, the rest are added and the extra ones removed from the end. Switching the sequence off lets every member part-way through go.',
   },
   operation: {
     inputFields: [
@@ -34,8 +34,13 @@ export default {
         label: 'Trigger',
         type: 'string',
         required: false,
-        choices: { churned: 'Member churned (their last live membership ended)' },
-        helpText: 'What enrols a member. Only "Member churned" is available today.',
+        choices: {
+          churned: 'Member churned (their last live membership ended)',
+          lead: 'New lead (they arrived without buying)',
+          stalled_checkout: 'Checkout stalled (a checkout stayed open past the project\'s window)',
+          trial_ending: 'Trial ending (a trial without a card is about to end)',
+        },
+        helpText: 'What enrols a member. Members already part-way through keep their passage.',
       },
       {
         key: 'active',

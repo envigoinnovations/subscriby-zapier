@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence',
   label: 'Sequence Created',
   description:
-    'Triggers when a creator builds a win-back sequence: the ordered messages a member who leaves receives on the days the creator chose, each with the way back and, optionally, a coupon. The payload carries the sequence snapshot with its steps (none yet on this event).',
+    'Triggers when a creator builds a sequence: the ordered messages a member receives on the days the creator chose after one of four moments (they left, they arrived as a lead, their checkout stalled, their trial is about to end), each with the way to the plan and, optionally, a coupon. The payload carries the sequence snapshot with its steps (none yet on this event).',
   event: 'sequence.created',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000001',

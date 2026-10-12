@@ -10,12 +10,18 @@
 
 - **Lead nurture triggers** (3): **Member Lead Created** (a new lead, once, with the door they came through and the Smart Link credited), **Checkout Stalled** (once per member per day, with the plan, the rail, the surface and the passage opened) and **Checkout Recovered** (with the payment and subscription that finished the checkout), one per new event, with the catalogue's payloads as their samples.
 
+- **Lead nurture search** (1): **Find Checkouts** (every checkout a member started on the portal or in the project bot, newest first, with the member, the plan, the rail, where they started, when the hourly sweep counted it as stalled and what became of it as an outcome; narrowed to the stalled or the recovered ones, one plan or one member).
 - **Revenue Recovery triggers** (5): **Subscription Payment Recovered**, **Subscription Access Suspended**, **Subscription Access Restored**, **Subscription Cancellation Feedback** and **Subscription Offer Taken**, one per new `subscription.*` event, with the catalogue's payloads as their samples.
 - **Sequence triggers** (7): **Sequence Created**, **Sequence Updated**, **Sequence Deleted**, **Sequence Enrolled**, **Sequence Step Sent**, **Sequence Converted** and **Sequence Exited**, one per `sequence.*` event, subscribed behind `project-sequence:view`.
 - **Revenue Recovery action** (1): **Update Retention Settings** (the grace window, the daily digest, the cancellation question and the three offers; only the fields filled in change, with Clear Discount Coupon and Clear Return Coupon for the two offers).
 - **Revenue Recovery searches** (4): **Get Retention Settings** (the row, created with the defaults on the first read, with the ladder in words and whether the offers are on the plan), **Get Retention Stats** (the dashboard card's figures over a period preset, with the reasons members gave and their shares), **Find Cancellation Feedback** (the screens members reached, by reason and surface) and **Find Retention Activity** (the ledger behind every figure, by kind).
 - **Sequence actions** (3): **Create Sequence** (the name, the trigger, the switch and the steps as line items, written with the sequence in one call), **Update Sequence** (only the fields filled in change; the steps, when given, replace the whole list in order and keep the ids still in place; Clear Steps removes them all) and **Delete Sequence** (every member part-way through leaves it; the history stays).
 - **Sequence searches** (3): **Find Sequences** (by running state and trigger, each row with its steps and counts), **Get Sequence** and **Find Sequence Enrollments** (the passages members made through one, by the way out).
+
+### Changed
+
+- **Update Retention Settings** takes the two Lead nurture windows, **Checkout Window (Hours)** (1–24, after which an open checkout counts as stalled) and **Trial Reminder (Days Before The End)** (1–14, when a cardless trial's sequence starts); **Get Retention Settings** reads them back, and **Get Retention Stats** carries the nurture block (leads arrived, nurtured and converted; checkouts started, stalled and recovered with their US dollars; trials nurtured and saved).
+- **Create Sequence** and **Update Sequence** offer all four triggers (Member churned, New lead, Checkout stalled, Trial ending), and a sequence's first step may wait 0 days to go out on the next hourly run; the later steps keep 1–180.
 
 ## 4.2.0 — 12 October 2026
 

@@ -31,21 +31,21 @@ export const sequenceStepFields = [
     key: 'steps',
     label: 'Steps',
     required: false,
-    helpText: 'The steps in the order they go out, at most 8. Each waits its days after the step before (the first after the member leaves) and sends its message with {name}, {project}, {coupon}, {discount} and {link} filled in.',
+    helpText: 'The steps in the order they go out, at most 8. Each waits its days after the step before (the first after the trigger\'s moment) and sends its message with {name}, {project}, {coupon}, {discount} and {link} filled in.',
     children: [
       {
         key: 'delay_days',
         label: 'Delay (Days)',
         type: 'integer',
         required: true,
-        helpText: 'Days after the trigger for the first step, after the step before for the rest; 1–180.',
+        helpText: 'Days after the trigger for the first step, 0–180 (0 goes out on the next hourly run); days after the step before for the rest, 1–180.',
       },
       {
         key: 'body',
         label: 'Message',
         type: 'text',
         required: true,
-        helpText: 'Up to 1,000 characters. Use {link} for the way back, {coupon} and {discount} when the step carries a coupon.',
+        helpText: 'Up to 1,000 characters. Use {link} for the way to the plan, {coupon} and {discount} when the step carries a coupon.',
       },
       {
         key: 'coupon_id',
@@ -92,7 +92,7 @@ export default {
   display: {
     label: 'Create Sequence',
     description:
-      'Build a win-back sequence on a project: the ordered messages a member who leaves receives on the days you choose, each with the way back as a button. The steps are written with the sequence in one call. Needs Growth or the Revenue Recovery Addon on the project owner.',
+      'Build a sequence on a project: the ordered messages a member receives on the days you choose after one of four moments (they left, they arrived as a lead, their checkout stalled, their trial is about to end), each with the way to the plan as a button. The steps are written with the sequence in one call. Needs Growth or the Revenue Recovery Addon on the project owner.',
   },
   operation: {
     inputFields: [
@@ -110,8 +110,13 @@ export default {
         label: 'Trigger',
         type: 'string',
         required: false,
-        choices: { churned: 'Member churned (their last live membership ended)' },
-        helpText: 'What enrols a member. Only "Member churned" is available today; leave blank for it.',
+        choices: {
+          churned: 'Member churned (their last live membership ended)',
+          lead: 'New lead (they arrived without buying)',
+          stalled_checkout: 'Checkout stalled (a checkout stayed open past the project\'s window)',
+          trial_ending: 'Trial ending (a trial without a card is about to end)',
+        },
+        helpText: 'What enrols a member. Leave blank for "Member churned".',
       },
       {
         key: 'active',
