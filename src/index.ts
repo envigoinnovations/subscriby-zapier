@@ -16,6 +16,8 @@ import subscriptionUnpaused from './triggers/subscription-unpaused';
 import subscriptionPastDue from './triggers/subscription-past-due';
 import subscriptionPaymentRecovered from './triggers/subscription-payment-recovered';
 import subscriptionAccessSuspended from './triggers/subscription-access-suspended';
+import subscriptionCancellationFeedback from './triggers/subscription-cancellation-feedback';
+import subscriptionOfferTaken from './triggers/subscription-offer-taken';
 import subscriptionAccessRestored from './triggers/subscription-access-restored';
 import subscriptionUnpaid from './triggers/subscription-unpaid';
 import subscriptionRefunded from './triggers/subscription-refunded';
@@ -406,6 +408,8 @@ const triggers = {
   [subscriptionPastDue.key]: subscriptionPastDue,
   [subscriptionPaymentRecovered.key]: subscriptionPaymentRecovered,
   [subscriptionAccessSuspended.key]: subscriptionAccessSuspended,
+  [subscriptionCancellationFeedback.key]: subscriptionCancellationFeedback,
+  [subscriptionOfferTaken.key]: subscriptionOfferTaken,
   [subscriptionAccessRestored.key]: subscriptionAccessRestored,
   [subscriptionUnpaid.key]: subscriptionUnpaid,
   [subscriptionRefunded.key]: subscriptionRefunded,
