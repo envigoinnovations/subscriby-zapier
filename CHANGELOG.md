@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 4.2.0 — 12 October 2026
 
 **Smart Links** (Subscriby 5.0.13) give a project a tracked address per channel: a video description, a bio, a newsletter, a flyer's QR. Each link counts its clicks, and every member who signs in within thirty days of clicking it is credited to it, so the funnel behind each channel (leads, purchases, payments, revenue) can be read apart from every other channel's. On every plan, under `/v1/projects/{project}/links` behind the `project-link:*` abilities.
 
