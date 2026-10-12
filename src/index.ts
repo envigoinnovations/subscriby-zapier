@@ -105,6 +105,13 @@ import couponExhausted from './triggers/coupon-exhausted';
 import linkCreated from './triggers/link-created';
 import linkUpdated from './triggers/link-updated';
 import linkArchived from './triggers/link-archived';
+import sequenceCreated from './triggers/sequence-created';
+import sequenceUpdated from './triggers/sequence-updated';
+import sequenceDeleted from './triggers/sequence-deleted';
+import sequenceEnrolled from './triggers/sequence-enrolled';
+import sequenceStepSent from './triggers/sequence-step-sent';
+import sequenceConverted from './triggers/sequence-converted';
+import sequenceExited from './triggers/sequence-exited';
 import referralProgramUpdated from './triggers/referral-program-updated';
 import referralAffiliateJoined from './triggers/referral-affiliate-joined';
 import referralAffiliateApproved from './triggers/referral-affiliate-approved';
@@ -480,6 +487,13 @@ const triggers = {
   [linkCreated.key]: linkCreated,
   [linkUpdated.key]: linkUpdated,
   [linkArchived.key]: linkArchived,
+  [sequenceCreated.key]: sequenceCreated,
+  [sequenceUpdated.key]: sequenceUpdated,
+  [sequenceDeleted.key]: sequenceDeleted,
+  [sequenceEnrolled.key]: sequenceEnrolled,
+  [sequenceStepSent.key]: sequenceStepSent,
+  [sequenceConverted.key]: sequenceConverted,
+  [sequenceExited.key]: sequenceExited,
   [couponUpdated.key]: couponUpdated,
   [couponActivated.key]: couponActivated,
   [couponDeactivated.key]: couponDeactivated,
