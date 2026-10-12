@@ -14,6 +14,9 @@ import subscriptionReactivated from './triggers/subscription-reactivated';
 import subscriptionPaused from './triggers/subscription-paused';
 import subscriptionUnpaused from './triggers/subscription-unpaused';
 import subscriptionPastDue from './triggers/subscription-past-due';
+import subscriptionPaymentRecovered from './triggers/subscription-payment-recovered';
+import subscriptionAccessSuspended from './triggers/subscription-access-suspended';
+import subscriptionAccessRestored from './triggers/subscription-access-restored';
 import subscriptionUnpaid from './triggers/subscription-unpaid';
 import subscriptionRefunded from './triggers/subscription-refunded';
 import subscriptionUpgraded from './triggers/subscription-upgraded';
@@ -401,6 +404,9 @@ const triggers = {
   [subscriptionPaused.key]: subscriptionPaused,
   [subscriptionUnpaused.key]: subscriptionUnpaused,
   [subscriptionPastDue.key]: subscriptionPastDue,
+  [subscriptionPaymentRecovered.key]: subscriptionPaymentRecovered,
+  [subscriptionAccessSuspended.key]: subscriptionAccessSuspended,
+  [subscriptionAccessRestored.key]: subscriptionAccessRestored,
   [subscriptionUnpaid.key]: subscriptionUnpaid,
   [subscriptionRefunded.key]: subscriptionRefunded,
   [subscriptionUpgraded.key]: subscriptionUpgraded,
