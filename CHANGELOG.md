@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.3.0 — 12 October 2026
+
+**Revenue Recovery** (Subscriby's next release) is what a project does when a renewal fails, when a member cancels and after they leave: a grace window the creator sets, with a notice ladder that carries the rail's own way to pay again and ends in a pause until a charge settles; a cancellation screen that asks why and makes one offer for the member's rail (a pause, a discount or a coupon to come back with); and win-back sequences, the messages a member who left receives on the days the creator chose, each with the way back as a button. The notices and the grace window are on every plan; the offers and the sequences need Growth or the Revenue Recovery Addon. The settings, the figures and the two ledgers live under `/v1/projects/{project}/retention` behind `project-subscription:*`; the sequences under `/v1/projects/{project}/sequences` behind the new `project-sequence:*` abilities.
+
+### Added
+
+- **Revenue Recovery triggers** (5): **Subscription Payment Recovered**, **Subscription Access Suspended**, **Subscription Access Restored**, **Subscription Cancellation Feedback** and **Subscription Offer Taken**, one per new `subscription.*` event, with the catalogue's payloads as their samples.
+- **Sequence triggers** (7): **Sequence Created**, **Sequence Updated**, **Sequence Deleted**, **Sequence Enrolled**, **Sequence Step Sent**, **Sequence Converted** and **Sequence Exited**, one per `sequence.*` event, subscribed behind `project-sequence:view`.
+- **Revenue Recovery action** (1): **Update Retention Settings** (the grace window, the daily digest, the cancellation question and the three offers; only the fields filled in change, with Clear Discount Coupon and Clear Return Coupon for the two offers).
+- **Revenue Recovery searches** (4): **Get Retention Settings** (the row, created with the defaults on the first read, with the ladder in words and whether the offers are on the plan), **Get Retention Stats** (the dashboard card's figures over a period preset, with the reasons members gave and their shares), **Find Cancellation Feedback** (the screens members reached, by reason and surface) and **Find Retention Activity** (the ledger behind every figure, by kind).
+- **Sequence actions** (3): **Create Sequence** (the name, the trigger, the switch and the steps as line items, written with the sequence in one call), **Update Sequence** (only the fields filled in change; the steps, when given, replace the whole list in order and keep the ids still in place; Clear Steps removes them all) and **Delete Sequence** (every member part-way through leaves it; the history stays).
+- **Sequence searches** (3): **Find Sequences** (by running state and trigger, each row with its steps and counts), **Get Sequence** and **Find Sequence Enrollments** (the passages members made through one, by the way out).
+
 ## 4.2.0 — 12 October 2026
 
 **Smart Links** (Subscriby 5.0.13) give a project a tracked address per channel: a video description, a bio, a newsletter, a flyer's QR. Each link counts its clicks, and every member who signs in within thirty days of clicking it is credited to it, so the funnel behind each channel (leads, purchases, payments, revenue) can be read apart from every other channel's. On every plan, under `/v1/projects/{project}/links` behind the `project-link:*` abilities.

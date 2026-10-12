@@ -255,6 +255,10 @@ import deactivateCoupon from './creates/deactivate-coupon';
 import createLink from './creates/create-link';
 import updateLink from './creates/update-link';
 import archiveLink from './creates/archive-link';
+import updateRetentionSettings from './creates/update-retention-settings';
+import createSequence from './creates/create-sequence';
+import updateSequence from './creates/update-sequence';
+import deleteSequence from './creates/delete-sequence';
 import updateReferralProgram from './creates/update-referral-program';
 import activateReferralProgram from './creates/activate-referral-program';
 import deactivateReferralProgram from './creates/deactivate-referral-program';
@@ -379,6 +383,13 @@ import getCoupon from './searches/get-coupon';
 import findLinks from './searches/find-links';
 import getLink from './searches/get-link';
 import getLinkFunnel from './searches/get-link-funnel';
+import getRetentionSettings from './searches/get-retention-settings';
+import getRetentionStats from './searches/get-retention-stats';
+import findCancellationFeedback from './searches/find-cancellation-feedback';
+import findRetentionActivity from './searches/find-retention-activity';
+import findSequences from './searches/find-sequences';
+import getSequence from './searches/get-sequence';
+import findSequenceEnrollments from './searches/find-sequence-enrollments';
 import getReferralProgram from './searches/get-referral-program';
 import findReferralAffiliates from './searches/find-referral-affiliates';
 import getReferralAffiliate from './searches/get-referral-affiliate';
@@ -652,6 +663,10 @@ const creates = {
   [createLink.key]: createLink,
   [updateLink.key]: updateLink,
   [archiveLink.key]: archiveLink,
+  [updateRetentionSettings.key]: updateRetentionSettings,
+  [createSequence.key]: createSequence,
+  [updateSequence.key]: updateSequence,
+  [deleteSequence.key]: deleteSequence,
   [updateCoupon.key]: updateCoupon,
   [deleteCoupon.key]: deleteCoupon,
   [activateCoupon.key]: activateCoupon,
@@ -782,6 +797,13 @@ const searches = {
   [findLinks.key]: findLinks,
   [getLink.key]: getLink,
   [getLinkFunnel.key]: getLinkFunnel,
+  [getRetentionSettings.key]: getRetentionSettings,
+  [getRetentionStats.key]: getRetentionStats,
+  [findCancellationFeedback.key]: findCancellationFeedback,
+  [findRetentionActivity.key]: findRetentionActivity,
+  [findSequences.key]: findSequences,
+  [getSequence.key]: getSequence,
+  [findSequenceEnrollments.key]: findSequenceEnrollments,
   [getReferralProgram.key]: getReferralProgram,
   [findReferralAffiliates.key]: findReferralAffiliates,
   [getReferralAffiliate.key]: getReferralAffiliate,
