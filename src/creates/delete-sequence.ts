@@ -5,7 +5,7 @@ export default defineRpcCreate({
   noun: 'Sequence',
   label: 'Delete Sequence',
   description:
-    'Put a win-back sequence out of use: every member part-way through leaves it at once, the row and its history stay for the figures, and the id stops answering. Never undone; to stop a sequence without losing it, set it inactive with Update Sequence instead.',
+    'Put a recovery sequence out of use: every member part-way through leaves it at once, the row and its history stay for the figures, and the id stops answering. Never undone; to stop a sequence without losing it, set it inactive with Update Sequence instead.',
   method: 'DELETE',
   inputFields: [
     { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },

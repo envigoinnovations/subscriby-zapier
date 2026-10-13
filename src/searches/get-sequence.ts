@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Get Sequence',
     description:
-      'Retrieve one win-back sequence by UUID: its name, trigger, switch, its steps in order with the coupon each carries, and how it has done. Find Sequence Enrollments has the members behind the counts.',
+      'Retrieve one recovery sequence by UUID: its name, trigger, switch, its steps in order with the coupon each carries, and how it has done. Find Sequence Enrollments has the members behind the counts.',
   },
   operation: {
     inputFields: [

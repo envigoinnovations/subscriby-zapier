@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Find Sequences',
     description:
-      "List a project's win-back sequences, newest first, each with its steps in order and how it has done: the members enrolled, still receiving steps, completed and won back. Narrow to running or paused sequences, or to one trigger.",
+      "List a project's recovery sequences, newest first, each with its steps in order and how it has done: the members enrolled, still receiving steps, completed and won back. Narrow to running or paused sequences, or to one trigger.",
   },
   operation: {
     inputFields: [

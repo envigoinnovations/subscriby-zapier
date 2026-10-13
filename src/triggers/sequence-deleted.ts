@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence',
   label: 'Sequence Deleted',
   description:
-    'Triggers when a creator deletes a win-back sequence. Every member part-way through it is let go first (each firing Sequence Exited with the reason "deleted"), the messages already sent stay in the activity ledger, and the payload carries the final snapshot with its deletion time set.',
+    'Triggers when a creator deletes a recovery sequence. Every member part-way through it is let go first (each firing Sequence Exited with the reason "deleted"), the messages already sent stay in the activity ledger, and the payload carries the final snapshot with its deletion time set.',
   event: 'sequence.deleted',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000003',

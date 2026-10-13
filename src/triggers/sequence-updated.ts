@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence',
   label: 'Sequence Updated',
   description:
-    'Triggers when a win-back sequence changes: it was renamed, switched on or off, or a step was added, rewritten or removed. The payload carries the sequence snapshot after the write, with every step in order; switching a sequence off also lets its members go, which fires Sequence Exited for each.',
+    'Triggers when a recovery sequence changes: it was renamed, switched on or off, or a step was added, rewritten or removed. The payload carries the sequence snapshot after the write, with every step in order; switching a sequence off also lets its members go, which fires Sequence Exited for each.',
   event: 'sequence.updated',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000002',

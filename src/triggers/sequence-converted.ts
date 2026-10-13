@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence Enrollment',
   label: 'Sequence Converted',
   description:
-    'Triggers when a member in a win-back sequence pays again: every open enrollment of theirs in the project ends as a win, the messages they received are counted as converted by that payment, and the creator is told. The payload names the enrollment, the sequence, the member and the payment that closed it.',
+    'Triggers when a member in a recovery sequence pays again: every open enrollment of theirs in the project ends as a win, the messages they received are counted as converted by that payment, and the creator is told. The payload names the enrollment, the sequence, the member and the payment that closed it.',
   event: 'sequence.converted',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000006',

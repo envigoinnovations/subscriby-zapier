@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence Enrollment',
   label: 'Sequence Enrolled',
   description:
-    'Triggers when a member enters a win-back sequence: their membership ended and the project runs a sequence on that trigger, they hold no other live membership, and they were not already part-way through it. The payload names the enrollment, the sequence, the member, the membership that ended and when the first step is due.',
+    'Triggers when a member enters a recovery sequence: their membership ended and the project runs a sequence on that trigger, they hold no other live membership, and they were not already part-way through it. The payload names the enrollment, the sequence, the member, the membership that ended and when the first step is due.',
   event: 'sequence.enrolled',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000004',

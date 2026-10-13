@@ -7,7 +7,7 @@ export default {
   display: {
     label: 'Find Sequence Enrollments',
     description:
-      'List the passages members made through one win-back sequence, newest first: when they entered, the step due next, and how the passage ended if it has (won back, unreachable, the sequence switched off or deleted). Narrow to passages that ended one way.',
+      'List the passages members made through one recovery sequence, newest first: when they entered, the step due next, and how the passage ended if it has (won back, unreachable, the sequence switched off or deleted). Narrow to passages that ended one way.',
   },
   operation: {
     inputFields: [

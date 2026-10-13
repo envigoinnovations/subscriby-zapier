@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence Step',
   label: 'Sequence Step Sent',
   description:
-    'Triggers when one step of a win-back sequence reaches a member: the hourly sweep found the step due, filled the placeholders, carried the way back as a button and the member\'s connector delivered it. The payload names the enrollment, the step and its position, and the coupon code the step carried, if any.',
+    'Triggers when one step of a recovery sequence reaches a member: the hourly sweep found the step due, filled the placeholders, carried the way back as a button and the member\'s connector delivered it. The payload names the enrollment, the step and its position, and the coupon code the step carried, if any.',
   event: 'sequence.step_sent',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000005',

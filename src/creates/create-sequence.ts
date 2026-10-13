@@ -29,9 +29,8 @@ export const sequenceStepsFrom = (raw: unknown): Array<Record<string, unknown>> 
 export const sequenceStepFields = [
   {
     key: 'steps',
-    label: 'Steps',
+    label: 'Steps (at most 8, in the order they go out)',
     required: false,
-    helpText: 'The steps in the order they go out, at most 8. Each waits its days after the step before (the first after the trigger\'s moment) and sends its message with {name}, {project}, {coupon}, {discount} and {link} filled in.',
     children: [
       {
         key: 'delay_days',

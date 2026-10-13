@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Sequence Enrollment',
   label: 'Sequence Exited',
   description:
-    'Triggers when a member leaves a win-back sequence before its last step for a reason other than paying again: the creator switched the sequence off ("disabled") or deleted it ("deleted"), or the member could not be reached on any connected account ("opted_out"). A member who pays again fires Sequence Converted instead, and one who receives every step completes quietly.',
+    'Triggers when a member leaves a recovery sequence before its last step for a reason other than paying again: the creator switched the sequence off ("disabled") or deleted it ("deleted"), or the member could not be reached on any connected account ("opted_out"). A member who pays again fires Sequence Converted instead, and one who receives every step completes quietly.',
   event: 'sequence.exited',
   sample: {
     id: 'evt_01HXEXAMPLESEQUENCE000007',

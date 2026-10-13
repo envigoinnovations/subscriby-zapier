@@ -1,8 +1,8 @@
 # Changelog
 
-## 4.3.0 — 12 October 2026
+## 4.3.0 — 13 October 2026
 
-**Revenue Recovery** (Subscriby's next release) is what a project does when a renewal fails, when a member cancels and after they leave: a grace window the creator sets, with a notice ladder that carries the rail's own way to pay again and ends in a pause until a charge settles; a cancellation screen that asks why and makes one offer for the member's rail (a pause, a discount or a coupon to come back with); and win-back sequences, the messages a member who left receives on the days the creator chose, each with the way back as a button. The notices and the grace window are on every plan; the offers and the sequences need Growth or the Revenue Recovery Addon. The settings, the figures and the two ledgers live under `/v1/projects/{project}/retention` behind `project-subscription:*`; the sequences under `/v1/projects/{project}/sequences` behind the new `project-sequence:*` abilities.
+**Revenue Recovery** (Subscriby 5.0.14) is what a project does when a renewal fails, when a member cancels and after they leave: a grace window the creator sets, with a notice ladder that carries the rail's own way to pay again and ends in a pause until a charge settles; a cancellation screen that asks why and makes one offer for the member's rail (a pause, a discount or a coupon to come back with); and win-back sequences, the messages a member who left receives on the days the creator chose, each with the way back as a button. The notices and the grace window are on every plan; the offers and the sequences need Growth or the Revenue Recovery Addon. The settings, the figures and the two ledgers live under `/v1/projects/{project}/retention` behind `project-subscription:*`; the sequences under `/v1/projects/{project}/sequences` behind the new `project-sequence:*` abilities.
 
 **Lead nurture and checkout recovery** (the same release) completes the sequence engine: the lead, stalled-checkout and trial-ending triggers go live beside the churn one, every checkout a member starts on the portal or in the project bot is written to a ledger and counted as stalled once the window the project set has passed with no settled charge, the next charge that settles closes it as recovered, and three events say so.
 
@@ -20,6 +20,7 @@
 
 ### Changed
 
+- The sequence triggers and searches call the family **recovery sequences**, since a sequence runs on any of four moments (a member who left, a new lead, a stalled checkout, a trial ending) and only the churn one is a win-back; **Win-back after churn** stays the sample name of a churn sequence, and the retention figures keep their win-back messages and members won back.
 - **Update Retention Settings** takes the two Lead nurture windows, **Checkout Window (Hours)** (1–24, after which an open checkout counts as stalled) and **Trial Reminder (Days Before The End)** (1–14, when a cardless trial's sequence starts); **Get Retention Settings** reads them back, and **Get Retention Stats** carries the nurture block (leads arrived, nurtured and converted; checkouts started, stalled and recovered with their US dollars; trials nurtured and saved).
 - **Create Sequence** and **Update Sequence** offer all four triggers (Member churned, New lead, Checkout stalled, Trial ending), and a sequence's first step may wait 0 days to go out on the next hourly run; the later steps keep 1–180.
 
