@@ -135,6 +135,10 @@ import partnerPayoutRecorded from './triggers/partner-payout-recorded';
 import partnerApplicationApproved from './triggers/partner-application-approved';
 import partnerApplicationRejected from './triggers/partner-application-rejected';
 import partnerRateChanged from './triggers/partner-rate-changed';
+import copilotCreditsPurchased from './triggers/copilot-credits-purchased';
+import copilotCreditsGranted from './triggers/copilot-credits-granted';
+import copilotCreditsLow from './triggers/copilot-credits-low';
+import copilotCreditsRefunded from './triggers/copilot-credits-refunded';
 import projectCreated from './triggers/project-created';
 import projectUpdated from './triggers/project-updated';
 import projectArchived from './triggers/project-archived';
@@ -547,6 +551,10 @@ const triggers = {
   [partnerApplicationApproved.key]: partnerApplicationApproved,
   [partnerApplicationRejected.key]: partnerApplicationRejected,
   [partnerRateChanged.key]: partnerRateChanged,
+  [copilotCreditsPurchased.key]: copilotCreditsPurchased,
+  [copilotCreditsGranted.key]: copilotCreditsGranted,
+  [copilotCreditsLow.key]: copilotCreditsLow,
+  [copilotCreditsRefunded.key]: copilotCreditsRefunded,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
   [projectArchived.key]: projectArchived,

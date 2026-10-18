@@ -8,6 +8,7 @@
 
 ### Added
 
+- **Copilot Credits triggers** (4): **Copilot Credits Purchased** (a pack paid for and credited, at Checkout or by the auto top-up, with what was paid, the free bonus and the balance after it), **Copilot Credits Granted** (the welcome credit, a promotion or goodwill, with why, how much and when it lapses), **Copilot Credits Low** (the balance under the low-balance threshold, once a day at most) and **Copilot Credits Refunded** (a refund taking credit back, with the running refunded figure, the bonus withdrawn and the balance after it, negative when the credit had been spent), one per new event, with the catalogue's payloads as their samples; every amount is an integer in US cents and `project_id` is null, since the pool is the creator's own.
 - **Lead nurture triggers** (3): **Member Lead Created** (a new lead, once, with the door they came through and the Smart Link credited), **Checkout Stalled** (once per member per day, with the plan, the rail, the surface and the passage opened) and **Checkout Recovered** (with the payment and subscription that finished the checkout), one per new event, with the catalogue's payloads as their samples.
 
 - **Lead nurture search** (1): **Find Checkouts** (every checkout a member started on the portal or in the project bot, newest first, with the member, the plan, the rail, where they started, when the hourly sweep counted it as stalled and what became of it as an outcome; narrowed to the stalled or the recovered ones, one plan or one member).
