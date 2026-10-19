@@ -289,6 +289,7 @@ import updateSupportSettings from './creates/update-support-settings';
 import createKnowledgeEntry from './creates/create-knowledge-entry';
 import updateKnowledgeEntry from './creates/update-knowledge-entry';
 import deleteKnowledgeEntry from './creates/delete-knowledge-entry';
+import updateCopilotCreditsSettings from './creates/update-copilot-credits-settings';
 import updateResource from './creates/update-resource';
 import activateResource from './creates/activate-resource';
 import deactivateResource from './creates/deactivate-resource';
@@ -421,6 +422,8 @@ import getCannedReply from './searches/get-canned-reply';
 import getSupportSettings from './searches/get-support-settings';
 import findKnowledgeEntries from './searches/find-knowledge-entries';
 import getKnowledgeEntry from './searches/get-knowledge-entry';
+import getCopilotCredits from './searches/get-copilot-credits';
+import findCopilotCreditsStatement from './searches/find-copilot-credits-statement';
 import getPassWindow from './searches/get-pass-window';
 import getWebhookEndpoint from './searches/get-webhook-endpoint';
 import getWebhookDelivery from './searches/get-webhook-delivery';
@@ -717,6 +720,7 @@ const creates = {
   [createKnowledgeEntry.key]: createKnowledgeEntry,
   [updateKnowledgeEntry.key]: updateKnowledgeEntry,
   [deleteKnowledgeEntry.key]: deleteKnowledgeEntry,
+  [updateCopilotCreditsSettings.key]: updateCopilotCreditsSettings,
   [updateResource.key]: updateResource,
   [activateResource.key]: activateResource,
   [deactivateResource.key]: deactivateResource,
@@ -851,6 +855,8 @@ const searches = {
   [getSupportSettings.key]: getSupportSettings,
   [findKnowledgeEntries.key]: findKnowledgeEntries,
   [getKnowledgeEntry.key]: getKnowledgeEntry,
+  [getCopilotCredits.key]: getCopilotCredits,
+  [findCopilotCreditsStatement.key]: findCopilotCreditsStatement,
   [getPassWindow.key]: getPassWindow,
   [getWebhookEndpoint.key]: getWebhookEndpoint,
   [getWebhookDelivery.key]: getWebhookDelivery,
