@@ -102,6 +102,9 @@ import supportConversationUnblocked from './triggers/support-conversation-unbloc
 import supportCannedReplyCreated from './triggers/support-canned-reply-created';
 import supportCannedReplyUpdated from './triggers/support-canned-reply-updated';
 import supportCannedReplyDeleted from './triggers/support-canned-reply-deleted';
+import knowledgeCreated from './triggers/knowledge-created';
+import knowledgeUpdated from './triggers/knowledge-updated';
+import knowledgeDeleted from './triggers/knowledge-deleted';
 import supportSettingsUpdated from './triggers/support-settings-updated';
 import couponRedeemed from './triggers/coupon-redeemed';
 import couponExhausted from './triggers/coupon-exhausted';
@@ -283,6 +286,9 @@ import createCannedReply from './creates/create-canned-reply';
 import updateCannedReply from './creates/update-canned-reply';
 import deleteCannedReply from './creates/delete-canned-reply';
 import updateSupportSettings from './creates/update-support-settings';
+import createKnowledgeEntry from './creates/create-knowledge-entry';
+import updateKnowledgeEntry from './creates/update-knowledge-entry';
+import deleteKnowledgeEntry from './creates/delete-knowledge-entry';
 import updateResource from './creates/update-resource';
 import activateResource from './creates/activate-resource';
 import deactivateResource from './creates/deactivate-resource';
@@ -413,6 +419,8 @@ import findPartnerPayouts from './searches/find-partner-payouts';
 import findCannedReplies from './searches/find-canned-replies';
 import getCannedReply from './searches/get-canned-reply';
 import getSupportSettings from './searches/get-support-settings';
+import findKnowledgeEntries from './searches/find-knowledge-entries';
+import getKnowledgeEntry from './searches/get-knowledge-entry';
 import getPassWindow from './searches/get-pass-window';
 import getWebhookEndpoint from './searches/get-webhook-endpoint';
 import getWebhookDelivery from './searches/get-webhook-delivery';
@@ -528,6 +536,9 @@ const triggers = {
   [supportCannedReplyCreated.key]: supportCannedReplyCreated,
   [supportCannedReplyUpdated.key]: supportCannedReplyUpdated,
   [supportCannedReplyDeleted.key]: supportCannedReplyDeleted,
+  [knowledgeCreated.key]: knowledgeCreated,
+  [knowledgeUpdated.key]: knowledgeUpdated,
+  [knowledgeDeleted.key]: knowledgeDeleted,
   [supportSettingsUpdated.key]: supportSettingsUpdated,
   [couponRedeemed.key]: couponRedeemed,
   [couponExhausted.key]: couponExhausted,
@@ -703,6 +714,9 @@ const creates = {
   [updateCannedReply.key]: updateCannedReply,
   [deleteCannedReply.key]: deleteCannedReply,
   [updateSupportSettings.key]: updateSupportSettings,
+  [createKnowledgeEntry.key]: createKnowledgeEntry,
+  [updateKnowledgeEntry.key]: updateKnowledgeEntry,
+  [deleteKnowledgeEntry.key]: deleteKnowledgeEntry,
   [updateResource.key]: updateResource,
   [activateResource.key]: activateResource,
   [deactivateResource.key]: deactivateResource,
@@ -835,6 +849,8 @@ const searches = {
   [findCannedReplies.key]: findCannedReplies,
   [getCannedReply.key]: getCannedReply,
   [getSupportSettings.key]: getSupportSettings,
+  [findKnowledgeEntries.key]: findKnowledgeEntries,
+  [getKnowledgeEntry.key]: getKnowledgeEntry,
   [getPassWindow.key]: getPassWindow,
   [getWebhookEndpoint.key]: getWebhookEndpoint,
   [getWebhookDelivery.key]: getWebhookDelivery,

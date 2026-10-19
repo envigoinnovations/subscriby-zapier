@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.4.0 — 20 October 2026
+
+**Subscriby Copilot** (Subscriby 5.0.16) is the operator inside the dashboard and the platform bot, and **Knowledge** is what a project teaches it beyond what Subscriby already knows: questions with their answers and documents, each cut into passages the Copilot is handed when a question matches, and each marked for members or for the team alone. A project may let the Copilot answer its members too, in the inbox and the project bot and in a chat on the portal page, from the same Knowledge and the member's own standing. The entries live under `/v1/projects/{project}/knowledge` behind the `project-knowledge:*` abilities; the two member switches are fields of the project's support settings.
+
+### Added
+
+- **Knowledge triggers** (3): **New Knowledge Entry** (a question or a document taught, from the dashboard, the API or an agent), **Knowledge Entry Updated** (the title, the audience or the text changed, with the fields that moved and whether the text did; silent when a save changed nothing) and **Knowledge Entry Deleted** (an entry taken back with its passages), one per new `knowledge.*` event, with the catalogue's payloads as their samples; no payload carries the entry's text, so a Zap that needs the words reads them with **Get Knowledge Entry**.
+- **Knowledge actions** (3): **Create Knowledge Entry** (a question with its answer or a document sent as text, with who may be answered from it; indexed before the step returns, at most 200 entries a project), **Update Knowledge Entry** (only the fields filled in change; new words are cut into passages again at once, a new audience alone moves the member boundary) and **Delete Knowledge Entry** (the entry, its passages and its file go together; nothing is recoverable).
+- **Knowledge searches** (2): **Find Knowledge Entries** (what a project taught, newest first, each row with its kind, audience, state, title and passage count and never its text) and **Get Knowledge Entry** (one entry with its text).
+
+### Changed
+
+- **Update Support Settings** takes **Copilot Answers Members** (the Copilot answers members' own-subscription questions and what the project's Knowledge covers in the inbox and the project bot, marked as automated) and **Copilot on the Portal Page** (the same Copilot in a chat on the portal page for a signed-in member); **Get Support Settings** reads both back as `copilot_answers` and `copilot_portal`.
+
 ## 4.3.0 — 13 October 2026
 
 **Revenue Recovery** (Subscriby 5.0.14) is what a project does when a renewal fails, when a member cancels and after they leave: a grace window the creator sets, with a notice ladder that carries the rail's own way to pay again and ends in a pause until a charge settles; a cancellation screen that asks why and makes one offer for the member's rail (a pause, a discount or a coupon to come back with); and win-back sequences, the messages a member who left receives on the days the creator chose, each with the way back as a button. The notices and the grace window are on every plan; the offers and the sequences need Growth or the Revenue Recovery Addon. The settings, the figures and the two ledgers live under `/v1/projects/{project}/retention` behind `project-subscription:*`; the sequences under `/v1/projects/{project}/sequences` behind the new `project-sequence:*` abilities.

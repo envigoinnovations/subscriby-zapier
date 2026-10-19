@@ -32,13 +32,28 @@ export default {
       { key: 'agent_name', label: 'Agent Name', type: 'string', required: false, helpText: 'The name members see on replies, up to 60 characters. Leave blank to keep the stored name.' },
       { key: 'auto_reply', label: 'Auto Reply', type: 'text', required: false, helpText: 'Sent automatically when a member opens a thread, up to 1,000 characters. Leave blank to keep the stored text.' },
       { key: 'notify_email', label: 'Notify by Email', type: 'boolean', required: false, helpText: 'Whether the creator is emailed about new threads.' },
+      {
+        key: 'copilot_answers',
+        label: 'Copilot Answers Members',
+        type: 'boolean',
+        required: false,
+        helpText:
+          "Whether Subscriby Copilot answers members' own-subscription questions and what the project's Knowledge covers in the inbox and the project bot, marked as automated. Everything else still waits for a person.",
+      },
+      {
+        key: 'copilot_portal',
+        label: 'Copilot on the Portal Page',
+        type: 'boolean',
+        required: false,
+        helpText: "Whether a signed-in member finds the same Copilot in a chat on the project's portal page.",
+      },
     ],
     async perform(z: ZObject, bundle: Bundle) {
       const projectId = bundle.inputData.project_id as string;
 
       const body: Record<string, unknown> = {};
 
-      for (const key of ['enabled', 'relay_mode', 'agent_name', 'auto_reply', 'notify_email']) {
+      for (const key of ['enabled', 'relay_mode', 'agent_name', 'auto_reply', 'notify_email', 'copilot_answers', 'copilot_portal']) {
         const value = bundle.inputData[key];
         if (value !== undefined && value !== null && value !== '') {
           body[key] = value;
@@ -63,6 +78,8 @@ export default {
       agent_name: 'Team Subscriby',
       auto_reply: null,
       notify_email: true,
+      copilot_answers: false,
+      copilot_portal: false,
       updated_at: '2026-09-06T09:20:00Z',
     },
   },
