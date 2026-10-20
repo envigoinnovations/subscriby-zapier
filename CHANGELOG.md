@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.4.0 — 20 October 2026
+## 4.4.0 — 21 October 2026
 
 **Subscriby Copilot** (Subscriby 5.0.16) is the operator inside the dashboard and the platform bot, and **Knowledge** is what a project teaches it beyond what Subscriby already knows: questions with their answers and documents, each cut into passages the Copilot is handed when a question matches, and each marked for members or for the team alone. A project may let the Copilot answer its members too, in the inbox and the project bot and in a chat on the portal page, from the same Knowledge and the member's own standing. The entries live under `/v1/projects/{project}/knowledge` behind the `project-knowledge:*` abilities; the two member switches are fields of the project's support settings.
 
