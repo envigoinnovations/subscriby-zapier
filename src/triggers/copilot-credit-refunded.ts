@@ -1,15 +1,15 @@
 import { defineWebhookTrigger } from './webhook-trigger-factory';
 
 export default defineWebhookTrigger({
-  key: 'copilot_credits_refunded',
-  noun: 'Copilot Credits',
-  label: 'Copilot Credits Refunded',
+  key: 'copilot_credit_refunded',
+  noun: 'Copilot Credit',
+  label: 'Copilot Credit Refunded',
   description:
     'Triggers when Stripe refunds the charge for a pack of Copilot Credits, in part or in full, and the credit is taken back: "refunded_cents" is everything refunded on the purchase so far, "bonus_voided_cents" the bonus withdrawn once the refund reaches the full price, and "balance_cents" the whole balance after it, negative when the refunded credit had already been spent. One event per refund, with the running figure.',
-  event: 'copilot_credits.refunded',
+  event: 'copilot_credit.refunded',
   sample: {
     id: 'evt_01HXEXAMPLECOPILOT0000004',
-    type: 'copilot_credits.refunded',
+    type: 'copilot_credit.refunded',
     created_at: '2026-11-05T16:02:10Z',
     api_version: '2026-05-01',
     project_id: null,

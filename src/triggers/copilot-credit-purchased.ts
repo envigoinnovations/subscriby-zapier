@@ -1,15 +1,15 @@
 import { defineWebhookTrigger } from './webhook-trigger-factory';
 
 export default defineWebhookTrigger({
-  key: 'copilot_credits_purchased',
-  noun: 'Copilot Credits',
-  label: 'Copilot Credits Purchased',
+  key: 'copilot_credit_purchased',
+  noun: 'Copilot Credit',
+  label: 'Copilot Credit Purchased',
   description:
     'Triggers when a pack of Copilot Credits is paid for and credited, at Checkout or by the auto top-up: "paid_cents" is what you paid before tax, "bonus_cents" the free credit granted beside it, and "balance_cents" the whole balance after the purchase. Every amount is an integer in US cents; one event per pack, however many Stripe events describe the payment.',
-  event: 'copilot_credits.purchased',
+  event: 'copilot_credit.purchased',
   sample: {
     id: 'evt_01HXEXAMPLECOPILOT0000001',
-    type: 'copilot_credits.purchased',
+    type: 'copilot_credit.purchased',
     created_at: '2026-11-02T09:14:31Z',
     api_version: '2026-05-01',
     project_id: null,
