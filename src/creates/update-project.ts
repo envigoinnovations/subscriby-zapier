@@ -19,6 +19,15 @@ export default {
       { key: 'terms', label: 'Terms URL', type: 'string', required: false },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false },
       { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false },
+      {
+        key: 'storefront_arrangement',
+        label: 'Storefront Arrangement',
+        type: 'string',
+        required: false,
+        choices: { manual: 'Manual (the pinned order)', live: 'Live (what is on now first)' },
+        helpText:
+          'How the portal, the embed and the bot order the plans on offer. Live puts the passes and seasons whose access is on now first, then those opening soonest, then the pinned order; it needs the owner\'s time-limited passes capability (Growth, or the Passes Addon) and is refused with TEAM_TIER_REQUIRED without it.',
+      },
       { key: 'active', label: 'Active', type: 'boolean', required: false },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name' },
     ],
@@ -33,6 +42,7 @@ export default {
         'terms',
         'privacy',
         'metrics',
+        'storefront_arrangement',
         'active',
         'team_id',
       ];

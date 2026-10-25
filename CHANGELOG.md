@@ -8,6 +8,10 @@ The Copilot Credit event family is named in the singular, as every other family 
 
 - The four Copilot Credit triggers listen for `copilot_credit.purchased`, `copilot_credit.granted`, `copilot_credit.low` and `copilot_credit.refunded` and are keyed `copilot_credit_*`; their labels read **Copilot Credit Purchased**, **Copilot Credit Granted**, **Copilot Credit Low** and **Copilot Credit Refunded**. The payloads are unchanged. A Zap built on the plural keys of 4.4.0 has to be rebuilt on these; no published Zap was.
 
+### Added
+
+- **Update Project** takes **Storefront Arrangement**: `manual`, the order pinned from Storefront Order, or `live`, which puts the passes and seasons whose access is on now first, the one ending soonest at the top, then those opening soonest, then the pinned order. `live` needs the project owner's time-limited passes capability (Growth, or the Passes Addon) and is refused with `TEAM_TIER_REQUIRED` without it. Every project read carries the field as `storefront_arrangement`.
+
 ## 4.4.0 — 21 October 2026
 
 **Subscriby Copilot** (Subscriby 5.0.16) is the operator inside the dashboard and the platform bot, and **Knowledge** is what a project teaches it beyond what Subscriby already knows: questions with their answers and documents, each cut into passages the Copilot is handed when a question matches, and each marked for members or for the team alone. A project may let the Copilot answer its members too, in the inbox and the project bot and in a chat on the portal page, from the same Knowledge and the member's own standing. The entries live under `/v1/projects/{project}/knowledge` behind the `project-knowledge:*` abilities; the two member switches are fields of the project's support settings.
