@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.5.0 — 25 October 2026
+## 4.5.0 — 27 October 2026
 
 The Copilot Credit event family is named in the singular, as every other family in Subscriby's webhook catalogue is; the product keeps its name, Copilot Credits, in every description. Ships with the Subscriby release that follows 5.0.16, which sends the renamed events.
 
