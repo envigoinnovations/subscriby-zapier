@@ -105,6 +105,7 @@ import supportCannedReplyDeleted from './triggers/support-canned-reply-deleted';
 import knowledgeCreated from './triggers/knowledge-created';
 import knowledgeUpdated from './triggers/knowledge-updated';
 import knowledgeDeleted from './triggers/knowledge-deleted';
+import projectDesignPublished from './triggers/project-design-published';
 import supportSettingsUpdated from './triggers/support-settings-updated';
 import couponRedeemed from './triggers/coupon-redeemed';
 import couponExhausted from './triggers/coupon-exhausted';
@@ -289,6 +290,9 @@ import updateSupportSettings from './creates/update-support-settings';
 import createKnowledgeEntry from './creates/create-knowledge-entry';
 import updateKnowledgeEntry from './creates/update-knowledge-entry';
 import deleteKnowledgeEntry from './creates/delete-knowledge-entry';
+import updatePortalDesign from './creates/update-portal-design';
+import publishPortalDesign from './creates/publish-portal-design';
+import discardPortalDesignDraft from './creates/discard-portal-design-draft';
 import updateCopilotCreditsSettings from './creates/update-copilot-credits-settings';
 import updateResource from './creates/update-resource';
 import activateResource from './creates/activate-resource';
@@ -422,6 +426,7 @@ import getCannedReply from './searches/get-canned-reply';
 import getSupportSettings from './searches/get-support-settings';
 import findKnowledgeEntries from './searches/find-knowledge-entries';
 import getKnowledgeEntry from './searches/get-knowledge-entry';
+import getPortalDesign from './searches/get-portal-design';
 import getCopilotCredits from './searches/get-copilot-credits';
 import findCopilotCreditsStatement from './searches/find-copilot-credits-statement';
 import getPassWindow from './searches/get-pass-window';
@@ -571,6 +576,7 @@ const triggers = {
   [copilotCreditsRefunded.key]: copilotCreditsRefunded,
   [projectCreated.key]: projectCreated,
   [projectUpdated.key]: projectUpdated,
+  [projectDesignPublished.key]: projectDesignPublished,
   [projectArchived.key]: projectArchived,
   [projectRestored.key]: projectRestored,
   [projectDeleted.key]: projectDeleted,
@@ -720,6 +726,9 @@ const creates = {
   [createKnowledgeEntry.key]: createKnowledgeEntry,
   [updateKnowledgeEntry.key]: updateKnowledgeEntry,
   [deleteKnowledgeEntry.key]: deleteKnowledgeEntry,
+  [updatePortalDesign.key]: updatePortalDesign,
+  [publishPortalDesign.key]: publishPortalDesign,
+  [discardPortalDesignDraft.key]: discardPortalDesignDraft,
   [updateCopilotCreditsSettings.key]: updateCopilotCreditsSettings,
   [updateResource.key]: updateResource,
   [activateResource.key]: activateResource,
@@ -855,6 +864,7 @@ const searches = {
   [getSupportSettings.key]: getSupportSettings,
   [findKnowledgeEntries.key]: findKnowledgeEntries,
   [getKnowledgeEntry.key]: getKnowledgeEntry,
+  [getPortalDesign.key]: getPortalDesign,
   [getCopilotCredits.key]: getCopilotCredits,
   [findCopilotCreditsStatement.key]: findCopilotCreditsStatement,
   [getPassWindow.key]: getPassWindow,

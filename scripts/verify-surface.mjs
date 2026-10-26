@@ -55,6 +55,7 @@ const DELIBERATELY_ABSENT = new Map([
   ["DELETE /me/recovery/handshakes/{}", "Relinking the creator's own account is a human act at the connector; the dashboard's recovery steps drive it."],
   ["POST /me/recovery/handshakes/{}/confirm", "Relinking the creator's own account is a human act at the connector; the dashboard's recovery steps drive it."],
   ["GET /ping", "The health probe, not an operation."],
+  ["POST /projects/{}/portal-design/images/{}", "A picture is a file a person picks; a Zap step cannot send multipart. Pictures are stored on the dashboard or over REST and their addresses written with Update Portal Design."],
   ["GET /projects/{}/broadcasts/audiences", "The composer's audience list for the dashboard; Broadcast Message takes the same audience fields and reports what it queued."],
   ["GET /projects/{}/broadcasts/preview", "The composer's recipient estimate for the dashboard; Broadcast Message reports what it queued."],
   ["POST /projects/{}/plans/order", "Drag ordering of the plan list on the dashboard; a Zap has nothing to order."],
