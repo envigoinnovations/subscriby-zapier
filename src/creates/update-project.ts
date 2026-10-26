@@ -18,7 +18,6 @@ export default {
       { key: 'handle', label: 'Handle', type: 'string', required: false, helpText: 'URL slug (alpha-dash lowercase, 5-255). Requires Starter or Growth tier.' },
       { key: 'terms', label: 'Terms URL', type: 'string', required: false },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false },
-      { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false },
       {
         key: 'storefront_arrangement',
         label: 'Storefront Arrangement',
@@ -41,7 +40,6 @@ export default {
         'handle',
         'terms',
         'privacy',
-        'metrics',
         'storefront_arrangement',
         'active',
         'team_id',

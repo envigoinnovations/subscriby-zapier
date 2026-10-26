@@ -23,7 +23,6 @@ export default {
       },
       { key: 'terms', label: 'Terms URL', type: 'string', required: false, helpText: 'Optional URL to the terms page. Max 255 characters.' },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false, helpText: 'Optional URL to the privacy page. Max 255 characters.' },
-      { key: 'metrics', label: 'Aggregated Metrics', type: 'boolean', required: false, helpText: 'Opt into aggregated metrics collection on this project.' },
       { key: 'active', label: 'Active', type: 'boolean', required: false, helpText: 'Defaults to true. Set false to create in draft state.' },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name', helpText: 'UUID of the owning team. Defaults to the token\'s scoped team.' },
     ],
@@ -37,7 +36,6 @@ export default {
         'handle',
         'terms',
         'privacy',
-        'metrics',
         'active',
         'team_id',
       ];
