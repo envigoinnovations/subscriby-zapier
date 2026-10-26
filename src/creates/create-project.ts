@@ -24,6 +24,7 @@ export default {
       { key: 'terms', label: 'Terms URL', type: 'string', required: false, helpText: 'Optional URL to the terms page. Max 255 characters.' },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false, helpText: 'Optional URL to the privacy page. Max 255 characters.' },
       { key: 'active', label: 'Active', type: 'boolean', required: false, helpText: 'Defaults to true. Set false to create in draft state.' },
+      { key: 'hide_branding', label: 'Remove Subscriby Branding', type: 'boolean', required: false, helpText: 'Takes the "Powered by Subscriby" mark off the portal page, its social card and the bot. Off by default on every plan; turning it on needs a Starter or Growth tier — Free-tier tokens get TEAM_TIER_REQUIRED.' },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name', helpText: 'UUID of the owning team. Defaults to the token\'s scoped team.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -37,6 +38,7 @@ export default {
         'terms',
         'privacy',
         'active',
+        'hide_branding',
         'team_id',
       ];
 

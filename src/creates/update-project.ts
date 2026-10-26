@@ -28,6 +28,7 @@ export default {
           'How the portal, the embed and the bot order the plans on offer. Live puts the passes and seasons whose access is on now first, then those opening soonest, then the pinned order; it needs the owner\'s time-limited passes capability (Growth, or the Passes Addon) and is refused with TEAM_TIER_REQUIRED without it.',
       },
       { key: 'active', label: 'Active', type: 'boolean', required: false },
+      { key: 'hide_branding', label: 'Remove Subscriby Branding', type: 'boolean', required: false, helpText: 'Takes the "Powered by Subscriby" mark off the portal page, its social card and the bot. Off by default on every plan; turning it on needs a Starter or Growth tier — Free-tier tokens get TEAM_TIER_REQUIRED.' },
       { key: 'team_id', label: 'Team ID', type: 'string', required: false, dynamic: 'dropdown_teams.id.name' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -42,6 +43,7 @@ export default {
         'privacy',
         'storefront_arrangement',
         'active',
+        'hide_branding',
         'team_id',
       ];
 
