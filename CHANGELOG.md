@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- **Cancel Pass Window** takes **Season-Ticket Holders**: **Move them to the next date** (the default, and what the action always did) keeps a season at the same length, **Drop the date from their season** leaves the rest standing and reports what the date was worth per holder; single-date holders are always moved where a window is on sale. The row's `meta` gains `subscribers_affected`, `series_holders`, `refunds` (one row per holder owed a decision, with what they paid and what the date was worth, raw and formatted) and `refund_totals` per currency, and the **Pass Window Cancelled** trigger's payload carries `legs_dropped` and `series_holders`. Ships with the Subscriby release that follows 5.0.17.
+
 ## 4.5.0 — 27 October 2026
 
 The Copilot Credit event family is named in the singular, as every other family in Subscriby's webhook catalogue is; the product keeps its name, Copilot Credits, in every description. Ships with the Subscriby release that follows 5.0.16, which sends the renamed events.
