@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 4.6.0 — 27 October 2026
 
 ### Changed
 

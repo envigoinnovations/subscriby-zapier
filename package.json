@@ -1,6 +1,6 @@
 {
     "name": "subscriby-zapier",
-    "version": "4.5.0",
+    "version": "4.6.0",
     "description": "Zapier Platform integration for Subscriby — monetised Telegram community automation.",
     "main": "index.js",
     "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
         "node": ">=18"
     },
     "scripts": {
-    "prepare": "git config core.hooksPath .githooks || exit 0",
+        "prepare": "git config core.hooksPath .githooks || exit 0",
         "verify:surface": "node scripts/verify-surface.mjs",
         "export:operations": "node scripts/export-operations.mjs",
         "prebuild": "npm run verify:surface && node -e \"const p=require('./package.json');const s=require('fs').readFileSync('src/utils/http.ts','utf8');if(!s.includes('INTEGRATION_VERSION = \\\"'+p.version+'\\\"')){console.error('src/utils/http.ts INTEGRATION_VERSION does not match package.json '+p.version+' — the User-Agent would report the wrong version.');process.exit(1)}\"",
