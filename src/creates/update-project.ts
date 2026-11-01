@@ -8,14 +8,14 @@ export default {
   display: {
     label: 'Update Project',
     description:
-      'Partial-update an existing Subscriby project. Only fields you supply are changed; omitted fields keep their current value. Handle uniqueness and custom_handle tier gate are enforced server-side.',
+      'Partial-update an existing Subscriby project. Only fields you supply are changed; omitted fields keep their current value. Handle uniqueness is enforced server-side, and a changed handle keeps the old address redirecting.',
   },
   operation: {
     inputFields: [
       { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'name', label: 'Name', type: 'string', required: false, helpText: '5-255 characters.' },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'Max 1000 characters. HTML filtered server-side.' },
-      { key: 'handle', label: 'Handle', type: 'string', required: false, helpText: 'URL slug (alpha-dash lowercase, 5-255). Requires Starter or Growth tier.' },
+      { key: 'handle', label: 'Handle', type: 'string', required: false, helpText: 'URL slug (alpha-dash lowercase, 5-255), unique across every project\'s current and former handles, on every tier. Changing it moves the portal URL at once; the old address keeps redirecting.' },
       { key: 'terms', label: 'Terms URL', type: 'string', required: false },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false },
       {

@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Create Project',
     description:
-      'Create a new Subscriby project. Delegates to the REST v1 endpoint — plan limits, the custom_handle tier gate, and cache invalidation all run server-side.',
+      'Create a new Subscriby project. Delegates to the REST v1 endpoint — plan limits, handle uniqueness and cache invalidation all run server-side.',
   },
   operation: {
     inputFields: [
@@ -19,7 +19,7 @@ export default {
         label: 'Handle',
         type: 'string',
         required: false,
-        helpText: 'URL-friendly slug; alpha-dash lowercase, 5-255 chars. Requires a Starter or Growth Subscriby tier — Free-tier tokens get TEAM_TIER_REQUIRED if supplied.',
+        helpText: 'URL-friendly slug; alpha-dash lowercase, 5-255 chars, unique across every project\'s current and former handles, on every tier. Omitted, a random handle is assigned; it can be changed later and the old address keeps redirecting.',
       },
       { key: 'terms', label: 'Terms URL', type: 'string', required: false, helpText: 'Optional URL to the terms page. Max 255 characters.' },
       { key: 'privacy', label: 'Privacy URL', type: 'string', required: false, helpText: 'Optional URL to the privacy page. Max 255 characters.' },

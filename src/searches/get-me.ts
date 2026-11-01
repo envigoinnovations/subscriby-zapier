@@ -39,7 +39,6 @@ export default {
       plan: 'growth',
       capabilities: {
         no_branding: true,
-        custom_handle: true,
         time_limited_passes: true,
         coupons: true,
         free_plans: true,

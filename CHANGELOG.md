@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- **Create Project** and **Update Project** take a `handle` on every tier: the Free tier no longer answers `TEAM_TIER_REQUIRED` for one, a handle has to be unique across every project's current and former handles, and a changed handle keeps the old address redirecting to the new one. **Get Me** no longer lists `custom_handle` among the capabilities, because a handle of the creator's own is on every plan. Ships with the Subscriby release that follows 5.0.17.
+
 ## 4.6.0 — 27 October 2026
 
 ### Changed
