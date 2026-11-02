@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- **List Connector Spaces** lists the places of one kind a project's installation of a connector could gate, as the platform lists them right now (a server's roles or channels), and **Create Resource From Space** sells one of them: the resource is created and bound to the place, the installation being asked again before the row persists, so a place it does not list is refused. Both answer only for a connector that lists its places; the hidden **New Connector Space (Dropdown)** feeds the Place field. **Request Resource Link** stays the door for a connector that cannot list.
+- **List Connector Installation Actions** lists what a project's installation of a connector can do for the creator beyond gating (each action with its key, label, description, fields and whether it asks for confirmation), and **Run Connector Installation Action** runs one with its answers checked against the fields the action declares, answering what happened in the creator's words; the hidden **New Installation Action (Dropdown)** feeds the Action field. Ships with the Subscriby release that carries the Discord connector.
+
 ## 4.7.0 — 1 November 2026
 
 ### Changed

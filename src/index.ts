@@ -190,6 +190,8 @@ import dropdownProjects from './triggers/dropdown-projects';
 import dropdownRecoveryOperations from './triggers/dropdown-recovery-operations';
 import dropdownConnectors from './triggers/dropdown-connectors';
 import dropdownConnectorInstallations from './triggers/dropdown-connector-installations';
+import dropdownConnectorSpaces from './triggers/dropdown-connector-spaces';
+import dropdownInstallationActions from './triggers/dropdown-installation-actions';
 import dropdownPlans from './triggers/dropdown-plans';
 import dropdownTeams from './triggers/dropdown-teams';
 import dropdownMembers from './triggers/dropdown-members';
@@ -250,6 +252,7 @@ import kickMember from './creates/kick-member';
 import createResource from './creates/create-resource';
 import unlinkResource from './creates/unlink-resource';
 import requestResourceLink from './creates/request-resource-link';
+import createResourceFromSpace from './creates/create-resource-from-space';
 import deleteResource from './creates/delete-resource';
 import bulkGenerateAccessCodes from './creates/bulk-generate-access-codes';
 import deleteAccessCode from './creates/delete-access-code';
@@ -300,6 +303,7 @@ import deactivateResource from './creates/deactivate-resource';
 import installConnector from './creates/install-connector';
 import verifyConnectorInstallation from './creates/verify-connector-installation';
 import runConnectorDoctor from './creates/run-connector-doctor';
+import runConnectorInstallationAction from './creates/run-connector-installation-action';
 import restoreConnectorAccess from './creates/restore-connector-access';
 import updateConnectorInstallationSettings from './creates/update-connector-installation-settings';
 import disconnectConnector from './creates/disconnect-connector';
@@ -352,6 +356,8 @@ import getResourceStandby from './searches/get-resource-standby';
 import listConnectors from './searches/list-connectors';
 import getConnector from './searches/get-connector';
 import listConnectorInstallations from './searches/list-connector-installations';
+import listConnectorInstallationActions from './searches/list-connector-installation-actions';
+import listConnectorSpaces from './searches/list-connector-spaces';
 import getConnectorInstallation from './searches/get-connector-installation';
 import getConnectorUninstallPreview from './searches/get-connector-uninstall-preview';
 import listProjects from './searches/list-projects';
@@ -622,6 +628,8 @@ const triggers = {
   [dropdownRecoveryOperations.key]: dropdownRecoveryOperations,
   [dropdownConnectors.key]: dropdownConnectors,
   [dropdownConnectorInstallations.key]: dropdownConnectorInstallations,
+  [dropdownConnectorSpaces.key]: dropdownConnectorSpaces,
+  [dropdownInstallationActions.key]: dropdownInstallationActions,
   [dropdownPlans.key]: dropdownPlans,
   [dropdownTeams.key]: dropdownTeams,
   [dropdownMembers.key]: dropdownMembers,
@@ -686,6 +694,7 @@ const creates = {
   [createResource.key]: createResource,
   [unlinkResource.key]: unlinkResource,
   [requestResourceLink.key]: requestResourceLink,
+  [createResourceFromSpace.key]: createResourceFromSpace,
   [deleteResource.key]: deleteResource,
   [bulkGenerateAccessCodes.key]: bulkGenerateAccessCodes,
   [deleteAccessCode.key]: deleteAccessCode,
@@ -736,6 +745,7 @@ const creates = {
   [installConnector.key]: installConnector,
   [verifyConnectorInstallation.key]: verifyConnectorInstallation,
   [runConnectorDoctor.key]: runConnectorDoctor,
+  [runConnectorInstallationAction.key]: runConnectorInstallationAction,
   [restoreConnectorAccess.key]: restoreConnectorAccess,
   [updateConnectorInstallationSettings.key]: updateConnectorInstallationSettings,
   [disconnectConnector.key]: disconnectConnector,
@@ -790,6 +800,8 @@ const searches = {
   [listConnectors.key]: listConnectors,
   [getConnector.key]: getConnector,
   [listConnectorInstallations.key]: listConnectorInstallations,
+  [listConnectorInstallationActions.key]: listConnectorInstallationActions,
+  [listConnectorSpaces.key]: listConnectorSpaces,
   [getConnectorInstallation.key]: getConnectorInstallation,
   [getConnectorUninstallPreview.key]: getConnectorUninstallPreview,
   [listProjects.key]: listProjects,
