@@ -30,7 +30,7 @@ export default {
         dynamic: 'dropdown_connector_spaces.id.title',
         helpText: "The place, as List Connector Spaces lists it under external_id; the dropdown offers the places of the chosen kind the project's installation can see.",
       },
-      { key: 'title', label: 'Title', type: 'string', required: true, helpText: 'The resource title members read, 5 to 255 characters.' },
+      { key: 'title', label: 'Title', type: 'string', required: true, helpText: 'The resource title members read, 1 to 255 characters; the place\'s own name as the platform spells it is the usual choice.' },
       { key: 'description', label: 'Description', type: 'text', required: false, helpText: 'What members get, up to 1000 characters of well-formed HTML, shown as a perk beside the title.' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
