@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Broadcast Message',
     description:
-      'Send a Telegram message to a segment of a project’s members. The send is queued and runs in the background — watch the Broadcast Completed trigger for the sent/failed tallies. Cannot be recalled once sent.',
+      'Send a Telegram message to a segment of a project’s members. The send is queued and runs in the background — it answers the broadcast_id of the record it reports into; watch the Broadcast Completed trigger for the sent/failed tallies, or read them back with Get Broadcast. Cannot be recalled once sent.',
   },
   operation: {
     inputFields: [
@@ -99,6 +99,7 @@ export default {
       return (response.data as { data?: unknown }).data ?? response.data;
     },
     sample: {
+      broadcast_id: '0192f4a6-3c1e-7d2b-9a8f-4e5d6c7b8a90',
       project_id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
       audience: 'customer',
       pass_window_id: null,

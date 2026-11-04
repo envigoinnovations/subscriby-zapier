@@ -243,6 +243,7 @@ import reactivateSubscription from './creates/reactivate-subscription';
 import unpauseSubscription from './creates/unpause-subscription';
 import banMember from './creates/ban-member';
 import broadcastMessage from './creates/broadcast-message';
+import retryBroadcast from './creates/retry-broadcast';
 import replySupportConversation from './creates/reply-support-conversation';
 import resolveSupportConversation from './creates/resolve-support-conversation';
 import assignSupportConversation from './creates/assign-support-conversation';
@@ -364,6 +365,8 @@ import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
 import findPassWindows from './searches/find-pass-windows';
+import findBroadcasts from './searches/find-broadcasts';
+import listBroadcastFailures from './searches/list-broadcast-failures';
 import listSubscriptions from './searches/list-subscriptions';
 import listMembers from './searches/list-members';
 import listMemberIdentities from './searches/list-member-identities';
@@ -436,6 +439,7 @@ import getPortalDesign from './searches/get-portal-design';
 import getCopilotCredits from './searches/get-copilot-credits';
 import findCopilotCreditsStatement from './searches/find-copilot-credits-statement';
 import getPassWindow from './searches/get-pass-window';
+import getBroadcast from './searches/get-broadcast';
 import getWebhookEndpoint from './searches/get-webhook-endpoint';
 import getWebhookDelivery from './searches/get-webhook-delivery';
 
@@ -685,6 +689,7 @@ const creates = {
   [pauseSubscription.key]: pauseSubscription,
   [banMember.key]: banMember,
   [broadcastMessage.key]: broadcastMessage,
+  [retryBroadcast.key]: retryBroadcast,
   [replySupportConversation.key]: replySupportConversation,
   [resolveSupportConversation.key]: resolveSupportConversation,
   [assignSupportConversation.key]: assignSupportConversation,
@@ -808,6 +813,8 @@ const searches = {
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
   [findPassWindows.key]: findPassWindows,
+  [findBroadcasts.key]: findBroadcasts,
+  [listBroadcastFailures.key]: listBroadcastFailures,
   [listSubscriptions.key]: listSubscriptions,
   [listMembers.key]: listMembers,
   [listMemberIdentities.key]: listMemberIdentities,
@@ -880,6 +887,7 @@ const searches = {
   [getCopilotCredits.key]: getCopilotCredits,
   [findCopilotCreditsStatement.key]: findCopilotCreditsStatement,
   [getPassWindow.key]: getPassWindow,
+  [getBroadcast.key]: getBroadcast,
   [getWebhookEndpoint.key]: getWebhookEndpoint,
   [getWebhookDelivery.key]: getWebhookDelivery,
 };

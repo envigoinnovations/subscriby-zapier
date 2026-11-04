@@ -14,6 +14,8 @@ export default defineWebhookTrigger({
     api_version: '2026-05-01',
     project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
     data: {
+      broadcast_id: '0192f4a6-3c1e-7d2b-9a8f-4e5d6c7b8a90',
+      parent_id: null,
       project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
       audience: 'customer',
       pass_window_id: null,
