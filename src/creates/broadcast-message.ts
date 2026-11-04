@@ -44,6 +44,7 @@ export default {
           cancelled_still_active: 'Cancelled, Still Inside Their Period',
           paused: 'Paused Subscriptions',
           trialing_cardless: 'Trialing Without a Card',
+          waiting_on_connection: 'Waiting on a Connection',
           all_pass_holders: 'All Active Pass Holders',
           all_pass_holders_not_in_queue: 'All Active Pass Holders Not in Queue',
           pass_holders: 'Active Pass Holders (one window)',

@@ -6,12 +6,13 @@ export default {
   noun: 'Member',
   display: {
     label: 'List Members',
-    description: 'List members within a project, optionally filtered by status.',
+    description: 'List members within a project, optionally filtered by status, or narrowed to the members waiting on a connection.',
   },
   operation: {
     inputFields: [
       { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
       { key: 'status', label: 'Status', type: 'string', required: false, helpText: 'Optional member status filter.' },
+      { key: 'access', label: 'Access', type: 'string', required: false, choices: { waiting: 'Waiting on a connection' }, helpText: 'Set to Waiting on a connection to keep only the members whose live purchase includes a place on a platform they have not connected yet, the ones Remind Member to Connect nudges.' },
       { key: 'limit', label: 'Limit', type: 'integer', required: false, default: '25' },
     ],
     async perform(z: ZObject, bundle: Bundle) {
@@ -19,6 +20,7 @@ export default {
       const params: Record<string, unknown> = {};
 
       if (bundle.inputData.status) params.status = bundle.inputData.status;
+      if (bundle.inputData.access) params.access = bundle.inputData.access;
       params.per_page = Math.min(Number(bundle.inputData.limit ?? 25), 100);
 
       const response = await z.request({

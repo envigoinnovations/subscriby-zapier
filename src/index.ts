@@ -313,6 +313,7 @@ import createPassWindow from './creates/create-pass-window';
 import cancelPassWindow from './creates/cancel-pass-window';
 import remindPassWindowQueue from './creates/remind-pass-window-queue';
 import remindPassHolder from './creates/remind-pass-holder';
+import remindMemberToConnect from './creates/remind-member-to-connect';
 import reissueSubscriptionGrants from './creates/reissue-subscription-grants';
 import completeCreatorTask from './creates/complete-creator-task';
 import markNotificationRead from './creates/mark-notification-read';
@@ -759,6 +760,7 @@ const creates = {
   [cancelPassWindow.key]: cancelPassWindow,
   [remindPassWindowQueue.key]: remindPassWindowQueue,
   [remindPassHolder.key]: remindPassHolder,
+  [remindMemberToConnect.key]: remindMemberToConnect,
   [reissueSubscriptionGrants.key]: reissueSubscriptionGrants,
   [completeCreatorTask.key]: completeCreatorTask,
   [markNotificationRead.key]: markNotificationRead,
