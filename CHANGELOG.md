@@ -14,6 +14,7 @@
 
 - **Create Resource From Space** takes a title of one character and up, so a place can be sold under the name the platform spells it, such as a Discord role called VIP.
 - The **Get Connector** and **List Connectors** samples carry a `version` of `1.0.0`, the number a connector offered to creators carries from its private beta through general availability.
+- The installation-action samples carry the Discord action label as it reads now, **Create Members Area**.
 
 ## 4.7.0 — 1 November 2026
 

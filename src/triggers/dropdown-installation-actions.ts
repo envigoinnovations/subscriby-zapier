@@ -44,7 +44,7 @@ export default {
     sample: {
       id: 'setup_members_area',
       key: 'setup_members_area',
-      label: 'Set up a members area',
+      label: 'Create Members Area',
       description: 'Creates a Members category with a text channel, an announcements channel and a voice channel, and the role behind them.',
     },
   },
