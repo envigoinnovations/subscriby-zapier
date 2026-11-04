@@ -47,7 +47,7 @@ export default {
       key: 'telegram',
       name: 'Telegram',
       vendor: 'Subscriby',
-      version: '0.1.0',
+      version: '1.0.0',
       status: 'available',
       status_label: 'Available Now',
       installable: true,
