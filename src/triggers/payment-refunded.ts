@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Payment',
   label: 'Payment Refunded',
   description:
-    'Triggers when a settled refund is recorded against a charge, full or partial — read data.full_refund to tell them apart. Only settled refunds fire; a refund a provider has merely queued raises nothing. Emitted for Stripe, PayPal, Paystack, Razorpay and Skrill.',
+    'Triggers when a settled refund is recorded against a charge, full or partial — read data.full_refund to tell them apart. Only settled refunds fire; a refund a provider has merely queued raises nothing. Emitted for Stripe, PayPal, Polar, Mollie, Paystack, Razorpay and Skrill.',
   event: 'payment.refunded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',

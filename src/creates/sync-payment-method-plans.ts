@@ -5,7 +5,7 @@ export default defineRpcCreate({
   noun: 'Payment Method',
   label: 'Sync Payment Method Plans',
   description:
-    "Queue a push of the project's plans into a gateway's catalogue (Stripe products and prices, PayPal, Razorpay or CoinPayments plans). Answers sync_queued at once; the work runs in the background and each plan reports through the plan.sync_completed event. A gateway that keeps no catalogue (Telegram Stars, access codes, the redirect gateways) is refused.",
+    "Queue a push of the project's plans into a gateway's catalogue (Stripe products and prices, Polar products, PayPal, Razorpay or CoinPayments plans). Answers sync_queued at once; the work runs in the background and each plan reports through the plan.sync_completed event. A gateway that keeps no catalogue (Telegram Stars, access codes, the redirect gateways) is refused.",
   inputFields: [
     { key: 'project_id', label: 'Project ID', type: 'string', required: true, dynamic: 'dropdown_projects.id.name', altersDynamicFields: true },
     { key: 'method_id', label: 'Method ID', type: 'string', required: true, helpText: 'UUID of the payment method; find it with List Payment Methods.' },
