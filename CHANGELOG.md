@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 4.9.0 — 5 November 2026
 
 ### Added
 

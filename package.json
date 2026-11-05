@@ -1,6 +1,6 @@
 {
     "name": "subscriby-zapier",
-    "version": "4.8.0",
+    "version": "4.9.0",
     "description": "Zapier Platform integration for Subscriby — monetised Telegram community automation.",
     "main": "index.js",
     "types": "dist/index.d.ts",
