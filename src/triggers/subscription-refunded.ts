@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Subscription',
   label: 'Subscription Refunded',
   description:
-    'Triggers when a settled refund returns the whole charge, so the subscription is unwound and access revoked. A partial refund raises Payment Refunded instead. Emitted for Stripe, PayPal, Polar, Mollie, Paystack, Razorpay and Skrill; CoinPayments and CeyPay expose no refund notification.',
+    'Triggers when a settled refund returns the whole charge, so the subscription is unwound and access revoked. A partial refund raises Payment Refunded instead. Emitted for Stripe, PayPal, Polar, Mollie, Kelviq, Paystack, Razorpay and Skrill; CoinPayments and CeyPay expose no refund notification.',
   event: 'subscription.refunded',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
