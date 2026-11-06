@@ -10,6 +10,7 @@
 
 - **List Members** takes **Access**: `waiting` keeps the members whose live purchase includes a place waiting for an account they have not connected, the ones Remind Member to Connect nudges.
 - **Broadcast Message** offers the **Waiting on a Connection** audience, the same members, on every plan.
+- **Pass Holder Moved** and **Pass Series Leg Substituted** carry `reason` (`window_cancelled`, `series_date_substituted`, `paid_after_window`) and `move_id`, the hop in the project's pass move log; Pass Holder Moved also fires for a purchase bound to the next date after a late payment.
 
 ## 4.8.0 — 4 November 2026
 

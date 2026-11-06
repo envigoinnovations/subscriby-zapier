@@ -5,7 +5,7 @@ export default defineWebhookTrigger({
   noun: 'Pass Holder',
   label: 'Pass Holder Moved',
   description:
-    'Triggers when a pass holder is moved off a cancelled access window onto the next available one on the same plan. Fires once per holder. They are not charged again. `was_queued` tells you whether they had already tapped their invite link — if true the move asks nothing of them, if false they still need to join the queue for the new date. Timestamps are UTC.',
+    'Triggers when a pass holder is moved off a cancelled access window onto the next available one on the same plan. Fires once per holder. They are not charged again. `was_queued` tells you whether they had already tapped their invite link — if true the move asks nothing of them, if false they still need to join the queue for the new date. `reason` is `window_cancelled`, or `paid_after_window` when the payment settled after the window it was for and the pass was bound to the next date instead; `move_id` names the hop in the pass move log. Timestamps are UTC.',
   event: 'pass.holder_moved',
   sample: {
     id: 'evt_01HXEXAMPLE000000000000000',
@@ -24,6 +24,8 @@ export default defineWebhookTrigger({
       to_starts_at: '2026-09-27T13:00:00Z',
       to_ends_at: '2026-09-27T19:00:00Z',
       was_queued: true,
+      reason: 'window_cancelled',
+      move_id: 'b7e1c3d9-5a24-4f60-8c17-2d9e4b6f0a35',
     },
   },
 });

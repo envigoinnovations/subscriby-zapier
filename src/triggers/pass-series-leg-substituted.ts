@@ -23,7 +23,9 @@ export default defineWebhookTrigger({
           to_window_id: '8c04e7b2-51d6-4a39-9f80-b3e12d6a5074',
           to_starts_at: '2026-11-01T18:00:00Z',
           to_ends_at: '2026-11-01T21:00:00Z',
-          was_queued: true
+          was_queued: true,
+          reason: 'series_date_substituted',
+          move_id: 'b7e1c3d9-5a24-4f60-8c17-2d9e4b6f0a35'
     },
   },
 });
