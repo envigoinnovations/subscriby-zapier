@@ -366,6 +366,8 @@ import listProjects from './searches/list-projects';
 import getProject from './searches/get-project';
 import listPlans from './searches/list-plans';
 import findPassWindows from './searches/find-pass-windows';
+import findPassRoster from './searches/find-pass-roster';
+import findPassMoves from './searches/find-pass-moves';
 import findBroadcasts from './searches/find-broadcasts';
 import listBroadcastFailures from './searches/list-broadcast-failures';
 import listSubscriptions from './searches/list-subscriptions';
@@ -815,6 +817,8 @@ const searches = {
   [getProject.key]: getProject,
   [listPlans.key]: listPlans,
   [findPassWindows.key]: findPassWindows,
+  [findPassRoster.key]: findPassRoster,
+  [findPassMoves.key]: findPassMoves,
   [findBroadcasts.key]: findBroadcasts,
   [listBroadcastFailures.key]: listBroadcastFailures,
   [listSubscriptions.key]: listSubscriptions,

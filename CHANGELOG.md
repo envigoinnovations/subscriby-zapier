@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- **Find Pass Roster Rows** lists a project's Pass Roster: one row per member against the dates its pass plans sell, with their standing on each date they hold (in, queued, holds, missed, ended or covered) and the cancelled dates they were moved off with where they went; the columns, the dates beyond the span that holders were moved onto and every move off a column folded by destination ride on each row under `meta`. Narrow by plan, by a name or email fragment, and by a span of dates (eight weeks either side of now when neither bound is given).
+- **Find Pass Moves** lists every hop one purchase's passes made, oldest first, from the project's pass move log: both dates by ID and as a person reads them, the reason (`window_cancelled`, `series_date_substituted`, `paid_after_window`), who made it and when. Ships with the Subscriby release that carries the Pass Roster.
+
 ## 4.9.0 — 5 November 2026
 
 ### Added
