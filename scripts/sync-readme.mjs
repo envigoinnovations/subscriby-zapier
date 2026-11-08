@@ -116,7 +116,7 @@ const sections = [
     heading: "## Supported searches",
     title: `## Supported searches (${searches.length})`,
     body: [
-      "One search per list or lookup of the REST API; a search that finds nothing returns an empty result rather than an error, so a Zap can branch on it.",
+      "One search per list or lookup of the REST API, returning the matching records the way Zapier expects them.",
       "",
       resourceTable(searches, "Searches"),
     ].join("\n"),
