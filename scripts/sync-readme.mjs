@@ -58,7 +58,7 @@ for (const trigger of eventTriggers) {
 }
 
 const familyRows = [...byFamily.entries()]
-  .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "en"))
+  .sort((a, b) => familyLabel(a[0]).localeCompare(familyLabel(b[0]), "en"))
   .map(([family, events]) => {
     const list = events
       .sort((a, b) => a.localeCompare(b, "en"))
@@ -74,7 +74,7 @@ const triggerTable = [
   `| **Total** | **${eventTriggers.length}** | |`,
 ].join("\n");
 
-/** One row per resource, the operations in the order their files declare them, largest resource first. */
+/** One row per resource in alphabetical order, its operations alphabetical too. */
 function resourceTable(operations, column) {
   const byNoun = new Map();
 
@@ -87,7 +87,7 @@ function resourceTable(operations, column) {
   }
 
   const rows = [...byNoun.entries()]
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "en"))
+    .sort((a, b) => a[0].localeCompare(b[0], "en"))
     .map(([noun, labels]) => `| ${noun} | ${labels.sort((a, b) => a.localeCompare(b, "en")).join(", ")} |`);
 
   return [`| Resource | ${column} |`, "| -------- | ------- |", ...rows].join("\n");

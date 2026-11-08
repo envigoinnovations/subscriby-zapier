@@ -21,31 +21,31 @@ One trigger per webhook event, every event in the catalogue Subscriby publishes 
 
 | Family | Count | Events |
 | ------ | ----- | ------ |
-| [Subscription](https://docs.subscriby.net/webhooks/v1/events/subscription) | 21 | `subscription.access_restored`, `subscription.access_suspended`, `subscription.activated`, `subscription.cancellation_feedback`, `subscription.cancelled`, `subscription.created`, `subscription.downgraded`, `subscription.expired`, `subscription.offer_taken`, `subscription.past_due`, `subscription.paused`, `subscription.payment_recovered`, `subscription.reactivated`, `subscription.refunded`, `subscription.renewed`, `subscription.trial_converting`, `subscription.trial_expired`, `subscription.trial_started`, `subscription.unpaid`, `subscription.unpaused`, `subscription.upgraded` |
-| [Member](https://docs.subscriby.net/webhooks/v1/events/member) | 16 | `member.access_extended`, `member.banned`, `member.churned`, `member.converted`, `member.identity_linked`, `member.identity_unlinked`, `member.joined`, `member.kicked`, `member.lead_created`, `member.removed`, `member.resource_added`, `member.resource_pending`, `member.resource_reissued`, `member.resource_removed`, `member.trial_joined`, `member.unbanned` |
-| [Project](https://docs.subscriby.net/webhooks/v1/events/project) | 14 | `project.archived`, `project.created`, `project.deleted`, `project.design_published`, `project.payment_method.deleted`, `project.payment_method.updated`, `project.resource.created`, `project.resource.deleted`, `project.resource.linked`, `project.resource.status_changed`, `project.resource.unlinked`, `project.resource.updated`, `project.restored`, `project.updated` |
-| [Recovery](https://docs.subscriby.net/webhooks/v1/events/recovery) | 13 | `recovery.identity_relinked`, `recovery.incident_opened`, `recovery.incident_resolved`, `recovery.installation_failed_over`, `recovery.operation_completed`, `recovery.operation_failed`, `recovery.operation_reverted`, `recovery.operation_started`, `recovery.readiness_changed`, `recovery.resource_failed_over`, `recovery.resource_replaced`, `recovery.standby_registered`, `recovery.standby_removed` |
-| [Support](https://docs.subscriby.net/webhooks/v1/events/support) | 12 | `support.canned_reply.created`, `support.canned_reply.deleted`, `support.canned_reply.updated`, `support.conversation.assigned`, `support.conversation.blocked`, `support.conversation.opened`, `support.conversation.reopened`, `support.conversation.resolved`, `support.conversation.unblocked`, `support.message.received`, `support.message.sent`, `support.settings.updated` |
-| [Billing](https://docs.subscriby.net/webhooks/v1/events/billing) | 10 | `billing.account_locked`, `billing.grace_period_warning`, `billing.invoice_created`, `billing.invoice_overdue`, `billing.invoice_paid`, `billing.payment_failed`, `billing.tier_cancelled`, `billing.tier_downgraded`, `billing.tier_upgraded`, `billing.trial_ending` |
-| [Connector](https://docs.subscriby.net/webhooks/v1/events/connector) | 10 | `connector.connected`, `connector.disconnected`, `connector.doctor_completed`, `connector.installed`, `connector.outage_closed`, `connector.outage_compensated`, `connector.outage_opened`, `connector.settings_updated`, `connector.status_changed`, `connector.uninstalled` |
-| [Partner](https://docs.subscriby.net/webhooks/v1/events/partner) | 10 | `partner.application_approved`, `partner.application_rejected`, `partner.payout_recorded`, `partner.rate_changed`, `partner.referral_converted`, `partner.referral_signed_up`, `partner.reward_approved`, `partner.reward_credited`, `partner.reward_earned`, `partner.reward_reversed` |
-| [Referral](https://docs.subscriby.net/webhooks/v1/events/referral) | 10 | `referral.affiliate_approved`, `referral.affiliate_joined`, `referral.affiliate_suspended`, `referral.captured`, `referral.converted`, `referral.payout_recorded`, `referral.program_updated`, `referral.reward_approved`, `referral.reward_earned`, `referral.reward_reversed` |
-| [Pass](https://docs.subscriby.net/webhooks/v1/events/pass) | 8 | `pass.holder_missed`, `pass.holder_moved`, `pass.holder_queued`, `pass.holder_stranded`, `pass.window_cancelled`, `pass.window_closed`, `pass.window_opened`, `pass.window_scheduled` |
-| [Pass Series](https://docs.subscriby.net/webhooks/v1/events/pass-series) | 8 | `pass_series.completed`, `pass_series.leg_added`, `pass_series.leg_completed`, `pass_series.leg_dropped`, `pass_series.leg_substituted`, `pass_series.presale_opened`, `pass_series.purchased`, `pass_series.seats_exhausted` |
-| [Plan](https://docs.subscriby.net/webhooks/v1/events/plan) | 8 | `plan.activated`, `plan.created`, `plan.deactivated`, `plan.deleted`, `plan.order_changed`, `plan.sold_out`, `plan.sync_completed`, `plan.updated` |
-| [Coupon](https://docs.subscriby.net/webhooks/v1/events/coupon) | 7 | `coupon.activated`, `coupon.created`, `coupon.deactivated`, `coupon.deleted`, `coupon.exhausted`, `coupon.redeemed`, `coupon.updated` |
-| [Sequence](https://docs.subscriby.net/webhooks/v1/events/sequence) | 7 | `sequence.converted`, `sequence.created`, `sequence.deleted`, `sequence.enrolled`, `sequence.exited`, `sequence.step_sent`, `sequence.updated` |
-| [Team](https://docs.subscriby.net/webhooks/v1/events/team) | 7 | `team.created`, `team.deleted`, `team.member.invited`, `team.member.joined`, `team.member.removed`, `team.member.role_changed`, `team.updated` |
-| [Copilot Credit](https://docs.subscriby.net/webhooks/v1/events/copilot-credit) | 4 | `copilot_credit.granted`, `copilot_credit.low`, `copilot_credit.purchased`, `copilot_credit.refunded` |
-| [Group](https://docs.subscriby.net/webhooks/v1/events/group) | 4 | `group.created`, `group.deleted`, `group.members_synced`, `group.updated` |
-| [Payment](https://docs.subscriby.net/webhooks/v1/events/payment) | 4 | `payment.failed`, `payment.pending`, `payment.refunded`, `payment.succeeded` |
 | [Access Code](https://docs.subscriby.net/webhooks/v1/events/access-code) | 3 | `access_code.expired`, `access_code.generated`, `access_code.redeemed` |
-| [Knowledge](https://docs.subscriby.net/webhooks/v1/events/knowledge) | 3 | `knowledge.created`, `knowledge.deleted`, `knowledge.updated` |
-| [Smart Link](https://docs.subscriby.net/webhooks/v1/events/link) | 3 | `link.archived`, `link.created`, `link.updated` |
-| [Role](https://docs.subscriby.net/webhooks/v1/events/role) | 3 | `role.created`, `role.deleted`, `role.updated` |
+| [Billing](https://docs.subscriby.net/webhooks/v1/events/billing) | 10 | `billing.account_locked`, `billing.grace_period_warning`, `billing.invoice_created`, `billing.invoice_overdue`, `billing.invoice_paid`, `billing.payment_failed`, `billing.tier_cancelled`, `billing.tier_downgraded`, `billing.tier_upgraded`, `billing.trial_ending` |
 | [Broadcast](https://docs.subscriby.net/webhooks/v1/events/broadcast) | 2 | `broadcast.completed`, `broadcast.queued` |
 | [Checkout](https://docs.subscriby.net/webhooks/v1/events/checkout) | 2 | `checkout.recovered`, `checkout.stalled` |
+| [Connector](https://docs.subscriby.net/webhooks/v1/events/connector) | 10 | `connector.connected`, `connector.disconnected`, `connector.doctor_completed`, `connector.installed`, `connector.outage_closed`, `connector.outage_compensated`, `connector.outage_opened`, `connector.settings_updated`, `connector.status_changed`, `connector.uninstalled` |
+| [Copilot Credit](https://docs.subscriby.net/webhooks/v1/events/copilot-credit) | 4 | `copilot_credit.granted`, `copilot_credit.low`, `copilot_credit.purchased`, `copilot_credit.refunded` |
+| [Coupon](https://docs.subscriby.net/webhooks/v1/events/coupon) | 7 | `coupon.activated`, `coupon.created`, `coupon.deactivated`, `coupon.deleted`, `coupon.exhausted`, `coupon.redeemed`, `coupon.updated` |
 | [Creator Task](https://docs.subscriby.net/webhooks/v1/events/creator-task) | 2 | `creator_task.completed`, `creator_task.opened` |
+| [Group](https://docs.subscriby.net/webhooks/v1/events/group) | 4 | `group.created`, `group.deleted`, `group.members_synced`, `group.updated` |
+| [Knowledge](https://docs.subscriby.net/webhooks/v1/events/knowledge) | 3 | `knowledge.created`, `knowledge.deleted`, `knowledge.updated` |
+| [Member](https://docs.subscriby.net/webhooks/v1/events/member) | 16 | `member.access_extended`, `member.banned`, `member.churned`, `member.converted`, `member.identity_linked`, `member.identity_unlinked`, `member.joined`, `member.kicked`, `member.lead_created`, `member.removed`, `member.resource_added`, `member.resource_pending`, `member.resource_reissued`, `member.resource_removed`, `member.trial_joined`, `member.unbanned` |
+| [Partner](https://docs.subscriby.net/webhooks/v1/events/partner) | 10 | `partner.application_approved`, `partner.application_rejected`, `partner.payout_recorded`, `partner.rate_changed`, `partner.referral_converted`, `partner.referral_signed_up`, `partner.reward_approved`, `partner.reward_credited`, `partner.reward_earned`, `partner.reward_reversed` |
+| [Pass](https://docs.subscriby.net/webhooks/v1/events/pass) | 8 | `pass.holder_missed`, `pass.holder_moved`, `pass.holder_queued`, `pass.holder_stranded`, `pass.window_cancelled`, `pass.window_closed`, `pass.window_opened`, `pass.window_scheduled` |
+| [Pass Series](https://docs.subscriby.net/webhooks/v1/events/pass-series) | 8 | `pass_series.completed`, `pass_series.leg_added`, `pass_series.leg_completed`, `pass_series.leg_dropped`, `pass_series.leg_substituted`, `pass_series.presale_opened`, `pass_series.purchased`, `pass_series.seats_exhausted` |
+| [Payment](https://docs.subscriby.net/webhooks/v1/events/payment) | 4 | `payment.failed`, `payment.pending`, `payment.refunded`, `payment.succeeded` |
+| [Plan](https://docs.subscriby.net/webhooks/v1/events/plan) | 8 | `plan.activated`, `plan.created`, `plan.deactivated`, `plan.deleted`, `plan.order_changed`, `plan.sold_out`, `plan.sync_completed`, `plan.updated` |
+| [Project](https://docs.subscriby.net/webhooks/v1/events/project) | 14 | `project.archived`, `project.created`, `project.deleted`, `project.design_published`, `project.payment_method.deleted`, `project.payment_method.updated`, `project.resource.created`, `project.resource.deleted`, `project.resource.linked`, `project.resource.status_changed`, `project.resource.unlinked`, `project.resource.updated`, `project.restored`, `project.updated` |
+| [Recovery](https://docs.subscriby.net/webhooks/v1/events/recovery) | 13 | `recovery.identity_relinked`, `recovery.incident_opened`, `recovery.incident_resolved`, `recovery.installation_failed_over`, `recovery.operation_completed`, `recovery.operation_failed`, `recovery.operation_reverted`, `recovery.operation_started`, `recovery.readiness_changed`, `recovery.resource_failed_over`, `recovery.resource_replaced`, `recovery.standby_registered`, `recovery.standby_removed` |
+| [Referral](https://docs.subscriby.net/webhooks/v1/events/referral) | 10 | `referral.affiliate_approved`, `referral.affiliate_joined`, `referral.affiliate_suspended`, `referral.captured`, `referral.converted`, `referral.payout_recorded`, `referral.program_updated`, `referral.reward_approved`, `referral.reward_earned`, `referral.reward_reversed` |
+| [Role](https://docs.subscriby.net/webhooks/v1/events/role) | 3 | `role.created`, `role.deleted`, `role.updated` |
+| [Sequence](https://docs.subscriby.net/webhooks/v1/events/sequence) | 7 | `sequence.converted`, `sequence.created`, `sequence.deleted`, `sequence.enrolled`, `sequence.exited`, `sequence.step_sent`, `sequence.updated` |
+| [Smart Link](https://docs.subscriby.net/webhooks/v1/events/link) | 3 | `link.archived`, `link.created`, `link.updated` |
+| [Subscription](https://docs.subscriby.net/webhooks/v1/events/subscription) | 21 | `subscription.access_restored`, `subscription.access_suspended`, `subscription.activated`, `subscription.cancellation_feedback`, `subscription.cancelled`, `subscription.created`, `subscription.downgraded`, `subscription.expired`, `subscription.offer_taken`, `subscription.past_due`, `subscription.paused`, `subscription.payment_recovered`, `subscription.reactivated`, `subscription.refunded`, `subscription.renewed`, `subscription.trial_converting`, `subscription.trial_expired`, `subscription.trial_started`, `subscription.unpaid`, `subscription.unpaused`, `subscription.upgraded` |
+| [Support](https://docs.subscriby.net/webhooks/v1/events/support) | 12 | `support.canned_reply.created`, `support.canned_reply.deleted`, `support.canned_reply.updated`, `support.conversation.assigned`, `support.conversation.blocked`, `support.conversation.opened`, `support.conversation.reopened`, `support.conversation.resolved`, `support.conversation.unblocked`, `support.message.received`, `support.message.sent`, `support.settings.updated` |
+| [Team](https://docs.subscriby.net/webhooks/v1/events/team) | 7 | `team.created`, `team.deleted`, `team.member.invited`, `team.member.joined`, `team.member.removed`, `team.member.role_changed`, `team.updated` |
 | **Total** | **191** | |
 
 ## Supported actions (126)
@@ -54,49 +54,49 @@ One action per write of the REST API, each sending a fresh `Idempotency-Key` so 
 
 | Resource | Actions |
 | -------- | ------- |
-| Connector Installation | Disconnect Connector, Install Connector, Restore Connector Access, Run Connector Doctor, Uninstall Connector, Update Connector Installation Settings, Verify Connector Installation |
-| Resource | Activate Resource, Create Resource, Create Resource From Space, Deactivate Resource, Delete Resource, Unlink Resource, Update Resource |
-| Subscription | Cancel Subscription, Pause Subscription Access, Reactivate Subscription, Reissue Subscription Grants, Remind Member to Connect, Remind Pass Holder, Unpause Subscription Access |
-| Plan | Create Plan, Delete Plan, Publish Plan, Start Next Season, Unpublish Plan, Update Plan |
-| Webhook Endpoint | Create Webhook Endpoint, Delete Webhook Endpoint, Pause Webhook Endpoint, Resume Webhook Endpoint, Rotate Webhook Secret, Test Webhook Endpoint |
-| Coupon | Activate Coupon, Create Coupon, Deactivate Coupon, Delete Coupon, Update Coupon |
-| Project | Archive Project, Create Project, Delete Project, Restore Project, Update Project |
-| Resource Standby | Remove Resource Standby, Request Resource Standby, Set Resource Standby Mirror, Use Resource Standby, Withdraw Resource Standby Request |
-| Support Conversation | Assign Support Conversation, Block Support Contact, Reopen Support Conversation, Resolve Support Conversation, Unblock Support Contact |
-| Group | Create Group, Delete Group, Sync Group Members, Update Group |
-| Payment Method | Activate Payment Method, Deactivate Payment Method, Delete Payment Method, Sync Payment Method Plans |
-| Referral Program | Activate Referral Program, Deactivate Referral Program, Delete Referral Program, Update Referral Program |
-| Team Member | Cancel Team Invitation, Change Team Member Role, Invite Team Member, Remove Team Member |
+| Access Code | Delete Access Code |
+| Access Code Batch | Bulk Generate Access Codes |
+| Broadcast | Broadcast Message, Retry Broadcast |
 | Canned Reply | Create Canned Reply, Delete Canned Reply, Update Canned Reply |
+| Connector Installation | Disconnect Connector, Install Connector, Restore Connector Access, Run Connector Doctor, Uninstall Connector, Update Connector Installation Settings, Verify Connector Installation |
+| Copilot Credits Settings | Update Copilot Credits Settings |
+| Coupon | Activate Coupon, Create Coupon, Deactivate Coupon, Delete Coupon, Update Coupon |
+| Creator Task | Complete Creator Task |
+| Group | Create Group, Delete Group, Sync Group Members, Update Group |
+| Installation Action | Run Connector Installation Action |
 | Knowledge Entry | Create Knowledge Entry, Delete Knowledge Entry, Update Knowledge Entry |
 | Member | Ban Member, Kick Member, Unban Member |
+| Member Identity | Unlink Member Identity |
+| Notification | Mark All Notifications Read, Mark Notification Read |
+| Partner Program | Accept Partner Terms, Update Partner Payout Details |
 | Pass Window | Cancel Pass Window, Create Pass Window, Remind Pass Window Queue |
+| Payment Method | Activate Payment Method, Deactivate Payment Method, Delete Payment Method, Sync Payment Method Plans |
+| Plan | Create Plan, Delete Plan, Publish Plan, Start Next Season, Unpublish Plan, Update Plan |
 | Portal Design | Discard Portal Design Draft, Publish Portal Design, Update Portal Design |
+| Project | Archive Project, Create Project, Delete Project, Restore Project, Update Project |
 | Recovery Operation | Notify Members Of Recovery, Nudge Pending Readmissions, Revert Recovery Operation |
+| Recovery Settings | Update Recovery Settings |
 | Referral Affiliate | Add Referral Affiliate, Approve Referral Affiliate, Suspend Referral Affiliate |
+| Referral Payout | Record Referral Payout |
+| Referral Program | Activate Referral Program, Deactivate Referral Program, Delete Referral Program, Update Referral Program |
+| Resource | Activate Resource, Create Resource, Create Resource From Space, Deactivate Resource, Delete Resource, Unlink Resource, Update Resource |
+| Resource Link Request | Request Resource Link |
+| Resource Replacement | Request Resource Replacement, Withdraw Resource Replacement Request |
+| Resource Standby | Remove Resource Standby, Request Resource Standby, Set Resource Standby Mirror, Use Resource Standby, Withdraw Resource Standby Request |
+| Retention Settings | Update Retention Settings |
 | Role | Create Role, Delete Role, Update Role |
 | Sequence | Create Sequence, Delete Sequence, Update Sequence |
 | Smart Link | Archive Smart Link, Create Smart Link, Update Smart Link |
-| Team | Create Team, Delete Team, Update Team |
-| Broadcast | Broadcast Message, Retry Broadcast |
-| Notification | Mark All Notifications Read, Mark Notification Read |
-| Partner Program | Accept Partner Terms, Update Partner Payout Details |
-| Resource Replacement | Request Resource Replacement, Withdraw Resource Replacement Request |
-| Webhook Delivery | Retry Dead Webhook Deliveries, Retry Webhook Delivery |
-| Access Code | Delete Access Code |
-| Access Code Batch | Bulk Generate Access Codes |
-| Copilot Credits Settings | Update Copilot Credits Settings |
-| Creator Task | Complete Creator Task |
-| Installation Action | Run Connector Installation Action |
-| Member Identity | Unlink Member Identity |
-| Recovery Settings | Update Recovery Settings |
-| Referral Payout | Record Referral Payout |
-| Resource Link Request | Request Resource Link |
-| Retention Settings | Update Retention Settings |
 | Standby Installation | Remove Standby Installation |
+| Subscription | Cancel Subscription, Pause Subscription Access, Reactivate Subscription, Reissue Subscription Grants, Remind Member to Connect, Remind Pass Holder, Unpause Subscription Access |
+| Support Conversation | Assign Support Conversation, Block Support Contact, Reopen Support Conversation, Resolve Support Conversation, Unblock Support Contact |
 | Support Message | Reply to Support Conversation |
 | Support Settings | Update Support Settings |
+| Team | Create Team, Delete Team, Update Team |
+| Team Member | Cancel Team Invitation, Change Team Member Role, Invite Team Member, Remove Team Member |
 | Token | Revoke Token |
+| Webhook Delivery | Retry Dead Webhook Deliveries, Retry Webhook Delivery |
+| Webhook Endpoint | Create Webhook Endpoint, Delete Webhook Endpoint, Pause Webhook Endpoint, Resume Webhook Endpoint, Rotate Webhook Secret, Test Webhook Endpoint |
 
 ## Supported searches (105)
 
@@ -104,81 +104,81 @@ One search per list or lookup of the REST API, returning the matching records th
 
 | Resource | Searches |
 | -------- | ------- |
-| Member | Find Member by Connector Account, Find Member by ID, List Members |
-| Plan | Find Plan by ID, Find Plan by Name, List Plans |
-| Project | Find Project by Handle, Get Project, List Projects |
-| Team | Get Current Team, Get Team, List Teams |
-| Broadcast | Find Broadcasts, Get Broadcast |
-| Canned Reply | Find Canned Replies, Get Canned Reply |
-| Connector | Get Connector, List Connectors |
-| Connector Installation | Get Connector Installation, List Connector Installations |
-| Coupon | Find Coupons, Get Coupon |
-| Group | Get Group, List Groups |
-| Knowledge Entry | Find Knowledge Entries, Get Knowledge Entry |
-| Partner Referral | Find Partner Referrals, Get Partner Referral |
-| Pass Window | Find Pass Windows, Get Pass Window |
-| Payment Method | Get Payment Method, List Payment Methods |
-| Referral | Find Referrals, Get Referral |
-| Referral Affiliate | Find Referral Affiliates, Get Referral Affiliate |
-| Resource | Get Resource, List Resources |
-| Role | Get Role, List Roles |
-| Sequence | Find Sequences, Get Sequence |
-| Smart Link | Find Smart Links, Get Smart Link |
-| Subscription | Find Subscription by ID, List Subscriptions |
-| Support Conversation | Find Support Conversation, List Support Conversations |
-| Team Member | Get Team Member, List Team Members |
-| Token | Get Token, List Tokens |
-| Webhook Delivery | Get Webhook Delivery, List Webhook Deliveries |
-| Webhook Endpoint | Get Webhook Endpoint, List Webhook Endpoints |
 | Access Code | List Access Codes |
 | Access Code Cost Preview | Preview Access Code Cost |
 | Account | Get Me |
 | Activity Entry | List Activity |
+| Broadcast | Find Broadcasts, Get Broadcast |
 | Broadcast Failure | List Broadcast Failures |
 | Cancellation Record | Find Cancellation Feedback |
+| Canned Reply | Find Canned Replies, Get Canned Reply |
 | Checkout | Find Checkouts |
+| Connector | Get Connector, List Connectors |
 | Connector Analytics | Get Connector Analytics |
+| Connector Installation | Get Connector Installation, List Connector Installations |
 | Connector Space | List Connector Spaces |
 | Connector Uninstall Preview | Get Connector Uninstall Preview |
 | Copilot Credits | Get Copilot Credits |
 | Copilot Credits Statement Line | Find Copilot Credits Statement |
+| Coupon | Find Coupons, Get Coupon |
 | Creator Task | List Creator Tasks |
 | Dashboard Metric | Get Dashboard Metrics |
 | Deep Link | Get Deep Link |
 | Earnings Report | Get Earnings Report |
 | Grant | List Subscription Grants |
+| Group | Get Group, List Groups |
 | Installation Action | List Connector Installation Actions |
+| Knowledge Entry | Find Knowledge Entries, Get Knowledge Entry |
+| Member | Find Member by Connector Account, Find Member by ID, List Members |
 | Member Identity | List Member Identities |
 | Notification | List Notifications |
 | Partner Payout | Find Partner Payouts |
 | Partner Program | Get Partner Program |
+| Partner Referral | Find Partner Referrals, Get Partner Referral |
 | Partner Reward | Find Partner Rewards |
 | Pass Move | Find Pass Moves |
 | Pass Roster Row | Find Pass Roster Rows |
+| Pass Window | Find Pass Windows, Get Pass Window |
+| Payment Method | Get Payment Method, List Payment Methods |
+| Plan | Find Plan by ID, Find Plan by Name, List Plans |
 | Plan Performance Row | Get Plan Performance |
 | Portal Design | Get Portal Design |
 | Portal URL | Get Portal URL |
+| Project | Find Project by Handle, Get Project, List Projects |
 | Recovery Allowance | Get Recovery Allowances |
 | Recovery Incident | List Recovery Incidents |
 | Recovery Operation | List Recovery Operations |
 | Recovery Readiness | Get Recovery Readiness |
 | Recovery Roll Call | Get Recovery Roll Call |
 | Recovery Settings | Get Recovery Settings |
+| Referral | Find Referrals, Get Referral |
+| Referral Affiliate | Find Referral Affiliates, Get Referral Affiliate |
 | Referral Payout | Find Referral Payouts |
 | Referral Program | Get Referral Program |
 | Referral Reward | Find Referral Rewards |
+| Resource | Get Resource, List Resources |
 | Resource Standby | Get Resource Standby |
 | Retention Activity | Find Retention Activity |
 | Retention Settings | Get Retention Settings |
 | Retention Stats | Get Retention Stats |
 | Revenue Composition | Get Revenue Composition |
+| Role | Get Role, List Roles |
+| Sequence | Find Sequences, Get Sequence |
 | Sequence Enrollment | Find Sequence Enrollments |
+| Smart Link | Find Smart Links, Get Smart Link |
 | Smart Link Funnel | Get Smart Link Funnel |
 | Subscriber Analytics | Get Subscriber Analytics |
+| Subscription | Find Subscription by ID, List Subscriptions |
+| Support Conversation | Find Support Conversation, List Support Conversations |
 | Support Message | List Support Messages |
 | Support Settings | Get Support Settings |
+| Team | Get Current Team, Get Team, List Teams |
+| Team Member | Get Team Member, List Team Members |
+| Token | Get Token, List Tokens |
 | Transaction | List Transactions |
 | Transaction Breakdown | Get Transaction Breakdown |
+| Webhook Delivery | Get Webhook Delivery, List Webhook Deliveries |
+| Webhook Endpoint | Get Webhook Endpoint, List Webhook Endpoints |
 
 ## Development
 
