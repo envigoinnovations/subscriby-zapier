@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 4.10.0 — 8 November 2026
 
 ### Added
 
