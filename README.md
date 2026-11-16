@@ -98,7 +98,7 @@ One action per write of the REST API, each sending a fresh `Idempotency-Key` so 
 | Webhook Delivery | Retry Dead Webhook Deliveries, Retry Webhook Delivery |
 | Webhook Endpoint | Create Webhook Endpoint, Delete Webhook Endpoint, Pause Webhook Endpoint, Resume Webhook Endpoint, Rotate Webhook Secret, Test Webhook Endpoint |
 
-## Supported searches (105)
+## Supported searches (107)
 
 One search per list or lookup of the REST API, returning the matching records the way Zapier expects them.
 
@@ -139,6 +139,7 @@ One search per list or lookup of the REST API, returning the matching records th
 | Pass Move | Find Pass Moves |
 | Pass Roster Row | Find Pass Roster Rows |
 | Pass Window | Find Pass Windows, Get Pass Window |
+| Payment | Find Payments, Get Payment |
 | Payment Method | Get Payment Method, List Payment Methods |
 | Plan | Find Plan by ID, Find Plan by Name, List Plans |
 | Plan Performance Row | Get Plan Performance |

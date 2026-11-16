@@ -408,6 +408,8 @@ import getSubscriberAnalytics from './searches/get-subscriber-analytics';
 import getTransactionBreakdown from './searches/get-transaction-breakdown';
 import getPlanPerformance from './searches/get-plan-performance';
 import listTransactions from './searches/list-transactions';
+import findPayments from './searches/find-payments';
+import getPayment from './searches/get-payment';
 import findCoupons from './searches/find-coupons';
 import getCoupon from './searches/get-coupon';
 import findLinks from './searches/find-links';
@@ -859,6 +861,8 @@ const searches = {
   [getTransactionBreakdown.key]: getTransactionBreakdown,
   [getPlanPerformance.key]: getPlanPerformance,
   [listTransactions.key]: listTransactions,
+  [findPayments.key]: findPayments,
+  [getPayment.key]: getPayment,
   [findCoupons.key]: findCoupons,
   [getCoupon.key]: getCoupon,
   [findLinks.key]: findLinks,

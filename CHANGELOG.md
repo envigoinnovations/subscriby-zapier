@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.11.0 — 16 November 2026
+
+### Added
+
+- **Find Payments** lists the payment ledger the dashboard's All Transactions page shows, newest first, across every project the token may see or one project: each row with the amount in the currency it was paid in, the gateway with its mode and the references it gave, the fee Subscriby calculated, why it was billed, the member and the plan, and the gateway's words when it failed. Narrow by status, plan, payment method, connector, a span of dates, or a search over the gateway references and names. Needs the `payment:view-any` ability. Ships with the Subscriby release that opens the ledger over the API.
+- **Get Payment** reads one payment by UUID in the same row, behind `payment:view`; the id comes off Find Payments or a Payment Succeeded, Payment Failed or Payment Refunded trigger.
+
 ## 4.10.0 — 8 November 2026
 
 ### Added
