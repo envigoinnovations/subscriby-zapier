@@ -94,9 +94,10 @@ export default {
       member: {
         id: '2a91c4e7-6f38-4b52-8e0d-9c1a7b3f5d80',
         project_id: '7f3d1c92-8b45-4e6a-9d21-5c8e0a4b6f13',
-        username: 'gus',
-        first_name: 'Gus',
-        last_name: 'Moved',
+        name: 'Gus Moved',
+        username: null,
+        first_name: null,
+        last_name: null,
         status: 'customer',
         joined_at: '2026-10-02T18:40:11Z',
         created_at: '2026-10-02T18:40:11Z',

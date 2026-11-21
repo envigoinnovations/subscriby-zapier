@@ -2,6 +2,10 @@
 
 ## 4.11.0 — 16 November 2026
 
+### Changed
+
+- Every member object the API returns (Find Pass Roster's rows, the members family and the member embedded in events) carries `name`, the member as the dashboard names them; `username`, `first_name` and `last_name` have answered null since the name parts moved onto the member's connected accounts, and the keys stay so an existing Zap keeps working.
+
 ### Added
 
 - **Find Payments** lists the payment ledger the dashboard's All Transactions page shows, newest first, across every project the token may see or one project: each row with the amount in the currency it was paid in, the gateway with its mode and the references it gave, the fee Subscriby calculated, why it was billed, the member and the plan, and the gateway's words when it failed. Narrow by status, plan, payment method, connector, a span of dates, or a search over the gateway references and names. Needs the `payment:view-any` ability. Ships with the Subscriby release that opens the ledger over the API.
