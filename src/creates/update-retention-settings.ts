@@ -8,7 +8,7 @@ export default {
   display: {
     label: 'Update Retention Settings',
     description:
-      "Change a project's Revenue Recovery settings: the grace window a failed renewal keeps access for, the daily digest, the cancellation question, the three offers the cancellation screen can make, the checkout window after which a checkout counts as stalled and the trial reminder before a cardless trial ends. Only the fields you fill in change; blank fields keep their value.",
+      "Change a project's Revenue Recovery settings: the grace window a failed renewal keeps access for, the daily digest, the waiting-place reminder, the cancellation question, the three offers the cancellation screen can make, the checkout window after which a checkout counts as stalled and the trial reminder before a cardless trial ends. Only the fields you fill in change; blank fields keep their value.",
   },
   operation: {
     inputFields: [
@@ -40,6 +40,13 @@ export default {
         type: 'boolean',
         required: false,
         helpText: 'Whether the cancellation screen asks the member why before the offer. Off skips straight to the offer.',
+      },
+      {
+        key: 'waiting_place_reminder_enabled',
+        label: 'Waiting-Place Reminder',
+        type: 'boolean',
+        required: false,
+        helpText: 'Whether a member whose place still waits for an account they have not connected is reminded once, a day after the purchase and a day before a pass window opens.',
       },
       {
         key: 'offer_pause_enabled',
@@ -102,7 +109,7 @@ export default {
         }
       }
 
-      for (const key of ['digest_enabled', 'cancel_feedback_enabled', 'offer_pause_enabled'] as const) {
+      for (const key of ['digest_enabled', 'cancel_feedback_enabled', 'waiting_place_reminder_enabled', 'offer_pause_enabled'] as const) {
         const value = bundle.inputData[key];
         if (value !== undefined && value !== null && value !== '') {
           body[key] = value === true || value === 'true';
@@ -141,6 +148,7 @@ export default {
       ladder: "A failed renewal keeps the member's access for 10 days: they are told at once with a link to settle the payment, reminded on day 3 and the day before the window closes, and paused when it does; access comes back by itself with the next successful payment.",
       digest_enabled: true,
       cancel_feedback_enabled: true,
+      waiting_place_reminder_enabled: true,
       checkout_stall_hours: 4,
       trial_notice_days: 3,
       offers_available: true,

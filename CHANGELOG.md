@@ -4,6 +4,7 @@
 
 ### Changed
 
+- **Update Retention Settings** takes **Waiting-Place Reminder**, the switch the dashboard's settings dialog has carried since the waiting places shipped (one reminder to a member whose place still waits for an account they have not connected, a day after the purchase and a day before a pass window opens), and the settings object **Get Retention Settings** returns carries it as `waiting_place_reminder_enabled`, true by default and kept as stored when a write leaves it out.
 - Every member object the API returns (Find Pass Roster's rows, the members family and the member embedded in events) carries `name`, the member as the dashboard names them; `username`, `first_name` and `last_name` have answered null since the name parts moved onto the member's connected accounts, and the keys stay so an existing Zap keeps working.
 
 ### Added

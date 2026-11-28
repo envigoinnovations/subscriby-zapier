@@ -39,6 +39,7 @@ export default {
       ladder: "A failed renewal keeps the member's access for 7 days: they are told at once with a link to settle the payment, reminded on day 3 and the day before the window closes, and paused when it does; access comes back by itself with the next successful payment.",
       digest_enabled: true,
       cancel_feedback_enabled: true,
+      waiting_place_reminder_enabled: true,
       checkout_stall_hours: 1,
       trial_notice_days: 3,
       offers_available: true,
